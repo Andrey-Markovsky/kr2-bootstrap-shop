@@ -1,9 +1,5 @@
-body {
-  min-height: 100vh;
-}
-
-.placeholder-box {
-  min-height: 240px;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -21,4 +17,29 @@ body {
 .card-img-top {
   height: 180px;
   object-fit: cover;
+}
+
+/* Доступность (Accessibility): чёткий видимый фокус с клавиатуры */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #0d6efd !important;
+  outline-offset: 2px !important;
+}
+
+/* Адаптивность для мобильных экранов (360–430px) */
+@media (max-width: 575.98px) {
+  .placeholder-image {
+    min-height: 200px;
+  }
+
+  .card-body .d-flex.gap-2 {
+    flex-direction: column;
+  }
+
+  .card-body .btn {
+    width: 100%;
+  }
 }
