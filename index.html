@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная — LitBrief (Bootstrap Shop)</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-light">
+
+  <!-- Шапка страницы -->
+  <header class="bg-primary text-white py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-8">
+          <h1 class="h3 mb-1">📚 LitBrief</h1>
+          <p class="mb-0 opacity-75">
+            Образовательный портал кратких содержаний и анализа литературы (Аналог Briefly.ru)
+          </p>
+        </div>
+        <div class="col-12 col-md-4 text-md-end mt-3 mt-md-0">
+          <span class="badge bg-light text-primary">
+            Практика №9
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Навигация Bootstrap -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">LitBrief</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Переключить навигацию"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalog.html">База пересказов</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product.html">Разбор книги</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="order.html">Предложить разбор</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero-блок на сетке -->
+    <section class="container my-5">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-6">
+          <h2 class="display-5 fw-bold">
+            Вся классическая литература в кратком изложении
+          </h2>
+          <p class="lead text-muted">
+            Готовьтесь к семинарам и экзаменам за 10 минут: структурированные пересказы по главам, анализ проблематики и характеристики главных героев.
+          </p>
+          <a class="btn btn-primary btn-lg" href="catalog.html">
+            Перейти к базе пересказов
+          </a>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="placeholder-box p-5 bg-white border rounded text-center d-flex flex-column justify-content-center">
+            <h3 class="h5 fw-bold">Произведение недели</h3>
+            <p class="mb-2 text-muted">
+              Ф. М. Достоевский — «Преступление и наказание»
+            </p>
+            <span class="badge bg-success align-self-center">Оригинал: 12 часов → Бриф: 12 минут</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Литературные эпохи (Блок преимуществ на сетке row + col-md-4) -->
+    <section class="container my-5" id="epochs">
+      <h2 class="text-center mb-4">Литературные эпохи и преимущества портала</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="p-4 border rounded h-100 bg-white">
+            <h3 class="h5">Золотой век (XIX в.)</h3>
+            <p class="mb-0 text-muted">
+              Пушкин, Лермонтов, Гоголь, Тургенев, Достоевский, Толстой. Подробные разборы классики на 12-колоночной сетке Bootstrap.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="p-4 border rounded h-100 bg-white">
+            <h3 class="h5">Серебряный век (XX в.)</h3>
+            <p class="mb-0 text-muted">
+              Булгаков, Бунин, Куприн, Блок, Маяковский. Адаптивные карточки с анализом символизма, акмеизма и футуризма.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="p-4 border rounded h-100 bg-white">
+            <h3 class="h5">Зарубежная классика</h3>
+            <p class="mb-0 text-muted">
+              Шекспир, Гёте, Гюго, Оруэлл, Ремарк. Готовая база конспектов, цитат и характеристик литературных типов.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Популярные пересказы недели (Сетка col-12 col-md-6 col-lg-4) -->
+    <section class="container my-5" id="popular">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Самые читаемые пересказы недели</h2>
+        <a class="btn btn-outline-primary" href="catalog.html">
+          Все пересказы
+        </a>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="border rounded h-100 p-4 bg-white">
+            <span class="badge bg-success mb-3">Чтение: 12 мин</span>
+            <h3 class="h5">Преступление и наказание</h3>
+            <p class="text-muted">
+              Ф. М. Достоевский. Психологический отчёт одного преступления и крушение теории Раскольникова.
+            </p>
+            <p class="fw-bold mb-3">Оригинал: 580 стр.</p>
+            <a class="btn btn-primary" href="product.html">
+              Читать разбор
+            </a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="border rounded h-100 p-4 bg-white">
+            <span class="badge bg-warning text-dark mb-3">Хит недели</span>
+            <h3 class="h5">Мастер и Маргарита</h3>
+            <p class="text-muted">
+              М. А. Булгаков. Визит Воланда в Москву, ершалаимские главы и история вечной любви.
+            </p>
+            <p class="fw-bold mb-3">Оригинал: 480 стр.</p>
+            <a class="btn btn-primary" href="product.html">
+              Читать разбор
+            </a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="border rounded h-100 p-4 bg-white">
+            <span class="badge bg-danger mb-3">Чтение: 8 мин</span>
+            <h3 class="h5">1984</h3>
+            <p class="text-muted">
+              Джордж Оруэлл. Роман-антиутопия о тоталитарном контроле Большого Брата и судьбе Уинстона Смита.
+            </p>
+            <p class="fw-bold mb-3">Оригинал: 320 стр.</p>
+            <a class="btn btn-primary" href="product.html">
+              Читать разбор
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-12 col-md-6">
+          <p class="mb-0">
+            &copy; 2026 LitBrief (Bootstrap Shop). Учебный проект.
+          </p>
+        </div>
+        <div class="col-12 col-md-6 text-md-end">
+          <a class="text-white text-decoration-none me-3" href="catalog.html">
+            База пересказов
+          </a>
+          <a class="text-white text-decoration-none" href="order.html">
+            Предложить разбор
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+</body>
+</html>
