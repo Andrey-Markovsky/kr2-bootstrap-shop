@@ -52,3 +52,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Настройка модального окна для передачи названия выбранной книги
+  const orderModal = document.getElementById('orderModal');
+  if (orderModal) {
+    orderModal.addEventListener('show.bs.modal', (event) => {
+      const button = event.relatedTarget;
+      const bookTitle = button.getAttribute('data-book-title') || 'Выбранное произведение';
+      const modalBookNameSpan = document.getElementById('modal-book-name');
+      if (modalBookNameSpan) {
+        modalBookNameSpan.textContent = bookTitle;
+      }
+    });
+  }
+});
