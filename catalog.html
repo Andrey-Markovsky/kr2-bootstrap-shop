@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>База пересказов — LitBrief</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-light">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">📚 LitBrief</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Переключить навигацию"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="catalog.html">База пересказов</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product.html">Разбор книги</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="order.html">Предложить разбор</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Дополнительно
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="catalog.html">Все пересказы</a></li>
+              <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
+              <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <div class="alert alert-info" role="alert">
+      Выберите произведение из базы пересказов. Карточки книг оформлены с помощью компонента Bootstrap <code>card</code>.
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="h2 mb-0">База кратких пересказов</h1>
+      <a class="btn btn-outline-primary" href="order.html">
+        Предложить книгу
+      </a>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <h2 class="card-title h5">Преступление и наказание</h2>
+              <span class="badge bg-success">12 мин</span>
+            </div>
+            <p class="card-text text-muted">
+              Ф. М. Достоевский. Подробный пересказ 6 частей и эпилога, теория Раскольникова и система образов.
+            </p>
+            <p class="fw-bold fs-5 mt-auto">Оригинал: 580 стр.</p>
+            <div class="d-flex gap-2">
+              <a class="btn btn-primary" href="product.html">Подробнее</a>
+              <button
+                class="btn btn-outline-primary"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#orderModal"
+              >
+                Заказать разбор
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <h2 class="card-title h5">Мастер и Маргарита</h2>
+              <span class="badge bg-warning text-dark">Хит</span>
+            </div>
+            <p class="card-text text-muted">
+              М. А. Булгаков. Сатирическая Москва 1930-х годов, суд Понтия Пилата и история Мастера.
+            </p>
+            <p class="fw-bold fs-5 mt-auto">Оригинал: 480 стр.</p>
+            <div class="d-flex gap-2">
+              <a class="btn btn-primary" href="product.html">Подробнее</a>
+              <button
+                class="btn btn-outline-primary"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#orderModal"
+              >
+                Заказать разбор
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <h2 class="card-title h5">Отцы и дети</h2>
+              <span class="badge bg-danger">9 мин</span>
+            </div>
+            <p class="card-text text-muted">
+              И. С. Тургенев. Философия нигилизма Евгения Базарова, идейный спор поколений и проверка любовью.
+            </p>
+            <p class="fw-bold fs-5 mt-auto">Оригинал: 280 стр.</p>
+            <div class="d-flex gap-2">
+              <a class="btn btn-primary" href="product.html">Подробнее</a>
+              <button
+                class="btn btn-outline-primary"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#orderModal"
+              >
+                Заказать разбор
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Модальное окно быстрой заявки -->
+  <div
+    class="modal fade"
+    id="orderModal"
+    tabindex="-1"
+    aria-labelledby="orderModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="orderModalLabel">
+            Быстрая заявка на разбор произведения
+          </h2>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Закрыть"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted">
+            Оставьте контактные данные и название книги — редакция LitBrief подготовит разбор.
+          </p>
+          <form>
+            <div class="mb-3">
+              <label for="modal-name" class="form-label">Имя</label>
+              <input id="modal-name" name="name" type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="modal-phone" class="form-label">Телефон</label>
+              <input id="modal-phone" name="phone" type="tel" class="form-control" required>
+            </div>
+            <div class="form-check mb-3">
+              <input id="modal-agree" name="agree" class="form-check-input" type="checkbox" required>
+              <label class="form-check-label" for="modal-agree">
+                Согласен на обработку данных
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Закрыть
+          </button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+            Отправить
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <p class="mb-0">&copy; 2026 LitBrief. Учебный проект.</p>
+    </div>
+  </footer>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+</body>
+</html>
