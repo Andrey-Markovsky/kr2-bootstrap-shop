@@ -9,6 +9,7 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="css/custom.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body class="bg-light">
 
@@ -184,6 +185,39 @@
             <a class="btn btn-primary" href="product.html">
               Читать разбор
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Калькулятор скорости чтения (Самостоятельная доработка) -->
+    <section class="container my-5" id="calculator">
+      <div class="card border-primary shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h2 class="h5 mb-0">⏱️ Интерактивный калькулятор времени чтения</h2>
+        </div>
+        <div class="card-body">
+          <p class="text-muted">
+            Рассчитайте, сколько времени потребуется на чтение оригинала произведения по сравнению с кратким разбором на LitBrief.
+          </p>
+          <form class="row g-3 align-items-end">
+            <div class="col-12 col-md-4">
+              <label for="calc-pages" class="form-label">Количество страниц в книге</label>
+              <input type="number" id="calc-pages" class="form-control" value="580" min="10" max="5000">
+            </div>
+            <div class="col-12 col-md-4">
+              <label for="calc-speed" class="form-label">Скорость чтения (стр. в час)</label>
+              <select id="calc-speed" class="form-select">
+                <option value="25">Вдумчивая (25 стр./час)</option>
+                <option value="40" selected>Средняя (40 стр./час)</option>
+                <option value="60">Быстрая (60 стр./час)</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-4">
+              <button type="button" id="calc-btn" class="btn btn-success w-100">Рассчитать</button>
+            </div>
+          </form>
+          <div id="calc-result" class="alert alert-success mt-3 mb-0" role="status">
+            Чтение оригинала (580 стр.) займёт около <strong>14.5 ч.</strong> На портале LitBrief вы разберёте сюжет и смысл за <strong>12 мин.</strong>!
           </div>
         </div>
       </div>
