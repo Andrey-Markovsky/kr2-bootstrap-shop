@@ -1,5 +1,230 @@
+const BOOKS_DATA = {
+  dostoevsky: {
+    title: 'Преступление и наказание',
+    badge: 'Время чтения: 12 минут',
+    epoch: 'Золотой век (1866 г.)',
+    lead: 'Социально-психологический и философский роман Ф. М. Достоевского о бывшем студенте Родионе Раскольникове, решившем проверить теорию о «праве сильной личности».',
+    pages: 'Оригинал: 580 стр. (экономия 14 часов)',
+    moral: '<strong>Главная мысль:</strong> Невозможно построить счастье на пролитой крови; переступая нравственный закон, человек прежде всего разрушает собственную душу.',
+    image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='340' viewBox='0 0 500 340'><rect width='500' height='340' fill='%2331102f'/><rect x='20' y='20' width='460' height='300' fill='none' stroke='%23fbbf24' stroke-opacity='0.6'/><text x='250' y='120' font-family='Georgia, serif' font-size='20' fill='%23f8fafc' text-anchor='middle'>Ф. М. ДОСТОЕВСКИЙ</text><text x='250' y='175' font-family='Georgia, serif' font-size='30' font-weight='bold' fill='%23fbbf24' text-anchor='middle'>Преступление и наказание</text><text x='250' y='230' font-family='Arial, sans-serif' font-size='16' fill='%23cbd5e1' text-anchor='middle'>Психологический роман • 1866 г.</text></svg>",
+    table: [
+      ['Автор и год публикации', 'Ф. М. Достоевский, 1866 год (журнал «Русский вестник»)'],
+      ['Родион Раскольников', 'Главный герой, бывший студент. Автор теории о делении людей на «тварей дрожащих» и «право имеющих»'],
+      ['Соня Мармеладова', 'Олицетворение христианского милосердия, жертвенной любви и духовного возрождения'],
+      ['Свидригайлов и Лужин', 'Двойники Раскольникова, показывающие тупик эгоизма и вседозволенности'],
+      ['Порфирий Петрович', 'Следователь, ведущий тонкий психологический поединок с главным героем']
+    ],
+    chapters: [
+      ['Часть 1–2. Замысел, теория и совершение убийства', 'Живущий в крайней бедности студент Раскольников убивает старуху-процентщицу Алёну Ивановну и её сестру Лизавету, чтобы проверить, способен ли он переступить черту как Наполеон.'],
+      ['Часть 3–4. Поединок со следователем и встреча с Соней', 'Следователь Порфирий Петрович разгадывает психологию преступника. Соня Мармеладова читает Раскольникову евангельскую главу о воскрешении Лазаря.'],
+      ['Часть 5–6 и Эпилог. Признание и духовное воскресение', 'После исповеди Соне и самоубийства Свидригайлова Раскольников делает явку с повинной. На каторге в Сибири любовь Сони возвращает его к жизни.']
+    ],
+    quotes: [
+      ['«Тварь ли я дрожащая или право имею...»', '— Родион Раскольников'],
+      ['«Страдание и боль всегда обязательны для широкого сознания и глубокого сердца.»', '— Ф. М. Достоевский']
+    ]
+  },
+  bulgakov: {
+    title: 'Мастер и Маргарита',
+    badge: 'Время чтения: 15 минут',
+    epoch: 'Серебряный век / XX век (1940 г.)',
+    lead: 'Философско-мистический роман М. А. Булгакова, объединяющий визит Воланда в Москву 1930-х годов, историю любви Мастера и суд Понтия Пилата над Иешуа.',
+    pages: 'Оригинал: 480 стр. (экономия 12 часов)',
+    moral: '<strong>Главная мысль:</strong> «Рукописи не горят» — подлинное творчество, милосердие и преданная любовь сильнее трусости, конформизма и смерти.',
+    image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='340' viewBox='0 0 500 340'><rect width='500' height='340' fill='%230f172a'/><rect x='20' y='20' width='460' height='300' fill='none' stroke='%23f59e0b' stroke-opacity='0.6'/><text x='250' y='120' font-family='Georgia, serif' font-size='20' fill='%23f8fafc' text-anchor='middle'>М. А. БУЛГАКОВ</text><text x='250' y='175' font-family='Georgia, serif' font-size='32' font-weight='bold' fill='%23f59e0b' text-anchor='middle'>Мастер и Маргарита</text><text x='250' y='230' font-family='Arial, sans-serif' font-size='16' fill='%23cbd5e1' text-anchor='middle'>Философско-мистический роман • 1940 г.</text></svg>",
+    table: [
+      ['Автор и годы создания', 'М. А. Булгаков, 1928–1940 гг. (опубликован в 1966–1967 гг.)'],
+      ['Мастер и Маргарита', 'Автор романа о Понтии Пилате и его возлюбленная, готовая на сделку с Воландом ради спасения Мастера'],
+      ['Воланд и его свита', 'Князь тьмы, Коровьев-Фагот, Азазелло, Кот Бегемот и Гелла, вскрывающие пороки москвичей'],
+      ['Иешуа Га-Ноцри', 'Бродячий философ в Ершалаиме, проповедующий, что все люди добры'],
+      ['Понтий Пилат', 'Пятый прокуратор Иудеи, пославший Иешуа на казнь из-за страха погубить карьеру («трусость — самый тяжкий порок»)']
+    ],
+    chapters: [
+      ['Книга 1. Воланд на Патриарших прудах и сеанс в Варьете', 'Спор Берлиоза и поэта Ивана Бездомного с загадочным иностранцем. Гибель Берлиоза под трамваем, заселение свиты Воланда в «нехорошую квартиру» и разоблачение жадности зрителей в театре Варьете.'],
+      ['Книга 2. Полёт Маргариты и Великий бал у сатаны', 'Маргарита принимает крем Азазелло, становится невидимой ведьмой, громит квартиру критика Латунского и исполняет роль королевы на весеннем балу полнолуния.'],
+      ['Финал. Воссоединение влюблённых и прощение Пилата', 'Воланд возвращает сожжённую рукопись романа. По просьбе Левия Матвея Мастер и Маргарита обретают вечный покой, а Понтий Пилат получает долгожданное прощение.']
+    ],
+    quotes: [
+      ['«Рукописи не горят.»', '— Воланд (М. А. Булгаков)'],
+      ['«Никогда и ничего не просите! Никогда и ничего, и в особенности у тех, кто сильнее вас.»', '— Воланд']
+    ]
+  },
+  turgenev: {
+    title: 'Отцы и дети',
+    badge: 'Время чтения: 9 минут',
+    epoch: 'Золотой век (1862 г.)',
+    lead: 'Социально-психологический роман И. С. Тургенева об идейном столкновении дворян-либералов 1840-х годов («отцов») и разночинцев-демократов 1860-х годов («детей»).',
+    pages: 'Оригинал: 280 стр. (экономия 7 часов)',
+    moral: '<strong>Главная мысль:</strong> Жизнь, природа и человеческое чувство всегда шире и сильнее любых радикальных теорий и полного отрицания.',
+    image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='340' viewBox='0 0 500 340'><rect width='500' height='340' fill='%23064e3b'/><rect x='20' y='20' width='460' height='300' fill='none' stroke='%236ee7b7' stroke-opacity='0.6'/><text x='250' y='120' font-family='Georgia, serif' font-size='20' fill='%23f8fafc' text-anchor='middle'>И. С. ТУРГЕНЕВ</text><text x='250' y='175' font-family='Georgia, serif' font-size='34' font-weight='bold' fill='%236ee7b7' text-anchor='middle'>Отцы и дети</text><text x='250' y='230' font-family='Arial, sans-serif' font-size='16' fill='%23d1fae5' text-anchor='middle'>Социально-психологический роман • 1862 г.</text></svg>",
+    table: [
+      ['Автор и год публикации', 'И. С. Тургенев, 1862 год (журнал «Русский вестник»)'],
+      ['Евгений Базаров', 'Студент-медик, разночинец, убеждённый нигилист, отрицающий авторитеты, искусство и сентиментальность'],
+      ['Павел Петрович Кирсанов', 'Дворянин-аристократ, главный идейный оппонент Базарова, защищающий традиции и принципы'],
+      ['Николай Петрович и Аркадий', 'Мягкий отец-помещик и его сын Аркадий, временно увлечённый идеями Базарова, но выбирающий семейное счастье'],
+      ['Анна Сергеевна Одинцова', 'Умная и независимая богатая вдова, любовь к которой разрушает нигилистическую броню Базарова']
+    ],
+    chapters: [
+      ['Часть 1. Приезд в Марьино и спор о нигилизме', 'Аркадий Кирсанов приезжает в имение отца вместе с другом Евгением Базаровым. Между Базаровым и дядей Аркадия Павлом Петровичем вспыхивает ожесточённый спор об искусстве, науке и русском народе.'],
+      ['Часть 2. Знакомство с Одинцовой и кризис Базарова', 'В губернском городе друзья знакомятся с Анной Одинцовой. В её имении Никольском Базаров осознаёт, что страстно влюблён, но после признания получает вежливый отказ.'],
+      ['Часть 3. Дуэль, разрыв с Аркадием и смерть героя', 'Случайная дуэль с Павлом Петровичем, отъезд Базарова к старым родителям. Заразившись тифом при вскрытии умершего крестьянина, Базаров мужественно встречает смерть, простившись с Одинцовой.']
+    ],
+    quotes: [
+      ['«Природа не храм, а мастерская, и человек в ней работник.»', '— Евгений Базаров'],
+      ['«Нигилист — это человек, который не склоняется ни перед какими авторитетами.»', '— Аркадий Кирсанов']
+    ]
+  },
+  tolstoy: {
+    title: 'Война и мир',
+    badge: 'Время чтения: 25 минут',
+    epoch: 'Золотой век (1869 г.)',
+    lead: 'Монументальный роман-эпопея Л. Н. Толстого о судьбах русского дворянства и всего народа в эпоху войн с Наполеоном 1805–1812 годов.',
+    pages: 'Оригинал: 1300 стр. (экономия 32 часов)',
+    moral: '<strong>Главная мысль:</strong> Истинное величие человека — в простоте, добре и единении с народом («мысль народная» и «мысль семейная»).',
+    image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='340' viewBox='0 0 500 340'><rect width='500' height='340' fill='%231e3a8a'/><rect x='20' y='20' width='460' height='300' fill='none' stroke='%23fde047' stroke-opacity='0.6'/><text x='250' y='120' font-family='Georgia, serif' font-size='20' fill='%23f8fafc' text-anchor='middle'>Л. Н. ТОЛСТОЙ</text><text x='250' y='175' font-family='Georgia, serif' font-size='34' font-weight='bold' fill='%23fde047' text-anchor='middle'>Война и мир</text><text x='250' y='230' font-family='Arial, sans-serif' font-size='16' fill='%23dbeafe' text-anchor='middle'>Роман-эпопея в 4 томах • 1869 г.</text></svg>",
+    table: [
+      ['Автор и годы создания', 'Л. Н. Толстой, 1863–1869 гг.'],
+      ['Андрей Болконский', 'Князь, ищущий свой «Тулон» и славу, но открывающий вечную истину под высоким небом Аустерлица'],
+      ['Пьер Безухов', 'Любимый герой Толстого, проходящий путь от светских кутежей и масонства до плена и народной мудрости Платона Каратаева'],
+      ['Наташа Ростова', 'Воплощение естественности, искренности, поэзии жизни и семейного начала'],
+      ['Кутузов и Наполеон', 'Два полюса истории: смиренный выразитель народного духа Кутузов и самонадеянный индивидуалист Наполеон']
+    ],
+    chapters: [
+      ['Том 1–2. Кампания 1805 года и мирная жизнь героев', 'Вечер в салоне Шерер, Шенграбенское и Аустерлицкое сражения. Ранение князя Андрея. Женитьба Пьера на Элен Курагиной, дуэль с Долоховым, первый бал Наташи Ростовой и её роковая ошибка с Анатолем.'],
+      ['Том 3. Отечественная война 1812 года и Бородино', 'Вторжение армии Наполеона, оставление Смоленска, назначение Кутузова. Бородинское сражение глазами Пьера Безухова, смертельное ранение Андрея Болконского и совет в Филях.'],
+      ['Том 4 и Эпилог. Партизанская война, плен Пьера и счастливые семьи', 'Примирение Наташи с умирающим князем Андреем. Встреча Пьера в плену с солдатом Платоном Каратаевым. Изгнание французов, брак Пьера с Наташей и Николая Ростова с княжной Марьей.']
+    ],
+    quotes: [
+      ['«Нет величия там, где нет простоты, добра и правды.»', '— Л. Н. Толстой'],
+      ['«Чтобы жить честно, надо рваться, путаться, биться, ошибаться, начинать и бросать...»', '— Л. Н. Толстой']
+    ]
+  },
+  pushkin: {
+    title: 'Евгений Онегин',
+    badge: 'Время чтения: 7 минут',
+    epoch: 'Золотой век (1833 г.)',
+    lead: 'Первый русский реалистический роман в стихах А. С. Пушкина, названный В. Г. Белинским «энциклопедией русской жизни».',
+    pages: 'Оригинал: 220 стр. (экономия 5 часов)',
+    moral: '<strong>Главная мысль:</strong> Эгоизм, скептицизм и оторванность от национальной почвы обрекают одарённого человека на духовную пустоту и одиночество.',
+    image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='340' viewBox='0 0 500 340'><rect width='500' height='340' fill='%233b0764'/><rect x='20' y='20' width='460' height='300' fill='none' stroke='%23e9d5ff' stroke-opacity='0.6'/><text x='250' y='120' font-family='Georgia, serif' font-size='20' fill='%23f8fafc' text-anchor='middle'>А. С. ПУШКИН</text><text x='250' y='175' font-family='Georgia, serif' font-size='32' font-weight='bold' fill='%23e9d5ff' text-anchor='middle'>Евгений Онегин</text><text x='250' y='230' font-family='Arial, sans-serif' font-size='16' fill='%23f3e8ff' text-anchor='middle'>Роман в стихах • 1833 г.</text></svg>",
+    table: [
+      ['Автор и годы создания', 'А. С. Пушкин, 1823–1831 гг.'],
+      ['Евгений Онегин', 'Молодой петербургский дворянин, подверженный «русской хандре», родоначальник типа «лишнего человека»'],
+      ['Татьяна Ларина', 'Нравственный идеал Пушкина («милый идеал»): цельная, глубокая и верная долгу русская натура'],
+      ['Владимир Ленский', 'Юный поэт-романтик с «душою прямо геттингенской», друг Онегина, погибший на дуэли'],
+      ['Ольга Ларина', 'Младшая сестра Татьяны, весёлая, но поверхностная невеста Ленского']
+    ],
+    chapters: [
+      ['Глава 1–3. Петербургская хандра, деревня и письмо Татьяны', 'Устав от светских развлечений, Онегин переезжает в деревню, сближается с поэтом Ленским и знакомится с семьёй Лариных. Татьяна влюбляется в Евгения и пишет ему искреннее признание.'],
+      ['Глава 4–6. Проповедь Онегина, именины и дуэль с Ленским', 'Онегин холодно отвергает Татьяну. На именинах Татьяны Евгений ради шутки ухаживает за Ольгой, вызывая ревность Ленского. На дуэли Онегин убивает своего друга.'],
+      ['Глава 7–8. Встреча в Петербурге и отказ Татьяны', 'Спустя годы вернувшийся из странствий Онегин встречает в свете Татьяну, ставшую величественной княгиней. Теперь уже Онегин пишет ей страстное письмо, но Татьяна остаётся верна мужу.']
+    ],
+    quotes: [
+      ['«Чем меньше женщину мы любим, тем легче нравимся мы ей...»', '— А. С. Пушкин'],
+      ['«Но я другому отдана; я буду век ему верна.»', '— Татьяна Ларина']
+    ]
+  },
+  orwell: {
+    title: '1984',
+    badge: 'Время чтения: 8 минут',
+    epoch: 'Зарубежная классика XX века (1949 г.)',
+    lead: 'Культовый роман-антиутопия Джорджа Оруэлла об обществе тотальной слежки, манипуляции историей и подавлении человеческой личности.',
+    pages: 'Оригинал: 320 стр. (экономия 8 часов)',
+    moral: '<strong>Главная мысль:</strong> Когда власть получает контроль над прошлым, языком и внутренним миром человека, свобода уничтожается изнутри.',
+    image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='340' viewBox='0 0 500 340'><rect width='500' height='340' fill='%23450a0a'/><rect x='20' y='20' width='460' height='300' fill='none' stroke='%23f87171' stroke-opacity='0.6'/><text x='250' y='120' font-family='Georgia, serif' font-size='20' fill='%23f8fafc' text-anchor='middle'>ДЖОРДЖ ОРУЭЛЛ</text><text x='250' y='180' font-family='Georgia, serif' font-size='44' font-weight='bold' fill='%23f87171' text-anchor='middle'>1984</text><text x='250' y='230' font-family='Arial, sans-serif' font-size='16' fill='%23fecaca' text-anchor='middle'>Роман-антиутопия • 1949 г.</text></svg>",
+    table: [
+      ['Автор и год издания', 'Джордж Оруэлл (Эрик Артур Блэр), 1949 год'],
+      ['Уинстон Смит', 'Рядовой сотрудник Министерства правды, пытающийся сохранить память, дневник и личную свободу'],
+      ['Джулия', 'Возлюбленная Уинстона, бунтующая против партийного аскетизма через тайную частную жизнь'],
+      ['О’Брайен', 'Высокопоставленный член Внутренней партии, заманивший Уинстона в ловушку и сломивший его в Министерстве любви'],
+      ['Большой Брат', 'Символ всевидящей и непогрешимой диктатуры партии ангсоца']
+    ],
+    chapters: [
+      ['Часть 1. Жизнь в Океании и тайный дневник Уинстона', 'Уинстон Смит ежедневно переписывает старые газеты в Министерстве правды, чтобы прогнозы партии всегда сбывались. Тайком от телекрана он начинает вести запрещённый дневник.'],
+      ['Часть 2. Любовь к Джулии и вступление в «Братство»', 'Уинстон и Джулия снимают комнату без телекрана над лавкой мистера Чаррингтона. Они доверяются члену Внутренней партии О’Брайену, но комната оказывается ловушкой Полиции мыслей.'],
+      ['Часть 3. Пытки в Министерстве любви и Комната 101', 'Под пытками О’Брайена Уинстон учится считать, что «дважды два — пять». В Комнате 101 под угрозой клетки с крысами он предаёт Джулию и в финале искренне любит Большого Брата.']
+    ],
+    quotes: [
+      ['«Война — это мир. Свобода — это рабство. Незнание — сила.»', '— Лозунг партии (Дж. Оруэлл)'],
+      ['«Свобода — это возможность сказать, что дважды два — четыре.»', '— Уинстон Смит']
+    ]
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Калькулятор скорости чтения (index.html)
+  // 1. Отрисовка выбранной книги на странице product.html
+  const detailTitle = document.getElementById('detail-title');
+  const bookSwitchBtns = document.querySelectorAll('.book-switch-btn');
+
+  function renderBook(bookKey) {
+    const book = BOOKS_DATA[bookKey] || BOOKS_DATA.dostoevsky;
+    if (!detailTitle) return;
+
+    document.title = `${book.title} — Разбор книги на LitBrief`;
+    document.getElementById('breadcrumb-book-title').textContent = book.title;
+    detailTitle.textContent = book.title;
+    document.getElementById('detail-badge').textContent = book.badge;
+    document.getElementById('detail-epoch').textContent = book.epoch;
+    document.getElementById('detail-lead').textContent = book.lead;
+    document.getElementById('detail-pages').textContent = book.pages;
+    document.getElementById('detail-moral').innerHTML = book.moral;
+    document.getElementById('detail-image').src = book.image;
+    document.getElementById('detail-image').alt = `Обложка книги ${book.title}`;
+    document.getElementById('modal-current-book').textContent = book.title;
+
+    // Обновление таблицы персонажей
+    const tbody = document.getElementById('detail-table-body');
+    if (tbody) {
+      tbody.innerHTML = book.table
+        .map(([param, val]) => `<tr><th scope="row">${param}</th><td>${val}</td></tr>`)
+        .join('');
+    }
+
+    // Обновление глав в Accordion
+    book.chapters.forEach(([heading, text], idx) => {
+      const btn = document.getElementById(`acc-btn-${idx + 1}`);
+      const body = document.getElementById(`acc-body-${idx + 1}`);
+      if (btn && body) {
+        btn.textContent = heading;
+        body.textContent = text;
+      }
+    });
+
+    // Обновление цитат
+    book.quotes.forEach(([qText, qAuthor], idx) => {
+      const qt = document.getElementById(`quote-text-${idx + 1}`);
+      const qa = document.getElementById(`quote-author-${idx + 1}`);
+      if (qt && qa) {
+        qt.textContent = qText;
+        qa.textContent = qAuthor;
+      }
+    });
+
+    // Подсветка активной кнопки книги
+    bookSwitchBtns.forEach((b) => {
+      if (b.dataset.book === bookKey) {
+        b.classList.replace('btn-outline-primary', 'btn-primary');
+      } else {
+        b.classList.replace('btn-primary', 'btn-outline-primary');
+      }
+    });
+  }
+
+  if (detailTitle) {
+    const params = new URLSearchParams(window.location.search);
+    const initialBook = params.get('book') || 'dostoevsky';
+    renderBook(initialBook);
+
+    bookSwitchBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.book;
+        renderBook(key);
+        window.history.replaceState({}, '', `product.html?book=${key}`);
+      });
+    });
+  }
+
+  // 2. Калькулятор скорости чтения (index.html)
   const calcBtn = document.getElementById('calc-btn');
   const calcPages = document.getElementById('calc-pages');
   const calcSpeed = document.getElementById('calc-speed');
@@ -8,62 +233,37 @@ document.addEventListener('DOMContentLoaded', () => {
   if (calcBtn && calcPages && calcSpeed && calcResult) {
     calcBtn.addEventListener('click', () => {
       const pages = Math.max(10, Number(calcPages.value) || 300);
-      const speed = Number(calcSpeed.value) || 35;
+      const speed = Number(calcSpeed.value) || 40;
       const originalHours = (pages / speed).toFixed(1);
-      const briefMinutes = Math.max(5, Math.round(pages / 35));
+      const briefMinutes = Math.max(5, Math.round(pages / 40));
 
       calcResult.innerHTML = `Чтение оригинала (${pages} стр.) займёт около <strong>${originalHours} ч.</strong> На портале LitBrief вы разберёте сюжет и смысл за <strong>${briefMinutes} мин.</strong>!`;
     });
   }
 
-  // 2. Копирование цитат в буфер обмена (product.html)
-  const copyButtons = document.querySelectorAll('.copy-quote-btn');
-  copyButtons.forEach((btn) => {
+  // 3. Копирование цитат в буфер обмена (product.html)
+  document.querySelectorAll('.copy-quote-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
-      const quote = btn.dataset.quote;
-      if (navigator.clipboard && quote) {
-        navigator.clipboard.writeText(quote);
+      const card = btn.closest('.card-body');
+      const quoteText = card ? card.querySelector('p').textContent : '';
+      if (navigator.clipboard && quoteText) {
+        navigator.clipboard.writeText(quoteText);
       }
-      const prevText = btn.textContent;
+      const prev = btn.textContent;
       btn.textContent = 'Скопировано! ✓';
       btn.classList.replace('btn-outline-primary', 'btn-success');
       setTimeout(() => {
-        btn.textContent = prevText;
+        btn.textContent = prev;
         btn.classList.replace('btn-success', 'btn-outline-primary');
       }, 2000);
     });
   });
 
-  // 3. Обработка отправки формы заявки (order.html)
-  const orderForm = document.getElementById('order-form');
-  const orderSuccess = document.getElementById('order-success');
-
-  if (orderForm) {
-    orderForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      if (!orderForm.checkValidity()) {
-        orderForm.reportValidity();
-        return;
-      }
-      if (orderSuccess) {
-        orderSuccess.hidden = false;
-      }
-      orderForm.reset();
+  // 4. Обработка быстрых форм в модальных окнах
+  document.querySelectorAll('.modal-quick-order').forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.innerHTML = '<div class="alert alert-success mb-0">Заявка принята! Материалы отправлены на указанный E-mail.</div>';
     });
-  }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  // Настройка модального окна для передачи названия выбранной книги
-  const orderModal = document.getElementById('orderModal');
-  if (orderModal) {
-    orderModal.addEventListener('show.bs.modal', (event) => {
-      const button = event.relatedTarget;
-      const bookTitle = button.getAttribute('data-book-title') || 'Выбранное произведение';
-      const modalBookNameSpan = document.getElementById('modal-book-name');
-      if (modalBookNameSpan) {
-        modalBookNameSpan.textContent = bookTitle;
-      }
-    });
-  }
+  });
 });

@@ -53,4 +53,4 @@
 - проект опубликован на GitHub Pages.
 
 ## Ссылка на опубликованный проект
-GitHub Pages: https://github.com/Andrey-Markovsky/kr2-bootstrap-shop
+GitHub Pages: https://andrey-markovsky.github.io/kr2-bootstrap-shop/

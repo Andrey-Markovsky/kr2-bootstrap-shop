@@ -3,27 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Детальный разбор произведения — LitBrief</title>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
+  <meta name="description" content="Подробный поглавный разбор классических произведений, таблицы персонажей и цитаты на портале LitBrief.">
+  <title>Разбор книги — LitBrief</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
+  <script src="js/main.js" defer></script>
 </head>
-<body class="bg-light">
+<body class="bg-light d-flex flex-column min-vh-100">
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Единая навигация -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" aria-label="Основная навигация">
     <div class="container">
-      <a class="navbar-brand" href="index.html">📚 LitBrief</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#mainNavbar"
-        aria-controls="mainNavbar"
-        aria-expanded="false"
-        aria-label="Переключить навигацию"
-      >
+      <a class="navbar-brand fw-bold" href="index.html">📚 LitBrief</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNavbar">
@@ -33,110 +25,190 @@
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="product.html">Разбор книги</a></li>
           <li class="nav-item"><a class="nav-link" href="order.html">Предложить разбор</a></li>
           <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Выбрать книгу
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="product.html?book=dostoevsky">Преступление и наказание</a></li>
+              <li><a class="dropdown-item" href="product.html?book=bulgakov">Мастер и Маргарита</a></li>
+              <li><a class="dropdown-item" href="product.html?book=turgenev">Отцы и дети</a></li>
+              <li><a class="dropdown-item" href="product.html?book=tolstoy">Война и мир</a></li>
+              <li><a class="dropdown-item" href="product.html?book=pushkin">Евгений Онегин</a></li>
+              <li><a class="dropdown-item" href="product.html?book=orwell">1984 (Дж. Оруэлл)</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <main class="container my-5">
-    <nav aria-label="breadcrumb">
+  <main class="container my-5 flex-grow-1">
+    <nav aria-label="Хлебные крошки">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
         <li class="breadcrumb-item"><a href="catalog.html">База пересказов</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Детальный разбор</li>
+        <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-book-title">Преступление и наказание</li>
       </ol>
     </nav>
 
-    <!-- Выбор произведения для демонстрации проработанности -->
-    <div class="card shadow-sm mb-4">
-      <div class="card-body d-flex flex-wrap align-items-center justify-content-between gap-3">
-        <h1 class="h4 mb-0">Карточка аналитического разбора</h1>
-        <div class="d-flex align-items-center gap-2">
-          <label for="book-selector" class="form-label mb-0 fw-bold">Книга:</label>
-          <select id="book-selector" class="form-select form-select-sm" style="width: 250px;">
-            <option value="dostoevsky" selected>Ф. М. Достоевский — Преступление и наказание</option>
-            <option value="bulgakov">М. А. Булгаков — Мастер и Маргарита</option>
-          </select>
+    <!-- Панель быстрого переключения между всеми 6 проработанными книгами -->
+    <div class="card shadow-sm mb-4 border-primary">
+      <div class="card-body">
+        <p class="fw-bold mb-2">Выберите произведение для просмотра полного разбора:</p>
+        <div class="d-flex flex-wrap gap-2" id="book-tabs">
+          <button type="button" class="btn btn-primary book-switch-btn" data-book="dostoevsky">Преступление и наказание</button>
+          <button type="button" class="btn btn-outline-primary book-switch-btn" data-book="bulgakov">Мастер и Маргарита</button>
+          <button type="button" class="btn btn-outline-primary book-switch-btn" data-book="turgenev">Отцы и дети</button>
+          <button type="button" class="btn btn-outline-primary book-switch-btn" data-book="tolstoy">Война и мир</button>
+          <button type="button" class="btn btn-outline-primary book-switch-btn" data-book="pushkin">Евгений Онегин</button>
+          <button type="button" class="btn btn-outline-primary book-switch-btn" data-book="orwell">1984</button>
         </div>
       </div>
     </div>
 
-    <!-- Основной блок товара / книги -->
-    <div class="row g-4">
-      <div class="col-12 col-lg-6">
-        <div class="card shadow-sm">
-          <div class="placeholder-image bg-white border rounded d-flex flex-column align-items-center justify-content-center p-4">
-            <span class="display-3 mb-2" id="book-icon">📕</span>
-            <span class="text-muted fw-bold" id="book-author">Ф. М. Достоевский (1866 г.)</span>
-          </div>
+    <!-- Карточка произведения -->
+    <div class="row g-4 align-items-center bg-white p-4 rounded shadow-sm border">
+      <div class="col-12 col-lg-5">
+        <div class="card shadow-sm overflow-hidden">
+          <img
+            id="detail-image"
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='340' viewBox='0 0 500 340'><rect width='500' height='340' fill='%2331102f'/><rect x='20' y='20' width='460' height='300' fill='none' stroke='%23fbbf24' stroke-opacity='0.6'/><text x='250' y='120' font-family='Georgia, serif' font-size='20' fill='%23f8fafc' text-anchor='middle'>Ф. М. ДОСТОЕВСКИЙ</text><text x='250' y='175' font-family='Georgia, serif' font-size='30' font-weight='bold' fill='%23fbbf24' text-anchor='middle'>Преступление и наказание</text><text x='250' y='230' font-family='Arial, sans-serif' font-size='16' fill='%23cbd5e1' text-anchor='middle'>Психологический роман • 1866 г.</text></svg>"
+            class="img-fluid w-100"
+            alt="Обложка произведения"
+          >
         </div>
       </div>
 
-      <div class="col-12 col-lg-6">
-        <span class="badge bg-success mb-3" id="book-badge">Время чтения: 12 минут</span>
-        <h2 class="h2" id="book-title-heading">Преступление и наказание</h2>
-        <p class="lead text-muted" id="book-desc">
-          Социально-психологический роман о студенте Родионе Раскольникове, решившем проверить теорию о праве сильной личности на преступление.
+      <div class="col-12 col-lg-7">
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <span class="badge bg-success fs-6" id="detail-badge">Время чтения: 12 минут</span>
+          <span class="badge bg-secondary fs-6" id="detail-epoch">Золотой век (1866 г.)</span>
+        </div>
+        <h1 class="h2 fw-bold" id="detail-title">Преступление и наказание</h1>
+        <p class="lead text-muted" id="detail-lead">
+          Социально-психологический и философский роман Ф. М. Достоевского о преступлении бывшего студента Родиона Раскольникова, решившего проверить теорию о «праве сильной личности».
         </p>
-        <p class="fs-3 fw-bold" id="book-volume">Оригинал: 580 стр.</p>
-        <div class="d-flex gap-2 mb-4">
-          <a class="btn btn-primary btn-lg" href="order.html">Заказать полный анализ</a>
-          <a class="btn btn-outline-secondary btn-lg" href="catalog.html">Назад в базу</a>
+        <p class="fs-4 fw-bold text-primary" id="detail-pages">Оригинал: 580 стр. (экономия 14 часов)</p>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="modal" data-bs-target="#productOrderModal">
+            Открыть модальное окно книги
+          </button>
+          <a class="btn btn-outline-secondary btn-lg" href="catalog.html">
+            Назад в базу
+          </a>
         </div>
-        <div class="alert alert-warning" role="alert" id="book-moral">
-          <strong>Главная мысль:</strong> Насилие не может привести к созиданию; разрушая другого, человек уничтожает собственную совесть.
+        <div class="alert alert-warning mb-0" role="alert" id="detail-moral">
+          <strong>Главная мысль:</strong> Невозможно построить счастье на пролитой крови; переступая нравственный закон, человек прежде всего разрушает собственную душу.
         </div>
       </div>
     </div>
 
-    <!-- Таблица характеристик (Bootstrap Table) -->
+    <!-- Таблица характеристик и главных героев -->
     <section class="mt-5">
-      <h3 class="h4 mb-3">Паспорт произведения</h3>
+      <h2 class="h4 mb-3">Паспорт произведения и система ключевых образов</h2>
       <div class="table-responsive">
-        <table class="table table-striped table-bordered align-middle bg-white">
-          <tbody id="table-content">
+        <table class="table table-striped table-bordered align-middle bg-white shadow-sm">
+          <thead class="table-dark">
             <tr>
-              <th scope="row" style="width: 30%;">Автор и эпоха</th>
-              <td>Ф. М. Достоевский, Золотой век русской литературы</td>
+              <th scope="col" style="width: 30%;">Персонаж / Параметр</th>
+              <th scope="col">Характеристика и роль в сюжете</th>
+            </tr>
+          </thead>
+          <tbody id="detail-table-body">
+            <tr>
+              <th scope="row">Автор и год публикации</th>
+              <td>Ф. М. Достоевский, 1866 год (журнал «Русский вестник»)</td>
             </tr>
             <tr>
-              <th scope="row">Главный герой</th>
-              <td>Родион Раскольников</td>
+              <th scope="row">Родион Раскольников</th>
+              <td>Главный герой, бывший студент. Автор антигуманной теории о делении людей на «тварей дрожащих» и «право имеющих»</td>
             </tr>
             <tr>
-              <th scope="row">Основной конфликт</th>
-              <td>Столкновение индивидуалистической теории с народной нравственностью и христианской совестью</td>
+              <th scope="row">Соня Мармеладова</th>
+              <td>Олицетворение христианского смирения, жертвенного сострадания и духовного спасения для Раскольникова</td>
+            </tr>
+            <tr>
+              <th scope="row">Аркадий Свидригайлов и Пётр Лужин</th>
+              <td>Интеллектуальные «двойники» Раскольникова, доводящие идею вседозволенности и эгоизма до нравственного краха</td>
+            </tr>
+            <tr>
+              <th scope="row">Порфирий Петрович</th>
+              <td>Следователь, тонкий психолог, подталкивающий Раскольникова к добровольному признанию и раскаянию</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- Компонент Accordion (Раскрывающийся блок по главам)[cite: 7] -->
+    <!-- Компонент Accordion: Сюжет по частям -->
     <section class="my-5">
-      <h3 class="h4 mb-3">Краткий сюжет по частям (Accordion)[cite: 7]</h3>
-      <div class="accordion" id="bookAccordion">
+      <h2 class="h4 mb-3">Подробный пересказ сюжета по частям (Accordion)</h2>
+      <div class="accordion shadow-sm" id="faqAccordion">
         <div class="accordion-item">
-          <h4 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accOne" aria-expanded="true" aria-controls="accOne">
-              Часть 1. Замысел и преступление
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne" id="acc-btn-1">
+              Часть 1–2. Замысел, теория Раскольникова и совершение убийства
             </button>
-          </h4>
-          <div id="accOne" class="accordion-collapse collapse show" data-bs-parent="#bookAccordion">
-            <div class="accordion-body" id="acc-text-1">
-              Нищета и ущемленная гордость подталкивают Раскольникова к страшному эксперименту — убийству процентщицы.
+          </h3>
+          <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body" id="acc-body-1">
+              Живущий в нищете петербургский студент Родион Раскольников знакомится в трактире с Мармеладовым и узнаёт о бедственном положении его дочери Сони. Получив письмо от матери о вынужденном браке сестры Дуни с расчётливым Лужиным, Раскольников убивает топором старуху-процентщицу Алёну Ивановну и её кроткую сестру Лизавету. После преступления он прячет награбленное под камнем и впадает в тяжёлую нервную горячку.
             </div>
           </div>
         </div>
+
         <div class="accordion-item">
-          <h4 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accTwo" aria-expanded="false" aria-controls="accTwo">
-              Часть 2–Эпилог. Душевные муки и духовное возрождение
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo" id="acc-btn-2">
+              Часть 3–4. Психологический поединок с Порфирием Петровичем и чтение Евангелия
             </button>
-          </h4>
-          <div id="accTwo" class="accordion-collapse collapse" data-bs-parent="#bookAccordion">
-            <div class="accordion-body" id="acc-text-2">
-              Психологический кризис, признание Соне Мармеладовой, явка с повинной и каторжные годы в Сибири, ведущие к исцелению.
+          </h3>
+          <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body" id="acc-body-2">
+              В Петербург приезжают мать и сестра Раскольникова. Следователь Порфирий Петрович обсуждает с Родионом его статью «О преступлении», давая понять, что разгадал настоящего убийцу. Раскольников приходит к Соне Мармеладовой, и она читает ему евангельскую притчу о воскрешении Лазаря.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree" id="acc-btn-3">
+              Часть 5–6 и Эпилог. Признание Соне, явка с повинной и каторга в Сибири
+            </button>
+          </h3>
+          <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body" id="acc-body-3">
+              Раскольников признаётся Соне в двойном убийстве и объясняет, что убил не ради денег, а чтобы проверить, «тварь ли он дрожащая или право имеет». После самоубийства Свидригайлова Родион кается на Сенной площади и делает явку с повинной. В эпилоге на сибирской каторге, куда за ним последовала Соня, начинается его духовное возрождение.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Раздел Цитатник с копированием -->
+    <section class="my-5" id="quotes">
+      <h2 class="h4 mb-3">Ключевые цитаты из произведения (нажмите, чтобы скопировать)</h2>
+      <div class="row g-3" id="quotes-container">
+        <div class="col-12 col-md-6">
+          <div class="card h-100 shadow-sm border-start border-4 border-primary">
+            <div class="card-body d-flex flex-column justify-content-between">
+              <p class="fst-italic mb-3" id="quote-text-1">«Тварь ли я дрожащая или право имею...»</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted" id="quote-author-1">— Родион Раскольников</small>
+                <button type="button" class="btn btn-sm btn-outline-primary copy-quote-btn">Скопировать цитату</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card h-100 shadow-sm border-start border-4 border-primary">
+            <div class="card-body d-flex flex-column justify-content-between">
+              <p class="fst-italic mb-3" id="quote-text-2">«Страдание и боль всегда обязательны для широкого сознания и глубокого сердца.»</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted" id="quote-author-2">— Ф. М. Достоевский</small>
+                <button type="button" class="btn btn-sm btn-outline-primary copy-quote-btn">Скопировать цитату</button>
+              </div>
             </div>
           </div>
         </div>
@@ -144,49 +216,44 @@
     </section>
   </main>
 
-  <footer class="bg-dark text-white py-4 mt-5">
+  <!-- Модальное окно выбранной книги на странице product.html -->
+  <div class="modal fade" id="productOrderModal" tabindex="-1" aria-labelledby="productOrderModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h2 class="modal-title h5" id="productOrderModalLabel">Заказ материалов по книге</h2>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted">
+            Вы выбрали произведение: <strong id="modal-current-book">Преступление и наказание</strong>. Заполните форму, чтобы получить PDF-разбор и тест для самопроверки.
+          </p>
+          <form class="modal-quick-order">
+            <div class="mb-3">
+              <label for="prod-modal-name" class="form-label">Ваше имя *</label>
+              <input id="prod-modal-name" type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="prod-modal-email" class="form-label">E-mail *</label>
+              <input id="prod-modal-email" type="email" class="form-control" required>
+            </div>
+            <div class="form-check mb-3">
+              <input id="prod-modal-agree" class="form-check-input" type="checkbox" required>
+              <label class="form-check-label" for="prod-modal-agree">Согласен на обработку данных</label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Отправить запрос</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white py-4 mt-auto">
     <div class="container">
       <p class="mb-0">&copy; 2026 LitBrief. Учебный проект.</p>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Маленький скрипт переключения книг на странице товара -->
-  <script>
-    const selector = document.getElementById('book-selector');
-    if (selector) {
-      selector.addEventListener('change', (e) => {
-        if (e.target.value === 'bulgakov') {
-          document.getElementById('book-icon').textContent = '📘';
-          document.getElementById('book-author').textContent = 'М. А. Булгаков (1940 г.)';
-          document.getElementById('book-badge').textContent = 'Время чтения: 15 минут';
-          document.getElementById('book-title-heading').textContent = 'Мастер и Маргарита';
-          document.getElementById('book-desc').textContent = 'Философский роман о визите сатаны (Воланда) в атеистическую Москву 1930-х годов, вечной любви Мастера и судьбе Иешуа Га-Ноцри.';
-          document.getElementById('book-volume').textContent = 'Оригинал: 480 стр.';
-          document.getElementById('book-moral').innerHTML = '<strong>Главная мысль:</strong> Рукописи не горят, а истина и творческая свобода неподвластны тоталитарному контролю.';
-          document.getElementById('table-content').innerHTML = `
-            <tr><th scope="row">Автор и эпоха</th><td>М. А. Булгаков, Советская литература XX века</td></tr>
-            <tr><th scope="row">Главные герои</th><td>Мастер, Маргарита, Воланд, Понтий Пилат</td></tr>
-            <tr><th scope="row">Основной конфликт</th><td>Противостояние творческой личности и продажного конформистского общества</td></tr>`;
-          document.getElementById('acc-text-1').textContent = 'Появление Воланда со свитой на Патриарших прудах, сеанс черной магии в варьете и параллельная история Понтия Пилата.';
-          document.getElementById('acc-text-2').textContent = 'Встреча Маргариты с Азазелло, полет на метле, спасение рукописи и обретение вечного покоя в лунном свете.';
-        } else {
-          document.getElementById('book-icon').textContent = '📕';
-          document.getElementById('book-author').textContent = 'Ф. М. Достоевский (1866 г.)';
-          document.getElementById('book-badge').textContent = 'Время чтения: 12 минут';
-          document.getElementById('book-title-heading').textContent = 'Преступление и наказание';
-          document.getElementById('book-desc').textContent = 'Социально-психологический роман о студенте Родионе Раскольникове, решившем проверить теорию о праве сильной личности на преступление.';
-          document.getElementById('book-volume').textContent = 'Оригинал: 580 стр.';
-          document.getElementById('book-moral').innerHTML = '<strong>Главная мысль:</strong> Насилие не может привести к созиданию; разрушая другого, человек уничтожает собственную совесть.';
-          document.getElementById('table-content').innerHTML = `
-            <tr><th scope="row">Автор и эпоха</th><td>Ф. М. Достоевский, Золотой век русской литературы</td></tr>
-            <tr><th scope="row">Главный герой</th><td>Родион Раскольников</td></tr>
-            <tr><th scope="row">Основной конфликт</th><td>Столкновение индивидуалистической теории с народной нравственностью и христианской совестью</td></tr>`;
-          document.getElementById('acc-text-1').textContent = 'Нищета и ущемленная гордость подталкивают Раскольникова к страшному эксперименту — убийству процентщицы.';
-          document.getElementById('acc-text-2').textContent = 'Психологический кризис, признание Соне Мармеладовой, явка с повинной и каторжные годы в Сибири, ведущие к исцелению.';
-        }
-      });
-    }
-  </script>
 </body>
 </html>

@@ -3,77 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Главная — LitBrief (Bootstrap Shop)</title>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
+  <meta name="description" content="LitBrief — образовательный портал с краткими содержаниями и анализом произведений художественной литературы.">
+  <title>Главная — LitBrief: Краткие содержания книг</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
   <script src="js/main.js" defer></script>
 </head>
-<body class="bg-light">
+<body class="bg-light d-flex flex-column min-vh-100">
 
-  <!-- Шапка страницы -->
+  <!-- Шапка сайта -->
   <header class="bg-primary text-white py-4">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-12 col-md-8">
           <h1 class="h3 mb-1">📚 LitBrief</h1>
           <p class="mb-0 opacity-75">
-            Образовательный портал кратких содержаний и анализа литературы
+            Образовательный портал кратких содержаний и разборов классики (Аналог Briefly.ru / Полка)
           </p>
         </div>
         <div class="col-12 col-md-4 text-md-end mt-3 mt-md-0">
-          <span class="badge bg-light text-primary">
-            Практика №9
-          </span>
+          <span class="badge bg-light text-primary fs-6">Практики 9–11</span>
         </div>
       </div>
     </div>
   </header>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Единая навигация Bootstrap -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" aria-label="Основная навигация">
     <div class="container">
-      <a class="navbar-brand" href="index.html">📚 LitBrief</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#mainNavbar"
-        aria-controls="mainNavbar"
-        aria-expanded="false"
-        aria-label="Переключить навигацию"
-      >
+      <a class="navbar-brand fw-bold" href="index.html">LitBrief</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Главная</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="catalog.html">База пересказов</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="product.html">Разбор книги</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="order.html">Предложить разбор</a>
-          </li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">База пересказов</a></li>
+          <li class="nav-item"><a class="nav-link" href="product.html">Разбор книги</a></li>
+          <li class="nav-item"><a class="nav-link" href="order.html">Предложить разбор</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
           <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Дополнительно
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="catalog.html">Все пересказы</a></li>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="index.html#epochs">Литературные эпохи</a></li>
+              <li><a class="dropdown-item" href="index.html#popular">Популярные пересказы</a></li>
+              <li><a class="dropdown-item" href="index.html#calculator">Калькулятор чтения</a></li>
+              <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
-              <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
             </ul>
           </li>
         </ul>
@@ -81,28 +59,32 @@
     </div>
   </nav>
 
-  <main>
-    <!-- Hero-блок на сетке -->
+  <main class="flex-grow-1">
+    <!-- Hero-блок -->
     <section class="container my-5">
-      <div class="row align-items-center g-4">
-        <div class="col-12 col-lg-6">
-          <h2 class="display-5 fw-bold">
-            Вся классическая литература в кратком изложении
-          </h2>
-          <p class="lead text-muted">
-            Готовьтесь к семинарам и экзаменам за 10 минут: структурированные пересказы по главам, анализ проблематики и характеристики главных героев.
+      <div class="row align-items-center g-4 bg-white p-4 p-md-5 rounded shadow-sm border">
+        <div class="col-12 col-lg-7">
+          <span class="badge bg-info text-dark mb-2">Подготовка к семинарам и экзаменам за 10 минут</span>
+          <h2 class="display-5 fw-bold mb-3">Вся художественная литература в кратком изложении</h2>
+          <p class="lead text-muted mb-4">
+            Структурированные пересказы по главам, анализ главной мысли, таблицы ключевых образов и проверенные цитаты для сочинений.
           </p>
-          <a class="btn btn-primary btn-lg" href="catalog.html">
-            Перейти к базе пересказов
-          </a>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-primary btn-lg" href="catalog.html">Открыть базу пересказов (6 книг)</a>
+            <a class="btn btn-outline-secondary btn-lg" href="#calculator">Калькулятор времени чтения</a>
+          </div>
         </div>
-        <div class="col-12 col-lg-6">
-          <div class="placeholder-box p-5 bg-white border rounded text-center d-flex flex-column justify-content-center">
-            <h3 class="h5 fw-bold">Произведение недели</h3>
-            <p class="mb-2 text-muted">
-              Ф. М. Достоевский — «Преступление и наказание»
-            </p>
-            <span class="badge bg-success align-self-center">Оригинал: 12 часов → Бриф: 12 минут</span>
+        <div class="col-12 col-lg-5">
+          <div class="card border-0 shadow-sm overflow-hidden">
+            <img
+              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='340' viewBox='0 0 600 340'><rect width='600' height='340' fill='%231e293b'/><rect x='25' y='25' width='550' height='290' rx='12' fill='none' stroke='%2394a3b8' stroke-width='2'/><text x='300' y='110' font-family='Georgia, serif' font-size='22' fill='%23cbd5e1' text-anchor='middle'>ВЫБОР РЕДАКЦИИ LITBRIEF</text><text x='300' y='165' font-family='Georgia, serif' font-size='32' font-weight='bold' fill='%23ffffff' text-anchor='middle'>Преступление и наказание</text><text x='300' y='210' font-family='Arial, sans-serif' font-size='18' fill='%2338bdf8' text-anchor='middle'>Ф. М. Достоевский • Полный разбор 6 частей</text><rect x='190' y='240' width='220' height='40' rx='20' fill='%2316a34a'/><text x='300' y='266' font-family='Arial, sans-serif' font-size='16' font-weight='bold' fill='%23ffffff' text-anchor='middle'>Бриф за 12 минут</text></svg>"
+              class="card-img-top"
+              alt="Обложка разбора книги недели: Преступление и наказание"
+            >
+            <div class="card-body text-center bg-light">
+              <p class="mb-2 text-muted small">Оригинал: 580 стр. (14.5 часов) → Наш разбор: 12 минут</p>
+              <a href="product.html?book=dostoevsky" class="btn btn-sm btn-primary">Перейти к полному разбору</a>
+            </div>
           </div>
         </div>
       </div>
@@ -110,86 +92,133 @@
 
     <!-- Литературные эпохи (Блок преимуществ на сетке row + col-md-4) -->
     <section class="container my-5" id="epochs">
-      <h2 class="text-center mb-4">Литературные эпохи и преимущества портала</h2>
+      <h2 class="text-center mb-4">Навигация по литературным эпохам</h2>
       <div class="row g-4">
         <div class="col-12 col-md-4">
-          <div class="p-4 border rounded h-100 bg-white">
-            <h3 class="h5">Золотой век (XIX в.)</h3>
-            <p class="mb-0 text-muted">
-              Пушкин, Лермонтов, Гоголь, Тургенев, Достоевский, Толстой. Подробные разборы классики на 12-колоночной сетке Bootstrap.
+          <div class="p-4 border rounded h-100 bg-white shadow-sm">
+            <span class="badge bg-warning text-dark mb-2">XIX век</span>
+            <h3 class="h5">Золотой век классики</h3>
+            <p class="mb-3 text-muted">
+              А. С. Пушкин, И. С. Тургенев, Ф. М. Достоевский, Л. Н. Толстой. Психологический реализм, «лишние люди» и философские искания.
             </p>
+            <a href="catalog.html" class="btn btn-sm btn-outline-primary">Смотреть книги эпохи</a>
           </div>
         </div>
         <div class="col-12 col-md-4">
-          <div class="p-4 border rounded h-100 bg-white">
-            <h3 class="h5">Серебряный век (XX в.)</h3>
-            <p class="mb-0 text-muted">
-              Булгаков, Бунин, Куприн, Блок, Маяковский. Адаптивные карточки с анализом символизма, акмеизма и футуризма.
+          <div class="p-4 border rounded h-100 bg-white shadow-sm">
+            <span class="badge bg-info text-dark mb-2">XX век</span>
+            <h3 class="h5">Серебряный век и Модернизм</h3>
+            <p class="mb-3 text-muted">
+              М. А. Булгаков, А. И. Куприн, И. А. Бунин. Мистический реализм, сатира, драматизм исторических переломов и тема творчества.
             </p>
+            <a href="catalog.html" class="btn btn-sm btn-outline-primary">Смотреть книги эпохи</a>
           </div>
         </div>
         <div class="col-12 col-md-4">
-          <div class="p-4 border rounded h-100 bg-white">
-            <h3 class="h5">Зарубежная классика</h3>
-            <p class="mb-0 text-muted">
-              Шекспир, Гёте, Гюго, Оруэлл, Ремарк. Готовая база конспектов, цитат и характеристик литературных типов.
+          <div class="p-4 border rounded h-100 bg-white shadow-sm">
+            <span class="badge bg-secondary mb-2">Мировой фонд</span>
+            <h3 class="h5">Зарубежная литература</h3>
+            <p class="mb-3 text-muted">
+              Джордж Оруэлл, Э. М. Ремарк, В. Гюго, У. Шекспир. Главные мировые романы-антиутопии, трагедии и философская проза.
             </p>
+            <a href="catalog.html" class="btn btn-sm btn-outline-primary">Смотреть книги эпохи</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Популярные пересказы недели (Сетка col-12 col-md-6 col-lg-4) -->
+    <!-- Популярные пересказы недели (Сетка карточек с картинками и индивидуальными модальными окнами) -->
     <section class="container my-5" id="popular">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Самые читаемые пересказы недели</h2>
-        <a class="btn btn-outline-primary" href="catalog.html">
-          Все пересказы
-        </a>
+        <a class="btn btn-outline-primary" href="catalog.html">Все 6 книг в базе</a>
       </div>
+
       <div class="row g-4">
+        <!-- Карточка 1: Преступление и наказание -->
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="border rounded h-100 p-4 bg-white">
-            <span class="badge bg-success mb-3">Чтение: 12 мин</span>
-            <h3 class="h5">Преступление и наказание</h3>
-            <p class="text-muted">
-              Ф. М. Достоевский. Психологический отчёт одного преступления и крушение теории Раскольникова.
-            </p>
-            <p class="fw-bold mb-3">Оригинал: 580 стр.</p>
-            <a class="btn btn-primary" href="product.html">
-              Читать разбор
-            </a>
-          </div>
+          <article class="card h-100 shadow-sm">
+            <img
+              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='220' viewBox='0 0 400 220'><rect width='400' height='220' fill='%2331102f'/><rect x='15' y='15' width='370' height='190' fill='none' stroke='%23e2e8f0' stroke-opacity='0.4'/><text x='200' y='75' font-family='Georgia, serif' font-size='15' fill='%23f8fafc' text-anchor='middle'>Ф. М. ДОСТОЕВСКИЙ</text><text x='200' y='115' font-family='Georgia, serif' font-size='22' font-weight='bold' fill='%23fbbf24' text-anchor='middle'>Преступление и наказание</text><text x='200' y='155' font-family='Arial, sans-serif' font-size='13' fill='%23cbd5e1' text-anchor='middle'>Психологический роман • 1866 г.</text></svg>"
+              class="card-img-top"
+              alt="Обложка книги Преступление и наказание"
+            >
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <h3 class="card-title h5 mb-0">Преступление и наказание</h3>
+                <span class="badge bg-success">12 мин</span>
+              </div>
+              <p class="card-text text-muted">
+                Психологический отчёт одного преступления. Теория Родиона Раскольникова о «праве сильной личности» и её крушение.
+              </p>
+              <p class="fw-bold mb-3 mt-auto">Оригинал: 580 стр.</p>
+              <div class="d-flex gap-2">
+                <a class="btn btn-primary" href="product.html?book=dostoevsky">Читать разбор</a>
+                <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalDostoevsky">
+                  Быстрый обзор
+                </button>
+              </div>
+            </div>
+          </article>
         </div>
+
+        <!-- Карточка 2: Мастер и Маргарита -->
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="border rounded h-100 p-4 bg-white">
-            <span class="badge bg-warning text-dark mb-3">Хит недели</span>
-            <h3 class="h5">Мастер и Маргарита</h3>
-            <p class="text-muted">
-              М. А. Булгаков. Визит Воланда в Москву, ершалаимские главы и история вечной любви.
-            </p>
-            <p class="fw-bold mb-3">Оригинал: 480 стр.</p>
-            <a class="btn btn-primary" href="product.html">
-              Читать разбор
-            </a>
-          </div>
+          <article class="card h-100 shadow-sm">
+            <img
+              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='220' viewBox='0 0 400 220'><rect width='400' height='220' fill='%230f172a'/><rect x='15' y='15' width='370' height='190' fill='none' stroke='%23f59e0b' stroke-opacity='0.5'/><text x='200' y='75' font-family='Georgia, serif' font-size='15' fill='%23f8fafc' text-anchor='middle'>М. А. БУЛГАКОВ</text><text x='200' y='115' font-family='Georgia, serif' font-size='24' font-weight='bold' fill='%23f59e0b' text-anchor='middle'>Мастер и Маргарита</text><text x='200' y='155' font-family='Arial, sans-serif' font-size='13' fill='%23cbd5e1' text-anchor='middle'>Философско-мистический роман • 1940 г.</text></svg>"
+              class="card-img-top"
+              alt="Обложка книги Мастер и Маргарита"
+            >
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <h3 class="card-title h5 mb-0">Мастер и Маргарита</h3>
+                <span class="badge bg-warning text-dark">Хит • 15 мин</span>
+              </div>
+              <p class="card-text text-muted">
+                Визит Воланда со свитой в Москву 1930-х годов, суд Понтия Пилата над Иешуа и самоотверженная любовь Маргариты.
+              </p>
+              <p class="fw-bold mb-3 mt-auto">Оригинал: 480 стр.</p>
+              <div class="d-flex gap-2">
+                <a class="btn btn-primary" href="product.html?book=bulgakov">Читать разбор</a>
+                <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalBulgakov">
+                  Быстрый обзор
+                </button>
+              </div>
+            </div>
+          </article>
         </div>
+
+        <!-- Карточка 3: 1984 -->
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="border rounded h-100 p-4 bg-white">
-            <span class="badge bg-danger mb-3">Чтение: 8 мин</span>
-            <h3 class="h5">1984</h3>
-            <p class="text-muted">
-              Джордж Оруэлл. Роман-антиутопия о тоталитарном контроле Большого Брата и судьбе Уинстона Смита.
-            </p>
-            <p class="fw-bold mb-3">Оригинал: 320 стр.</p>
-            <a class="btn btn-primary" href="product.html">
-              Читать разбор
-            </a>
-          </div>
+          <article class="card h-100 shadow-sm">
+            <img
+              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='220' viewBox='0 0 400 220'><rect width='400' height='220' fill='%23450a0a'/><rect x='15' y='15' width='370' height='190' fill='none' stroke='%23fca5a5' stroke-opacity='0.4'/><text x='200' y='75' font-family='Georgia, serif' font-size='15' fill='%23f8fafc' text-anchor='middle'>ДЖОРДЖ ОРУЭЛЛ</text><text x='200' y='120' font-family='Georgia, serif' font-size='32' font-weight='bold' fill='%23f87171' text-anchor='middle'>1984</text><text x='200' y='160' font-family='Arial, sans-serif' font-size='13' fill='%23fecaca' text-anchor='middle'>Роман-антиутопия • 1949 г.</text></svg>"
+              class="card-img-top"
+              alt="Обложка книги 1984"
+            >
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <h3 class="card-title h5 mb-0">1984</h3>
+                <span class="badge bg-danger">8 мин</span>
+              </div>
+              <p class="card-text text-muted">
+                Тоталитарное государство Океания, всевидящий Большой Брат, полиция мыслей и трагический бунт Уинстона Смита.
+              </p>
+              <p class="fw-bold mb-3 mt-auto">Оригинал: 320 стр.</p>
+              <div class="d-flex gap-2">
+                <a class="btn btn-primary" href="product.html?book=orwell">Читать разбор</a>
+                <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalOrwell">
+                  Быстрый обзор
+                </button>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
-    <!-- Калькулятор скорости чтения (Самостоятельная доработка) -->
+
+    <!-- Интерактивный калькулятор времени чтения -->
     <section class="container my-5" id="calculator">
       <div class="card border-primary shadow-sm">
         <div class="card-header bg-primary text-white">
@@ -197,7 +226,7 @@
         </div>
         <div class="card-body">
           <p class="text-muted">
-            Рассчитайте, сколько времени потребуется на чтение оригинала произведения по сравнению с кратким разбором на LitBrief.
+            Выберите объём книги и вашу скорость чтения, чтобы узнать, сколько часов вы сэкономите с кратким разбором на LitBrief.
           </p>
           <form class="row g-3 align-items-end">
             <div class="col-12 col-md-4">
@@ -213,7 +242,7 @@
               </select>
             </div>
             <div class="col-12 col-md-4">
-              <button type="button" id="calc-btn" class="btn btn-success w-100">Рассчитать</button>
+              <button type="button" id="calc-btn" class="btn btn-success w-100">Рассчитать время</button>
             </div>
           </form>
           <div id="calc-result" class="alert alert-success mt-3 mb-0" role="status">
@@ -224,29 +253,88 @@
     </section>
   </main>
 
+  <!-- Модальное окно 1: Преступление и наказание -->
+  <div class="modal fade" id="modalDostoevsky" tabindex="-1" aria-labelledby="modalDostoevskyLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h2 class="modal-title h5" id="modalDostoevskyLabel">📕 Преступление и наказание — Паспорт и быстрый заказ</h2>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Автор:</strong> Ф. М. Достоевский (1866 г.) | <strong>Жанр:</strong> Социально-психологический и философский роман</p>
+          <p><strong>Краткая суть:</strong> Бывший студент Родион Раскольников решается на убийство старухи-процентщицы, чтобы проверить свою теорию о делении людей на «тварей дрожащих» и «право имеющих». Совершив преступление, он переживает страшное душевное наказание и приходит к покаянию благодаря жертвенной любви Сони Мармеладовой.</p>
+          <p class="mb-0"><strong>Ключевые герои:</strong> Родион Раскольников, Соня Мармеладова, Порфирий Петрович, Свидригайлов, Лужин, Дуня.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="product.html?book=dostoevsky" class="btn btn-primary">Открыть полный поглавный разбор</a>
+          <a href="order.html" class="btn btn-outline-success">Заказать конспект</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно 2: Мастер и Маргарита -->
+  <div class="modal fade" id="modalBulgakov" tabindex="-1" aria-labelledby="modalBulgakovLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h2 class="modal-title h5" id="modalBulgakovLabel">📘 Мастер и Маргарита — Паспорт и быстрый заказ</h2>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Автор:</strong> М. А. Булгаков (1928–1940 гг.) | <strong>Жанр:</strong> Философско-мистический роман («роман в романе»)</p>
+          <p><strong>Краткая суть:</strong> В атеистическую Москву 1930-х годов прибывает Воланд со своей свитой, разоблачая пороки обывателей. Параллельно развивается история любви Мастера и Маргариты и библейский сюжет о суде прокуратора Понтия Пилата над бродячим философом Иешуа Га-Ноцри.</p>
+          <p class="mb-0"><strong>Ключевые герои:</strong> Мастер, Маргарита, Воланд, Коровьев, Кот Бегемот, Иван Бездомный, Понтий Пилат, Иешуа.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="product.html?book=bulgakov" class="btn btn-primary">Открыть полный поглавный разбор</a>
+          <a href="order.html" class="btn btn-outline-success">Заказать конспект</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно 3: 1984 -->
+  <div class="modal fade" id="modalOrwell" tabindex="-1" aria-labelledby="modalOrwellLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h2 class="modal-title h5" id="modalOrwellLabel">📕 1984 — Паспорт и быстрый заказ</h2>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Автор:</strong> Джордж Оруэлл (1949 г.) | <strong>Жанр:</strong> Социально-политическая антиутопия</p>
+          <p><strong>Краткая суть:</strong> Сотрудник Министерства правды Уинстон Смит живёт в тоталитарном государстве Океания под круглосуточным надзором телекранов и Большого Брата. Он влюбляется в Джулию и пытается бороться с системой, но попадает в застенки Министерства любви к О'Брайену.</p>
+          <p class="mb-0"><strong>Ключевые герои:</strong> Уинстон Смит, Джулия, О'Брайен, Большой Брат, Эммануэль Голдстейн.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="product.html?book=orwell" class="btn btn-primary">Открыть полный поглавный разбор</a>
+          <a href="order.html" class="btn btn-outline-success">Заказать конспект</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Подвал -->
-  <footer class="bg-dark text-white py-4 mt-5">
+  <footer class="bg-dark text-white py-4 mt-auto">
     <div class="container">
       <div class="row align-items-center g-3">
         <div class="col-12 col-md-6">
-          <p class="mb-0">
-            &copy; 2026 LitBrief (Bootstrap Shop). Учебный проект.
-          </p>
+          <p class="mb-0">&copy; 2026 LitBrief. Образовательный портал кратких содержаний.</p>
         </div>
         <div class="col-12 col-md-6 text-md-end">
-          <a class="text-white text-decoration-none me-3" href="catalog.html">
-            База пересказов
-          </a>
-          <a class="text-white text-decoration-none" href="order.html">
-            Предложить разбор
-          </a>
+          <a class="text-white text-decoration-none me-3" href="catalog.html">База пересказов</a>
+          <a class="text-white text-decoration-none me-3" href="order.html">Предложить разбор</a>
+          <a class="text-white text-decoration-none" href="contacts.html">Контакты</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
