@@ -1,25 +1,68 @@
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
+/* Жёсткая фиксация каркаса страницы, чтобы footer никогда не всплывал */
 body {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+  margin: 0;
 }
 
-.placeholder-box {
-  min-height: 240px;
+main {
+  flex: 1 0 auto;
 }
 
-.placeholder-image {
-  min-height: 320px;
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.site-footer {
+  flex-shrink: 0;
 }
 
 .card-img-top {
-  height: 180px;
+  height: 210px;
   object-fit: cover;
 }
 
-/* Доступность (Accessibility): чёткий видимый фокус с клавиатуры */
+/* Стили кнопок соцсетей (ВК, Telegram, WhatsApp) */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.social-vk {
+  background-color: #0077ff;
+  color: #ffffff;
+}
+
+.social-tg {
+  background-color: #26a5e4;
+  color: #ffffff;
+}
+
+.social-wa {
+  background-color: #25d366;
+  color: #ffffff;
+}
+
+/* Видимый фокус для клавиатурной навигации */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -29,12 +72,8 @@ textarea:focus-visible {
   outline-offset: 2px !important;
 }
 
-/* Адаптивность для мобильных экранов (360–430px) */
+/* Адаптивность для мобильных экранов */
 @media (max-width: 575.98px) {
-  .placeholder-image {
-    min-height: 200px;
-  }
-
   .card-body .d-flex.gap-2 {
     flex-direction: column;
   }

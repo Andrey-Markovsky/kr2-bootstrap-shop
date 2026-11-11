@@ -4,7 +4,7 @@ const BOOKS_DATA = {
     badge: 'Время чтения: 12 минут',
     epoch: 'Золотой век (1866 г.)',
     lead: 'Социально-психологический и философский роман Ф. М. Достоевского о бывшем студенте Родионе Раскольникове, решившем проверить теорию о «праве сильной личности».',
-    pages: 'Оригинал: 580 стр. (экономия 14 часов)',
+    pages: 'Объём оригинала: 580 стр. (экономия 14 часов)',
     moral: '<strong>Главная мысль:</strong> Невозможно построить счастье на пролитой крови; переступая нравственный закон, человек прежде всего разрушает собственную душу.',
     image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='340' viewBox='0 0 500 340'><rect width='500' height='340' fill='%2331102f'/><rect x='20' y='20' width='460' height='300' fill='none' stroke='%23fbbf24' stroke-opacity='0.6'/><text x='250' y='120' font-family='Georgia, serif' font-size='20' fill='%23f8fafc' text-anchor='middle'>Ф. М. ДОСТОЕВСКИЙ</text><text x='250' y='175' font-family='Georgia, serif' font-size='30' font-weight='bold' fill='%23fbbf24' text-anchor='middle'>Преступление и наказание</text><text x='250' y='230' font-family='Arial, sans-serif' font-size='16' fill='%23cbd5e1' text-anchor='middle'>Психологический роман • 1866 г.</text></svg>",
     table: [
@@ -29,7 +29,7 @@ const BOOKS_DATA = {
     badge: 'Время чтения: 15 минут',
     epoch: 'Серебряный век / XX век (1940 г.)',
     lead: 'Философско-мистический роман М. А. Булгакова, объединяющий визит Воланда в Москву 1930-х годов, историю любви Мастера и суд Понтия Пилата над Иешуа.',
-    pages: 'Оригинал: 480 стр. (экономия 12 часов)',
+    pages: 'Объём оригинала: 480 стр. (экономия 12 часов)',
     moral: '<strong>Главная мысль:</strong> «Рукописи не горят» — подлинное творчество, милосердие и преданная любовь сильнее трусости, конформизма и смерти.',
     image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='340' viewBox='0 0 500 340'><rect width='500' height='340' fill='%230f172a'/><rect x='20' y='20' width='460' height='300' fill='none' stroke='%23f59e0b' stroke-opacity='0.6'/><text x='250' y='120' font-family='Georgia, serif' font-size='20' fill='%23f8fafc' text-anchor='middle'>М. А. БУЛГАКОВ</text><text x='250' y='175' font-family='Georgia, serif' font-size='32' font-weight='bold' fill='%23f59e0b' text-anchor='middle'>Мастер и Маргарита</text><text x='250' y='230' font-family='Arial, sans-serif' font-size='16' fill='%23cbd5e1' text-anchor='middle'>Философско-мистический роман • 1940 г.</text></svg>",
     table: [
@@ -37,7 +37,7 @@ const BOOKS_DATA = {
       ['Мастер и Маргарита', 'Автор романа о Понтии Пилате и его возлюбленная, готовая на сделку с Воландом ради спасения Мастера'],
       ['Воланд и его свита', 'Князь тьмы, Коровьев-Фагот, Азазелло, Кот Бегемот и Гелла, вскрывающие пороки москвичей'],
       ['Иешуа Га-Ноцри', 'Бродячий философ в Ершалаиме, проповедующий, что все люди добры'],
-      ['Понтий Пилат', 'Пятый прокуратор Иудеи, пославший Иешуа на казнь из-за страха погубить карьеру («трусость — самый тяжкий порок»)']
+      ['Понтий Пилат', 'Пятый прокуратор Иудеи, пославший Иешуа на казнь из-за страха погубить карьеру']
     ],
     chapters: [
       ['Книга 1. Воланд на Патриарших прудах и сеанс в Варьете', 'Спор Берлиоза и поэта Ивана Бездомного с загадочным иностранцем. Гибель Берлиоза под трамваем, заселение свиты Воланда в «нехорошую квартиру» и разоблачение жадности зрителей в театре Варьете.'],
@@ -54,7 +54,7 @@ const BOOKS_DATA = {
     badge: 'Время чтения: 9 минут',
     epoch: 'Золотой век (1862 г.)',
     lead: 'Социально-психологический роман И. С. Тургенева об идейном столкновении дворян-либералов 1840-х годов («отцов») и разночинцев-демократов 1860-х годов («детей»).',
-    pages: 'Оригинал: 280 стр. (экономия 7 часов)',
+    pages: 'Объём оригинала: 280 стр. (экономия 7 часов)',
     moral: '<strong>Главная мысль:</strong> Жизнь, природа и человеческое чувство всегда шире и сильнее любых радикальных теорий и полного отрицания.',
     image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='340' viewBox='0 0 500 340'><rect width='500' height='340' fill='%23064e3b'/><rect x='20' y='20' width='460' height='300' fill='none' stroke='%236ee7b7' stroke-opacity='0.6'/><text x='250' y='120' font-family='Georgia, serif' font-size='20' fill='%23f8fafc' text-anchor='middle'>И. С. ТУРГЕНЕВ</text><text x='250' y='175' font-family='Georgia, serif' font-size='34' font-weight='bold' fill='%236ee7b7' text-anchor='middle'>Отцы и дети</text><text x='250' y='230' font-family='Arial, sans-serif' font-size='16' fill='%23d1fae5' text-anchor='middle'>Социально-психологический роман • 1862 г.</text></svg>",
     table: [
@@ -79,7 +79,7 @@ const BOOKS_DATA = {
     badge: 'Время чтения: 25 минут',
     epoch: 'Золотой век (1869 г.)',
     lead: 'Монументальный роман-эпопея Л. Н. Толстого о судьбах русского дворянства и всего народа в эпоху войн с Наполеоном 1805–1812 годов.',
-    pages: 'Оригинал: 1300 стр. (экономия 32 часов)',
+    pages: 'Объём оригинала: 1300 стр. (экономия 32 часов)',
     moral: '<strong>Главная мысль:</strong> Истинное величие человека — в простоте, добре и единении с народом («мысль народная» и «мысль семейная»).',
     image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='340' viewBox='0 0 500 340'><rect width='500' height='340' fill='%231e3a8a'/><rect x='20' y='20' width='460' height='300' fill='none' stroke='%23fde047' stroke-opacity='0.6'/><text x='250' y='120' font-family='Georgia, serif' font-size='20' fill='%23f8fafc' text-anchor='middle'>Л. Н. ТОЛСТОЙ</text><text x='250' y='175' font-family='Georgia, serif' font-size='34' font-weight='bold' fill='%23fde047' text-anchor='middle'>Война и мир</text><text x='250' y='230' font-family='Arial, sans-serif' font-size='16' fill='%23dbeafe' text-anchor='middle'>Роман-эпопея в 4 томах • 1869 г.</text></svg>",
     table: [
@@ -104,7 +104,7 @@ const BOOKS_DATA = {
     badge: 'Время чтения: 7 минут',
     epoch: 'Золотой век (1833 г.)',
     lead: 'Первый русский реалистический роман в стихах А. С. Пушкина, названный В. Г. Белинским «энциклопедией русской жизни».',
-    pages: 'Оригинал: 220 стр. (экономия 5 часов)',
+    pages: 'Объём оригинала: 220 стр. (экономия 5 часов)',
     moral: '<strong>Главная мысль:</strong> Эгоизм, скептицизм и оторванность от национальной почвы обрекают одарённого человека на духовную пустоту и одиночество.',
     image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='340' viewBox='0 0 500 340'><rect width='500' height='340' fill='%233b0764'/><rect x='20' y='20' width='460' height='300' fill='none' stroke='%23e9d5ff' stroke-opacity='0.6'/><text x='250' y='120' font-family='Georgia, serif' font-size='20' fill='%23f8fafc' text-anchor='middle'>А. С. ПУШКИН</text><text x='250' y='175' font-family='Georgia, serif' font-size='32' font-weight='bold' fill='%23e9d5ff' text-anchor='middle'>Евгений Онегин</text><text x='250' y='230' font-family='Arial, sans-serif' font-size='16' fill='%23f3e8ff' text-anchor='middle'>Роман в стихах • 1833 г.</text></svg>",
     table: [
@@ -129,7 +129,7 @@ const BOOKS_DATA = {
     badge: 'Время чтения: 8 минут',
     epoch: 'Зарубежная классика XX века (1949 г.)',
     lead: 'Культовый роман-антиутопия Джорджа Оруэлла об обществе тотальной слежки, манипуляции историей и подавлении человеческой личности.',
-    pages: 'Оригинал: 320 стр. (экономия 8 часов)',
+    pages: 'Объём оригинала: 320 стр. (экономия 8 часов)',
     moral: '<strong>Главная мысль:</strong> Когда власть получает контроль над прошлым, языком и внутренним миром человека, свобода уничтожается изнутри.',
     image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='340' viewBox='0 0 500 340'><rect width='500' height='340' fill='%23450a0a'/><rect x='20' y='20' width='460' height='300' fill='none' stroke='%23f87171' stroke-opacity='0.6'/><text x='250' y='120' font-family='Georgia, serif' font-size='20' fill='%23f8fafc' text-anchor='middle'>ДЖОРДЖ ОРУЭЛЛ</text><text x='250' y='180' font-family='Georgia, serif' font-size='44' font-weight='bold' fill='%23f87171' text-anchor='middle'>1984</text><text x='250' y='230' font-family='Arial, sans-serif' font-size='16' fill='%23fecaca' text-anchor='middle'>Роман-антиутопия • 1949 г.</text></svg>",
     table: [
@@ -172,7 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('detail-image').alt = `Обложка книги ${book.title}`;
     document.getElementById('modal-current-book').textContent = book.title;
 
-    // Обновление таблицы персонажей
     const tbody = document.getElementById('detail-table-body');
     if (tbody) {
       tbody.innerHTML = book.table
@@ -180,7 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .join('');
     }
 
-    // Обновление глав в Accordion
     book.chapters.forEach(([heading, text], idx) => {
       const btn = document.getElementById(`acc-btn-${idx + 1}`);
       const body = document.getElementById(`acc-body-${idx + 1}`);
@@ -190,7 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Обновление цитат
     book.quotes.forEach(([qText, qAuthor], idx) => {
       const qt = document.getElementById(`quote-text-${idx + 1}`);
       const qa = document.getElementById(`quote-author-${idx + 1}`);
@@ -200,7 +197,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Подсветка активной кнопки книги
     bookSwitchBtns.forEach((b) => {
       if (b.dataset.book === bookKey) {
         b.classList.replace('btn-outline-primary', 'btn-primary');
@@ -237,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const originalHours = (pages / speed).toFixed(1);
       const briefMinutes = Math.max(5, Math.round(pages / 40));
 
-      calcResult.innerHTML = `Чтение оригинала (${pages} стр.) займёт около <strong>${originalHours} ч.</strong> На портале LitBrief вы разберёте сюжет и смысл за <strong>${briefMinutes} мин.</strong>!`;
+      calcResult.innerHTML = `Чтение оригинала (${pages} стр.) займёт около <strong>${originalHours} ч.</strong> На портале LitBrief вы изучите сюжет и анализ за <strong>${briefMinutes} мин.</strong>!`;
     });
   }
 
@@ -259,11 +255,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Обработка быстрых форм в модальных окнах
+  // 4. Обработка быстрых форм во всплывающих окнах
   document.querySelectorAll('.modal-quick-order').forEach((form) => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      form.innerHTML = '<div class="alert alert-success mb-0">Заявка принята! Материалы отправлены на указанный E-mail.</div>';
+      form.innerHTML = '<div class="alert alert-success mb-0">Заявка принята! PDF-конспект отправлен на указанный E-mail.</div>';
     });
   });
+
+  // 5. Валидация основной формы заявки (order.html)
+  const orderForm = document.getElementById('order-form');
+  const orderSuccess = document.getElementById('order-success');
+
+  if (orderForm) {
+    orderForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!orderForm.checkValidity()) {
+        orderForm.reportValidity();
+        return;
+      }
+      if (orderSuccess) {
+        orderSuccess.hidden = false;
+      }
+      orderForm.reset();
+    });
+  }
 });

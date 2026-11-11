@@ -9,41 +9,43 @@
   <link rel="stylesheet" href="css/custom.css">
   <script src="js/main.js" defer></script>
 </head>
-<body class="bg-light d-flex flex-column min-vh-100">
+<body class="bg-light">
 
-  <!-- Единая навигация -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" aria-label="Основная навигация">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">📚 LitBrief</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-          <li class="nav-item"><a class="nav-link" href="catalog.html">База пересказов</a></li>
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="product.html">Разбор книги</a></li>
-          <li class="nav-item"><a class="nav-link" href="order.html">Предложить разбор</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Выбрать книгу
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="product.html?book=dostoevsky">Преступление и наказание</a></li>
-              <li><a class="dropdown-item" href="product.html?book=bulgakov">Мастер и Маргарита</a></li>
-              <li><a class="dropdown-item" href="product.html?book=turgenev">Отцы и дети</a></li>
-              <li><a class="dropdown-item" href="product.html?book=tolstoy">Война и мир</a></li>
-              <li><a class="dropdown-item" href="product.html?book=pushkin">Евгений Онегин</a></li>
-              <li><a class="dropdown-item" href="product.html?book=orwell">1984 (Дж. Оруэлл)</a></li>
-            </ul>
-          </li>
-        </ul>
+  <!-- Закреплённая шапка сайта -->
+  <header class="site-header shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-4" href="index.html">📚 LitBrief</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalog.html">База пересказов</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="product.html">Разбор книги</a></li>
+            <li class="nav-item"><a class="nav-link" href="order.html">Предложить разбор</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Выбрать произведение
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="product.html?book=dostoevsky">Преступление и наказание</a></li>
+                <li><a class="dropdown-item" href="product.html?book=bulgakov">Мастер и Маргарита</a></li>
+                <li><a class="dropdown-item" href="product.html?book=turgenev">Отцы и дети</a></li>
+                <li><a class="dropdown-item" href="product.html?book=tolstoy">Война и мир</a></li>
+                <li><a class="dropdown-item" href="product.html?book=pushkin">Евгений Онегин</a></li>
+                <li><a class="dropdown-item" href="product.html?book=orwell">1984 (Дж. Оруэлл)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <main class="container my-5 flex-grow-1">
+  <main class="container my-5">
     <nav aria-label="Хлебные крошки">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
@@ -52,10 +54,10 @@
       </ol>
     </nav>
 
-    <!-- Панель быстрого переключения между всеми 6 проработанными книгами -->
+    <!-- Панель выбора книги -->
     <div class="card shadow-sm mb-4 border-primary">
       <div class="card-body">
-        <p class="fw-bold mb-2">Выберите произведение для просмотра полного разбора:</p>
+        <p class="fw-bold mb-2">Выберите произведение для чтения разбора:</p>
         <div class="d-flex flex-wrap gap-2" id="book-tabs">
           <button type="button" class="btn btn-primary book-switch-btn" data-book="dostoevsky">Преступление и наказание</button>
           <button type="button" class="btn btn-outline-primary book-switch-btn" data-book="bulgakov">Мастер и Маргарита</button>
@@ -89,13 +91,13 @@
         <p class="lead text-muted" id="detail-lead">
           Социально-психологический и философский роман Ф. М. Достоевского о преступлении бывшего студента Родиона Раскольникова, решившего проверить теорию о «праве сильной личности».
         </p>
-        <p class="fs-4 fw-bold text-primary" id="detail-pages">Оригинал: 580 стр. (экономия 14 часов)</p>
+        <p class="fs-4 fw-bold text-primary" id="detail-pages">Объём оригинала: 580 стр. (экономия 14 часов)</p>
         <div class="d-flex flex-wrap gap-2 mb-4">
           <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="modal" data-bs-target="#productOrderModal">
-            Открыть модальное окно книги
+            Скачать PDF-конспект
           </button>
           <a class="btn btn-outline-secondary btn-lg" href="catalog.html">
-            Назад в базу
+            Вернуться в каталог
           </a>
         </div>
         <div class="alert alert-warning mb-0" role="alert" id="detail-moral">
@@ -134,16 +136,16 @@
             </tr>
             <tr>
               <th scope="row">Порфирий Петрович</th>
-              <td>Следователь, тонкий психолог, подталкивающий Раскольникова к добровольному признанию и раскаянию</td>
+              <td>Следователь, тонкий психолог, подталкивающий Раскольниковым к добровольному признанию и раскаянию</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- Компонент Accordion: Сюжет по частям -->
+    <!-- Сюжет по частям -->
     <section class="my-5">
-      <h2 class="h4 mb-3">Подробный пересказ сюжета по частям (Accordion)</h2>
+      <h2 class="h4 mb-3">Подробный пересказ сюжета по частям</h2>
       <div class="accordion shadow-sm" id="faqAccordion">
         <div class="accordion-item">
           <h3 class="accordion-header">
@@ -153,7 +155,7 @@
           </h3>
           <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
             <div class="accordion-body" id="acc-body-1">
-              Живущий в нищете петербургский студент Родион Раскольников знакомится в трактире с Мармеладовым и узнаёт о бедственном положении его дочери Сони. Получив письмо от матери о вынужденном браке сестры Дуни с расчётливым Лужиным, Раскольников убивает топором старуху-процентщицу Алёну Ивановну и её кроткую сестру Лизавету. После преступления он прячет награбленное под камнем и впадает в тяжёлую нервную горячку.
+              Живущий в нищете петербургский студент Родион Раскольников знакомится в трактире с Мармеладовым и узнаёт о бедственном положении его дочери Сони. Получив письмо от матери о вынужденном браке сестры Дуни с расчётливым Лужиным, Раскольников убивает топором старуху-процентщицу Алёну Ивановну и её кроткую сестру Лизавету.
             </div>
           </div>
         </div>
@@ -179,14 +181,14 @@
           </h3>
           <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
             <div class="accordion-body" id="acc-body-3">
-              Раскольников признаётся Соне в двойном убийстве и объясняет, что убил не ради денег, а чтобы проверить, «тварь ли он дрожащая или право имеет». После самоубийства Свидригайлова Родион кается на Сенной площади и делает явку с повинной. В эпилоге на сибирской каторге, куда за ним последовала Соня, начинается его духовное возрождение.
+              Раскольников признаётся Соне в двойном убийстве и объясняет, что убил не ради денег, а чтобы проверить, «тварь ли он дрожащая или право имеет». После самоубийства Свидригайлова Родион кается на Сенной площади и делает явку с повинной. В эпилоге на сибирской каторге начинается его духовное возрождение.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Раздел Цитатник с копированием -->
+    <!-- Раздел Цитатник -->
     <section class="my-5" id="quotes">
       <h2 class="h4 mb-3">Ключевые цитаты из произведения (нажмите, чтобы скопировать)</h2>
       <div class="row g-3" id="quotes-container">
@@ -216,17 +218,17 @@
     </section>
   </main>
 
-  <!-- Модальное окно выбранной книги на странице product.html -->
+  <!-- Всплывающее окно отправки PDF-конспекта -->
   <div class="modal fade" id="productOrderModal" tabindex="-1" aria-labelledby="productOrderModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header bg-primary text-white">
-          <h2 class="modal-title h5" id="productOrderModalLabel">Заказ материалов по книге</h2>
+          <h2 class="modal-title h5" id="productOrderModalLabel">Получить PDF-конспект книги</h2>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
         </div>
         <div class="modal-body">
           <p class="text-muted">
-            Вы выбрали произведение: <strong id="modal-current-book">Преступление и наказание</strong>. Заполните форму, чтобы получить PDF-разбор и тест для самопроверки.
+            Выбранное произведение: <strong id="modal-current-book">Преступление и наказание</strong>. Укажите ваши данные, чтобы мы отправили полный PDF-разбор и список цитат на вашу почту.
           </p>
           <form class="modal-quick-order">
             <div class="mb-3">
@@ -239,18 +241,62 @@
             </div>
             <div class="form-check mb-3">
               <input id="prod-modal-agree" class="form-check-input" type="checkbox" required>
-              <label class="form-check-label" for="prod-modal-agree">Согласен на обработку данных</label>
+              <label class="form-check-label" for="prod-modal-agree">Согласен на обработку персональных данных</label>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Отправить запрос</button>
+            <button type="submit" class="btn btn-primary w-100">Отправить конспект</button>
           </form>
         </div>
       </div>
     </div>
   </div>
 
-  <footer class="bg-dark text-white py-4 mt-auto">
+  <!-- Полноценный закреплённый подвал сайта -->
+  <footer class="site-footer bg-dark text-white pt-5 pb-4 mt-5">
     <div class="container">
-      <p class="mb-0">&copy; 2026 LitBrief. Учебный проект.</p>
+      <div class="row g-4 pb-4 border-bottom border-secondary">
+        <div class="col-12 col-md-4">
+          <h2 class="h5 fw-bold mb-3">📚 LitBrief</h2>
+          <p class="text-secondary small mb-0">
+            Онлайн-библиотека кратких пересказов, литературных разборов, характеристик персонажей и цитат из произведений русской и зарубежной классики.
+          </p>
+        </div>
+        <div class="col-12 col-md-4">
+          <h2 class="h6 fw-bold text-uppercase mb-3">Разделы портала</h2>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="index.html">Главная страница</a></li>
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="catalog.html">База пересказов</a></li>
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="product.html">Анализ произведений</a></li>
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="order.html">Предложить разбор книги</a></li>
+            <li><a class="text-secondary text-decoration-none" href="contacts.html">Контакты редакции</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-4">
+          <h2 class="h6 fw-bold text-uppercase mb-3">Связь с редакцией</h2>
+          <p class="small mb-2">
+            📞 <a href="tel:+74951234567" class="text-white text-decoration-none fw-bold">+7 (495) 123-45-67</a>
+          </p>
+          <p class="small mb-2">
+            ✉️ <a href="mailto:info@litbrief.ru" class="text-secondary text-decoration-none">info@litbrief.ru</a>
+          </p>
+          <p class="small text-secondary mb-3">
+            🕒 Время работы: ежедневно с 08:00 до 22:00
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://vk.com" target="_blank" rel="noopener" class="social-link social-vk" aria-label="ВКонтакте" title="ВКонтакте">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M13.162 18.994c.609 0 .858-.406.851-.915-.031-1.917.714-2.949 2.059-1.604 1.488 1.488 1.796 2.519 3.603 2.519h3.2c.808 0 1.126-.26 1.126-.668 0-.863-1.421-2.386-2.625-3.504-1.686-1.565-1.765-1.602-.313-3.486 1.801-2.339 4.157-5.336 2.073-5.336h-3.981c-.772 0-.828.435-1.103 1.083-.995 2.347-2.886 5.387-3.604 4.922-.751-.485-.407-2.406-.35-5.261.015-.754.011-1.271-1.141-1.539-.629-.145-1.241-.205-1.809-.205-2.273 0-3.841.953-2.95 1.119 1.571.293 1.42 3.692 1.054 5.16-.638 2.556-3.036-2.024-4.035-4.305-.241-.548-.315-.974-1.175-.974h-3.255c-.492 0-.787.16-.787.516 0 .602 2.96 6.72 5.786 9.77 2.756 2.975 5.48 2.708 7.376 2.708z"/></svg>
+            </a>
+            <a href="https://t.me" target="_blank" rel="noopener" class="social-link social-tg" aria-label="Telegram" title="Telegram">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+            <a href="https://wa.me/74951234567" target="_blank" rel="noopener" class="social-link social-wa" aria-label="WhatsApp" title="WhatsApp">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.853l-1.529 5.584 5.716-1.5c1.682.899 3.601 1.411 5.642 1.411 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pt-3 text-center text-secondary small">
+        <p class="mb-0">&copy; 2026 Портал «LitBrief». Все права защищены.</p>
+      </div>
     </div>
   </footer>
 

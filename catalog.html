@@ -3,44 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Полный каталог кратких пересказов классической литературы с обложками, фильтрами и модальными окнами.">
+  <meta name="description" content="Полный каталог кратких пересказов классической литературы с анализом сюжета и героев.">
   <title>База пересказов — LitBrief</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
   <script src="js/main.js" defer></script>
 </head>
-<body class="bg-light d-flex flex-column min-vh-100">
+<body class="bg-light">
 
-  <!-- Единая навигация -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" aria-label="Основная навигация">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">📚 LitBrief</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="catalog.html">База пересказов</a></li>
-          <li class="nav-item"><a class="nav-link" href="product.html">Разбор книги</a></li>
-          <li class="nav-item"><a class="nav-link" href="order.html">Предложить разбор</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Дополнительно
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="catalog.html">Все пересказы</a></li>
-              <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
-              <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
-            </ul>
-          </li>
-        </ul>
+  <!-- Закреплённая шапка сайта -->
+  <header class="site-header shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-4" href="index.html">📚 LitBrief</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="catalog.html">База пересказов</a></li>
+            <li class="nav-item"><a class="nav-link" href="product.html">Разбор книги</a></li>
+            <li class="nav-item"><a class="nav-link" href="order.html">Предложить разбор</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <main class="container my-5 flex-grow-1">
+  <main class="container my-5">
     <nav aria-label="Хлебные крошки">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
@@ -49,18 +41,16 @@
     </nav>
 
     <div class="alert alert-info" role="alert">
-      Выберите произведение из базы. У <strong>каждой книги</strong> есть полный разбор по главам (кнопка «Читать разбор») и индивидуальное модальное окно с паспортом произведения и быстрой заявкой (кнопка «Модальное окно книги»).
+      Выберите произведение из библиотеки, чтобы прочитать подробный поглавный пересказ или открыть краткую карточку и получить PDF-конспект на почту.
     </div>
 
     <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-2">
-      <h1 class="h2 mb-0">База кратких пересказов (6 произведений)</h1>
-      <a class="btn btn-outline-primary" href="order.html">Предложить новую книгу</a>
+      <h1 class="h2 mb-0">Библиотека кратких содержаний</h1>
+      <a class="btn btn-outline-primary" href="order.html">Предложить произведение</a>
     </div>
 
-    <!-- Сетка из 6 полностью проработанных книг -->
     <div class="row g-4">
-
-      <!-- Книга 1: Достоевский -->
+      <!-- Книга 1 -->
       <div class="col-12 col-md-6 col-lg-4">
         <article class="card h-100 shadow-sm">
           <img
@@ -77,18 +67,18 @@
             <p class="card-text text-muted">
               Подробный пересказ 6 частей и эпилога. Анализ теории Раскольникова, образов Сони Мармеладовой, Порфирия Петровича и Свидригайлова.
             </p>
-            <p class="fw-bold fs-6 mt-auto">Оригинал: 580 стр.</p>
+            <p class="fw-bold fs-6 mt-auto">Объём оригинала: 580 стр.</p>
             <div class="d-flex gap-2">
               <a class="btn btn-primary" href="product.html?book=dostoevsky">Читать разбор</a>
               <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#bookModal1">
-                Модальное окно
+                Краткая справка
               </button>
             </div>
           </div>
         </article>
       </div>
 
-      <!-- Книга 2: Булгаков -->
+      <!-- Книга 2 -->
       <div class="col-12 col-md-6 col-lg-4">
         <article class="card h-100 shadow-sm">
           <img
@@ -105,18 +95,18 @@
             <p class="card-text text-muted">
               Похождения Воланда в Москве, ершалаимские главы о Понтии Пилате и Иешуа, бал у сатаны и спасение рукописи Мастера.
             </p>
-            <p class="fw-bold fs-6 mt-auto">Оригинал: 480 стр.</p>
+            <p class="fw-bold fs-6 mt-auto">Объём оригинала: 480 стр.</p>
             <div class="d-flex gap-2">
               <a class="btn btn-primary" href="product.html?book=bulgakov">Читать разбор</a>
               <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#bookModal2">
-                Модальное окно
+                Краткая справка
               </button>
             </div>
           </div>
         </article>
       </div>
 
-      <!-- Книга 3: Тургенев -->
+      <!-- Книга 3 -->
       <div class="col-12 col-md-6 col-lg-4">
         <article class="card h-100 shadow-sm">
           <img
@@ -133,18 +123,18 @@
             <p class="card-text text-muted">
               Конфликт либералов-дворян Кирсановых и разночинца-нигилиста Евгения Базарова. Испытание нигилизма любовью к Анне Одинцовой.
             </p>
-            <p class="fw-bold fs-6 mt-auto">Оригинал: 280 стр.</p>
+            <p class="fw-bold fs-6 mt-auto">Объём оригинала: 280 стр.</p>
             <div class="d-flex gap-2">
               <a class="btn btn-primary" href="product.html?book=turgenev">Читать разбор</a>
               <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#bookModal3">
-                Модальное окно
+                Краткая справка
               </button>
             </div>
           </div>
         </article>
       </div>
 
-      <!-- Книга 4: Толстой -->
+      <!-- Книга 4 -->
       <div class="col-12 col-md-6 col-lg-4">
         <article class="card h-100 shadow-sm">
           <img
@@ -161,18 +151,18 @@
             <p class="card-text text-muted">
               Все 4 тома в чёткой структуре: духовные искания Андрея Болконского и Пьера Безухова, Наташа Ростова, Аустерлиц и Бородино.
             </p>
-            <p class="fw-bold fs-6 mt-auto">Оригинал: 1300 стр.</p>
+            <p class="fw-bold fs-6 mt-auto">Объём оригинала: 1300 стр.</p>
             <div class="d-flex gap-2">
               <a class="btn btn-primary" href="product.html?book=tolstoy">Читать разбор</a>
               <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#bookModal4">
-                Модальное окно
+                Краткая справка
               </button>
             </div>
           </div>
         </article>
       </div>
 
-      <!-- Книга 5: Пушкин -->
+      <!-- Книга 5 -->
       <div class="col-12 col-md-6 col-lg-4">
         <article class="card h-100 shadow-sm">
           <img
@@ -189,18 +179,18 @@
             <p class="card-text text-muted">
               «Энциклопедия русской жизни». Характер Онегина как «лишнего человека», письмо Татьяны Лариной и трагическая дуэль с Ленским.
             </p>
-            <p class="fw-bold fs-6 mt-auto">Оригинал: 220 стр.</p>
+            <p class="fw-bold fs-6 mt-auto">Объём оригинала: 220 стр.</p>
             <div class="d-flex gap-2">
               <a class="btn btn-primary" href="product.html?book=pushkin">Читать разбор</a>
               <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#bookModal5">
-                Модальное окно
+                Краткая справка
               </button>
             </div>
           </div>
         </article>
       </div>
 
-      <!-- Книга 6: Оруэлл -->
+      <!-- Книга 6 -->
       <div class="col-12 col-md-6 col-lg-4">
         <article class="card h-100 shadow-sm">
           <img
@@ -217,235 +207,235 @@
             <p class="card-text text-muted">
               Антиутопия о тоталитарном мире Океании, двоемыслии, новоязе, Министерстве правды и попытке Уинстона Смита сохранить человечность.
             </p>
-            <p class="fw-bold fs-6 mt-auto">Оригинал: 320 стр.</p>
+            <p class="fw-bold fs-6 mt-auto">Объём оригинала: 320 стр.</p>
             <div class="d-flex gap-2">
               <a class="btn btn-primary" href="product.html?book=orwell">Читать разбор</a>
               <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#bookModal6">
-                Модальное окно
+                Краткая справка
               </button>
             </div>
           </div>
         </article>
       </div>
-
     </div>
   </main>
 
-  <!-- ИНДИВИДУАЛЬНЫЕ МОДАЛЬНЫЕ ОКНА ДЛЯ КАЖДОЙ ИЗ 6 КНИГ -->
-
-  <!-- Модальное окно Книги 1: Преступление и наказание -->
+  <!-- Всплывающие карточки для всех 6 книг -->
   <div class="modal fade" id="bookModal1" tabindex="-1" aria-labelledby="bookModal1Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header bg-dark text-white">
-          <h2 class="modal-title h5" id="bookModal1Label">📕 Преступление и наказание — Модальная карточка книги</h2>
+          <h2 class="modal-title h5" id="bookModal1Label">📕 Преступление и наказание — О произведении</h2>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
         </div>
         <div class="modal-body">
-          <p><strong>Автор:</strong> Ф. М. Достоевский (1866 г.) | <strong>Время чтения брифа:</strong> 12 минут</p>
-          <p><strong>Сюжет и проблематика:</strong> Бывший студент Родион Раскольников совершает двойное убийство ради проверки собственной теории о «праве сильной личности». Роман раскрывает нравственные муки героя и путь к воскресению души через покаяние и христианскую любовь Сони Мармеладовой.</p>
+          <p><strong>Автор:</strong> Ф. М. Достоевский (1866 г.) | <strong>Время чтения разбора:</strong> 12 минут</p>
+          <p><strong>Сюжет и проблематика:</strong> Бывший студент Родион Раскольников совершает двойное убийство ради проверки собственной теории о «праве сильной личности». Роман раскрывает нравственные муки героя и путь к воскресению души через покаяние и любовь Сони Мармеладовой.</p>
           <hr>
           <form class="modal-quick-order">
-            <h3 class="h6 fw-bold">Быстрая заявка на PDF-шпаргалку по роману «Преступление и наказание»:</h3>
+            <h3 class="h6 fw-bold">Отправить PDF-конспект «Преступление и наказание» на почту:</h3>
             <div class="row g-2 mt-1">
-              <div class="col-12 col-md-5">
-                <input type="text" class="form-control" placeholder="Ваше имя *" required>
-              </div>
-              <div class="col-12 col-md-5">
-                <input type="email" class="form-control" placeholder="Ваш E-mail *" required>
-              </div>
-              <div class="col-12 col-md-2">
-                <button type="submit" class="btn btn-success w-100">Получить</button>
-              </div>
+              <div class="col-12 col-md-5"><input type="text" class="form-control" placeholder="Ваше имя *" required></div>
+              <div class="col-12 col-md-5"><input type="email" class="form-control" placeholder="Ваш E-mail *" required></div>
+              <div class="col-12 col-md-2"><button type="submit" class="btn btn-success w-100">Получить</button></div>
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <a href="product.html?book=dostoevsky" class="btn btn-primary">Перейти на страницу полного разбора</a>
+          <a href="product.html?book=dostoevsky" class="btn btn-primary">Перейти к полному разбору</a>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Модальное окно Книги 2: Мастер и Маргарита -->
   <div class="modal fade" id="bookModal2" tabindex="-1" aria-labelledby="bookModal2Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header bg-dark text-white">
-          <h2 class="modal-title h5" id="bookModal2Label">📘 Мастер и Маргарита — Модальная карточка книги</h2>
+          <h2 class="modal-title h5" id="bookModal2Label">📘 Мастер и Маргарита — О произведении</h2>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
         </div>
         <div class="modal-body">
-          <p><strong>Автор:</strong> М. А. Булгаков (1940 г.) | <strong>Время чтения брифа:</strong> 15 минут</p>
+          <p><strong>Автор:</strong> М. А. Булгаков (1940 г.) | <strong>Время чтения разбора:</strong> 15 минут</p>
           <p><strong>Сюжет и проблематика:</strong> Переплетение трёх миров: сатирического изображения Москвы 1930-х годов во время визита Воланда, трагической истории Понтия Пилата и Иешуа Га-Ноцри в древнем Ершалаиме и истории самоотверженной любви Мастера и Маргариты.</p>
           <hr>
           <form class="modal-quick-order">
-            <h3 class="h6 fw-bold">Быстрая заявка на PDF-шпаргалку по роману «Мастер и Маргарита»:</h3>
+            <h3 class="h6 fw-bold">Отправить PDF-конспект «Мастер и Маргарита» на почту:</h3>
             <div class="row g-2 mt-1">
-              <div class="col-12 col-md-5">
-                <input type="text" class="form-control" placeholder="Ваше имя *" required>
-              </div>
-              <div class="col-12 col-md-5">
-                <input type="email" class="form-control" placeholder="Ваш E-mail *" required>
-              </div>
-              <div class="col-12 col-md-2">
-                <button type="submit" class="btn btn-success w-100">Получить</button>
-              </div>
+              <div class="col-12 col-md-5"><input type="text" class="form-control" placeholder="Ваше имя *" required></div>
+              <div class="col-12 col-md-5"><input type="email" class="form-control" placeholder="Ваш E-mail *" required></div>
+              <div class="col-12 col-md-2"><button type="submit" class="btn btn-success w-100">Получить</button></div>
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <a href="product.html?book=bulgakov" class="btn btn-primary">Перейти на страницу полного разбора</a>
+          <a href="product.html?book=bulgakov" class="btn btn-primary">Перейти к полному разбору</a>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Модальное окно Книги 3: Отцы и дети -->
   <div class="modal fade" id="bookModal3" tabindex="-1" aria-labelledby="bookModal3Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header bg-dark text-white">
-          <h2 class="modal-title h5" id="bookModal3Label">📗 Отцы и дети — Модальная карточка книги</h2>
+          <h2 class="modal-title h5" id="bookModal3Label">📗 Отцы и дети — О произведении</h2>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
         </div>
         <div class="modal-body">
-          <p><strong>Автор:</strong> И. С. Тургенев (1862 г.) | <strong>Время чтения брифа:</strong> 9 минут</p>
+          <p><strong>Автор:</strong> И. С. Тургенев (1862 г.) | <strong>Время чтения разбора:</strong> 9 минут</p>
           <p><strong>Сюжет и проблематика:</strong> Молодой врач-нигилист Евгений Базаров гостит в имении Кирсановых, вступая в ожесточённый идейный спор с аристократом Павлом Петровичем. Отрицавший любовь и искусство Базаров сам неожиданно влюбляется в Анну Одинцову.</p>
           <hr>
           <form class="modal-quick-order">
-            <h3 class="h6 fw-bold">Быстрая заявка на PDF-шпаргалку по роману «Отцы и дети»:</h3>
+            <h3 class="h6 fw-bold">Отправить PDF-конспект «Отцы и дети» на почту:</h3>
             <div class="row g-2 mt-1">
-              <div class="col-12 col-md-5">
-                <input type="text" class="form-control" placeholder="Ваше имя *" required>
-              </div>
-              <div class="col-12 col-md-5">
-                <input type="email" class="form-control" placeholder="Ваш E-mail *" required>
-              </div>
-              <div class="col-12 col-md-2">
-                <button type="submit" class="btn btn-success w-100">Получить</button>
-              </div>
+              <div class="col-12 col-md-5"><input type="text" class="form-control" placeholder="Ваше имя *" required></div>
+              <div class="col-12 col-md-5"><input type="email" class="form-control" placeholder="Ваш E-mail *" required></div>
+              <div class="col-12 col-md-2"><button type="submit" class="btn btn-success w-100">Получить</button></div>
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <a href="product.html?book=turgenev" class="btn btn-primary">Перейти на страницу полного разбора</a>
+          <a href="product.html?book=turgenev" class="btn btn-primary">Перейти к полному разбору</a>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Модальное окно Книги 4: Война и мир -->
   <div class="modal fade" id="bookModal4" tabindex="-1" aria-labelledby="bookModal4Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header bg-dark text-white">
-          <h2 class="modal-title h5" id="bookModal4Label">📙 Война и мир — Модальная карточка книги</h2>
+          <h2 class="modal-title h5" id="bookModal4Label">📙 Война и мир — О произведении</h2>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
         </div>
         <div class="modal-body">
-          <p><strong>Автор:</strong> Л. Н. Толстой (1869 г.) | <strong>Время чтения брифа:</strong> 25 минут</p>
+          <p><strong>Автор:</strong> Л. Н. Толстой (1869 г.) | <strong>Время чтения разбора:</strong> 25 минут</p>
           <p><strong>Сюжет и проблематика:</strong> Масштабная панорама жизни русского общества в эпоху наполеоновских войн 1805–1812 годов. Судьбы семей Ростовых, Болконских и Курагиных, нравственные искания Пьера Безухова и князя Андрея, патриотическое единство народа.</p>
           <hr>
           <form class="modal-quick-order">
-            <h3 class="h6 fw-bold">Быстрая заявка на PDF-шпаргалку по эпопее «Война и мир»:</h3>
+            <h3 class="h6 fw-bold">Отправить PDF-конспект «Война и мир» на почту:</h3>
             <div class="row g-2 mt-1">
-              <div class="col-12 col-md-5">
-                <input type="text" class="form-control" placeholder="Ваше имя *" required>
-              </div>
-              <div class="col-12 col-md-5">
-                <input type="email" class="form-control" placeholder="Ваш E-mail *" required>
-              </div>
-              <div class="col-12 col-md-2">
-                <button type="submit" class="btn btn-success w-100">Получить</button>
-              </div>
+              <div class="col-12 col-md-5"><input type="text" class="form-control" placeholder="Ваше имя *" required></div>
+              <div class="col-12 col-md-5"><input type="email" class="form-control" placeholder="Ваш E-mail *" required></div>
+              <div class="col-12 col-md-2"><button type="submit" class="btn btn-success w-100">Получить</button></div>
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <a href="product.html?book=tolstoy" class="btn btn-primary">Перейти на страницу полного разбора</a>
+          <a href="product.html?book=tolstoy" class="btn btn-primary">Перейти к полному разбору</a>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Модальное окно Книги 5: Евгений Онегин -->
   <div class="modal fade" id="bookModal5" tabindex="-1" aria-labelledby="bookModal5Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header bg-dark text-white">
-          <h2 class="modal-title h5" id="bookModal5Label">📓 Евгений Онегин — Модальная карточка книги</h2>
+          <h2 class="modal-title h5" id="bookModal5Label">📓 Евгений Онегин — О произведении</h2>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
         </div>
         <div class="modal-body">
-          <p><strong>Автор:</strong> А. С. Пушкин (1833 г.) | <strong>Время чтения брифа:</strong> 7 минут</p>
-          <p><strong>Сюжет и проблематика:</strong> Пресыщенный светской жизнью петербургский денди Евгений Онегин уезжает в деревню, где отвергает искреннюю любовь Татьяны Лариной и убивает на дуэли своего друга Владимира Ленского. Спустя годы Онегин влюбляется в Татьяну-княгиню, но она остаётся верна долгу.</p>
+          <p><strong>Автор:</strong> А. С. Пушкин (1833 г.) | <strong>Время чтения разбора:</strong> 7 минут</p>
+          <p><strong>Сюжет и проблематика:</strong> Пресыщенный светской жизнью петербургский дворянин Евгений Онегин уезжает в деревню, где отвергает искреннюю любовь Татьяны Лариной и убивает на дуэли своего друга Владимира Ленского. Спустя годы Онегин влюбляется в Татьяну-княгиню, но она остаётся верна долгу.</p>
           <hr>
           <form class="modal-quick-order">
-            <h3 class="h6 fw-bold">Быстрая заявка на PDF-шпаргалку по роману «Евгений Онегин»:</h3>
+            <h3 class="h6 fw-bold">Отправить PDF-конспект «Евгений Онегин» на почту:</h3>
             <div class="row g-2 mt-1">
-              <div class="col-12 col-md-5">
-                <input type="text" class="form-control" placeholder="Ваше имя *" required>
-              </div>
-              <div class="col-12 col-md-5">
-                <input type="email" class="form-control" placeholder="Ваш E-mail *" required>
-              </div>
-              <div class="col-12 col-md-2">
-                <button type="submit" class="btn btn-success w-100">Получить</button>
-              </div>
+              <div class="col-12 col-md-5"><input type="text" class="form-control" placeholder="Ваше имя *" required></div>
+              <div class="col-12 col-md-5"><input type="email" class="form-control" placeholder="Ваш E-mail *" required></div>
+              <div class="col-12 col-md-2"><button type="submit" class="btn btn-success w-100">Получить</button></div>
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <a href="product.html?book=pushkin" class="btn btn-primary">Перейти на страницу полного разбора</a>
+          <a href="product.html?book=pushkin" class="btn btn-primary">Перейти к полному разбору</a>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Модальное окно Книги 6: 1984 -->
   <div class="modal fade" id="bookModal6" tabindex="-1" aria-labelledby="bookModal6Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header bg-dark text-white">
-          <h2 class="modal-title h5" id="bookModal6Label">📕 1984 — Модальная карточка книги</h2>
+          <h2 class="modal-title h5" id="bookModal6Label">📕 1984 — О произведении</h2>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
         </div>
         <div class="modal-body">
-          <p><strong>Автор:</strong> Джордж Оруэлл (1949 г.) | <strong>Время чтения брифа:</strong> 8 минут</p>
+          <p><strong>Автор:</strong> Джордж Оруэлл (1949 г.) | <strong>Время чтения разбора:</strong> 8 минут</p>
           <p><strong>Сюжет и проблематика:</strong> Классическая антиутопия о тоталитарном обществе, где партия контролирует не только поступки, но и мысли людей с помощью Полиции мыслей и фальсификации истории. История тайного романа и духовного поражения Уинстона Смита в Комнате 101.</p>
           <hr>
           <form class="modal-quick-order">
-            <h3 class="h6 fw-bold">Быстрая заявка на PDF-шпаргалку по роману «1984»:</h3>
+            <h3 class="h6 fw-bold">Отправить PDF-конспект «1984» на почту:</h3>
             <div class="row g-2 mt-1">
-              <div class="col-12 col-md-5">
-                <input type="text" class="form-control" placeholder="Ваше имя *" required>
-              </div>
-              <div class="col-12 col-md-5">
-                <input type="email" class="form-control" placeholder="Ваш E-mail *" required>
-              </div>
-              <div class="col-12 col-md-2">
-                <button type="submit" class="btn btn-success w-100">Получить</button>
-              </div>
+              <div class="col-12 col-md-5"><input type="text" class="form-control" placeholder="Ваше имя *" required></div>
+              <div class="col-12 col-md-5"><input type="email" class="form-control" placeholder="Ваш E-mail *" required></div>
+              <div class="col-12 col-md-2"><button type="submit" class="btn btn-success w-100">Получить</button></div>
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <a href="product.html?book=orwell" class="btn btn-primary">Перейти на страницу полного разбора</a>
+          <a href="product.html?book=orwell" class="btn btn-primary">Перейти к полному разбору</a>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
         </div>
       </div>
     </div>
   </div>
 
-  <footer class="bg-dark text-white py-4 mt-auto">
+  <!-- Полноценный закреплённый подвал сайта -->
+  <footer class="site-footer bg-dark text-white pt-5 pb-4 mt-5">
     <div class="container">
-      <p class="mb-0">&copy; 2026 LitBrief. Учебный проект.</p>
+      <div class="row g-4 pb-4 border-bottom border-secondary">
+        <div class="col-12 col-md-4">
+          <h2 class="h5 fw-bold mb-3">📚 LitBrief</h2>
+          <p class="text-secondary small mb-0">
+            Онлайн-библиотека кратких пересказов, литературных разборов, характеристик персонажей и цитат из произведений русской и зарубежной классики.
+          </p>
+        </div>
+        <div class="col-12 col-md-4">
+          <h2 class="h6 fw-bold text-uppercase mb-3">Разделы портала</h2>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="index.html">Главная страница</a></li>
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="catalog.html">База пересказов</a></li>
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="product.html">Анализ произведений</a></li>
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="order.html">Предложить разбор книги</a></li>
+            <li><a class="text-secondary text-decoration-none" href="contacts.html">Контакты редакции</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-4">
+          <h2 class="h6 fw-bold text-uppercase mb-3">Связь с редакцией</h2>
+          <p class="small mb-2">
+            📞 <a href="tel:+74951234567" class="text-white text-decoration-none fw-bold">+7 (495) 123-45-67</a>
+          </p>
+          <p class="small mb-2">
+            ✉️ <a href="mailto:info@litbrief.ru" class="text-secondary text-decoration-none">info@litbrief.ru</a>
+          </p>
+          <p class="small text-secondary mb-3">
+            🕒 Время работы: ежедневно с 08:00 до 22:00
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://vk.com" target="_blank" rel="noopener" class="social-link social-vk" aria-label="ВКонтакте" title="ВКонтакте">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M13.162 18.994c.609 0 .858-.406.851-.915-.031-1.917.714-2.949 2.059-1.604 1.488 1.488 1.796 2.519 3.603 2.519h3.2c.808 0 1.126-.26 1.126-.668 0-.863-1.421-2.386-2.625-3.504-1.686-1.565-1.765-1.602-.313-3.486 1.801-2.339 4.157-5.336 2.073-5.336h-3.981c-.772 0-.828.435-1.103 1.083-.995 2.347-2.886 5.387-3.604 4.922-.751-.485-.407-2.406-.35-5.261.015-.754.011-1.271-1.141-1.539-.629-.145-1.241-.205-1.809-.205-2.273 0-3.841.953-2.95 1.119 1.571.293 1.42 3.692 1.054 5.16-.638 2.556-3.036-2.024-4.035-4.305-.241-.548-.315-.974-1.175-.974h-3.255c-.492 0-.787.16-.787.516 0 .602 2.96 6.72 5.786 9.77 2.756 2.975 5.48 2.708 7.376 2.708z"/></svg>
+            </a>
+            <a href="https://t.me" target="_blank" rel="noopener" class="social-link social-tg" aria-label="Telegram" title="Telegram">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+            <a href="https://wa.me/74951234567" target="_blank" rel="noopener" class="social-link social-wa" aria-label="WhatsApp" title="WhatsApp">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.853l-1.529 5.584 5.716-1.5c1.682.899 3.601 1.411 5.642 1.411 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pt-3 text-center text-secondary small">
+        <p class="mb-0">&copy; 2026 Портал «LitBrief». Все права защищены.</p>
+      </div>
     </div>
   </footer>
 
