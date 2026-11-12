@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Заявка на подготовку литературного разбора или публикацию собственного материала на портале LitBrief.">
-  <title>Предложить разбор — LitBrief</title>
+  <meta name="description" content="О проекте LitBrief: методология филологического анализа, редакционные стандарты, принципы подготовки пересказов и структура фонда.">
+  <title>О проекте — LitBrief</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
-  <script src="js/main.js" defer></script>
 </head>
 <body class="bg-light">
 
@@ -22,10 +21,12 @@
         <div class="collapse navbar-collapse" id="mainNavbar">
           <ul class="navbar-nav ms-auto align-items-lg-center">
             <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-            <li class="nav-item"><a class="nav-link" href="catalog.html">База пересказов</a></li>
-            <li class="nav-item"><a class="nav-link" href="product.html">Разбор книги</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="order.html">Предложить разбор</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalog.html">База книг</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="order.html">О проекте</a></li>
             <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+              <a class="btn btn-primary btn-sm" href="index.html#propose-form">Предложить разбор</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -36,82 +37,155 @@
     <nav aria-label="Хлебные крошки">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Предложить разбор</li>
+        <li class="breadcrumb-item active" aria-current="page">О проекте</li>
       </ol>
     </nav>
 
-    <div class="row justify-content-center">
-      <div class="col-12 col-lg-8">
-        <div class="card shadow-sm">
-          <div class="card-header bg-primary text-white">
-            <h1 class="h4 mb-0">Заявка на добавление литературного разбора</h1>
+    <!-- Вводный блок о миссии портала -->
+    <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+      <span class="badge bg-primary mb-2">Редакционная концепция</span>
+      <h1 class="display-6 fw-bold mb-3">О литературно-аналитическом портале «LitBrief»</h1>
+      <p class="lead text-muted">
+        <strong>LitBrief</strong> — это специализированная цифровая энциклопедия художественной литературы, объединяющая выверенные поглавные пересказы классических произведений с академическим разбором их идейно-художественной структуры.
+      </p>
+      <p class="text-muted mb-0">
+        Задача портала — не заменить чтение первоисточника, а предоставить читателю систематизированный путеводитель по сложным текстам: помочь восстановить в памяти композицию многотомных романов, проследить эволюцию персонажей и понять историко-культурный контекст эпохи, в которую создавалось произведение.
+      </p>
+    </section>
+
+    <!-- Методология подготовки материалов (4 этапа) -->
+    <section class="mb-5">
+      <h2 class="h3 fw-bold mb-4">Методология подготовки литературных разборов</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm border-0 p-4">
+            <span class="badge bg-dark align-self-start mb-3">Этап 1</span>
+            <h3 class="h5 fw-bold">Текстологическая сверка</h3>
+            <p class="text-muted small mb-0">
+              Все материалы готовятся строго по академическим полным собраниям сочинений авторов без искажения авторской хронологии, топонимики и имён второстепенных действующих лиц.
+            </p>
           </div>
-          <div class="card-body">
-            <div class="alert alert-info" role="alert">
-              Не нашли нужное произведение в нашей базе? Оставьте заявку, и редакция LitBrief подготовит подробный поглавный пересказ и разбор образов. Поля со звёздочкой (*) обязательны.
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm border-0 p-4">
+            <span class="badge bg-primary align-self-start mb-3">Этап 2</span>
+            <h3 class="h5 fw-bold">Композиционный синтез</h3>
+            <p class="text-muted small mb-0">
+              Сюжет делится на смысловые узлы (части, тома, действия). Сохраняются ключевые поворотные точки фабулы, внутренние монологи и кульминационные диалоги героев.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm border-0 p-4">
+            <span class="badge bg-success align-self-start mb-3">Этап 3</span>
+            <h3 class="h5 fw-bold">Анализ системы образов</h3>
+            <p class="text-muted small mb-0">
+              Для каждого произведения составляется структурный паспорт персонажей: раскрываются основные конфликты, система «двойников», антиподов и идейная нагрузка каждого героя.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm border-0 p-4">
+            <span class="badge bg-warning text-dark align-self-start mb-3">Этап 4</span>
+            <h3 class="h5 fw-bold">Верификация цитатного фонда</h3>
+            <p class="text-muted small mb-0">
+              Каждая цитата снабжается точной атрибуцией (кому принадлежит реплика и в каком контексте она звучит), что позволяет использовать материалы при подготовке аналитических работ.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Таблица структуры библиотечного фонда -->
+    <section class="mb-5">
+      <h2 class="h3 fw-bold mb-3">Структура аналитического фонда LitBrief</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered align-middle bg-white shadow-sm">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Литературный раздел</th>
+              <th scope="col">Ключевые авторы в базе</th>
+              <th scope="col">Жанровый охват</th>
+              <th scope="col">Среднее время освоения</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Русская проза и поэзия первой половины XIX века</th>
+              <td>А. С. Пушкин, М. Ю. Лермонтов, Н. В. Гоголь</td>
+              <td>Роман в стихах, психологический роман, поэма</td>
+              <td>7–12 минут</td>
+            </tr>
+            <tr>
+              <th scope="row">Классический русский роман второй половины XIX века</th>
+              <td>И. С. Тургенев, Ф. М. Достоевский, Л. Н. Толстой</td>
+              <td>Социально-философский роман, роман-эпопея</td>
+              <td>9–25 минут</td>
+            </tr>
+            <tr>
+              <th scope="row">Русская драматургия и проза XX века</th>
+              <td>А. П. Чехов, М. А. Булгаков</td>
+              <td>Лирическая комедия, философско-мистический роман</td>
+              <td>8–15 минут</td>
+            </tr>
+            <tr>
+              <th scope="row">Зарубежная литература XX века</th>
+              <td>Джордж Оруэлл</td>
+              <td>Социально-политическая антиутопия</td>
+              <td>8–10 минут</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Частые вопросы о работе проекта -->
+    <section class="mb-4">
+      <h2 class="h3 fw-bold mb-3">Вопросы о работе редакции и материалах</h2>
+      <div class="accordion shadow-sm" id="aboutAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#aboutFaq1" aria-expanded="true" aria-controls="aboutFaq1">
+              Кто составляет пересказы и аналитические карточки для портала?
+            </button>
+          </h3>
+          <div id="aboutFaq1" class="accordion-collapse collapse show" data-bs-parent="#aboutAccordion">
+            <div class="accordion-body">
+              Над материалами работает профильная редакционная коллегия, состоящая из филологов, преподавателей литературы и редакторов. Каждый разбор проходит двухэтапную проверку: на фактическую точность пересказа сюжета и на полноту раскрытия авторского замысла.
             </div>
+          </div>
+        </div>
 
-            <form id="order-form" action="#" method="post" novalidate>
-              <div class="row g-3">
-                <div class="col-12 col-md-6">
-                  <label for="order-name" class="form-label">Ваше имя *</label>
-                  <input id="order-name" name="name" type="text" class="form-control" placeholder="Александр" required>
-                </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aboutFaq2" aria-expanded="false" aria-controls="aboutFaq2">
+              Чем аналитический разбор LitBrief отличается от обычного краткого содержания?
+            </button>
+          </h3>
+          <div id="aboutFaq2" class="accordion-collapse collapse" data-bs-parent="#aboutAccordion">
+            <div class="accordion-body">
+              Обычный пересказ фиксирует только внешнюю цепочку событий («кто куда пошёл»). В материалах LitBrief события неразрывно связаны с внутренней мотивацией героев, символикой деталей, композиционными приёмами автора и историческим контекстом эпохи.
+            </div>
+          </div>
+        </div>
 
-                <div class="col-12 col-md-6">
-                  <label for="order-email" class="form-label">E-mail *</label>
-                  <input id="order-email" name="email" type="email" class="form-control" placeholder="reader@mail.ru" required>
-                </div>
-
-                <div class="col-12 col-md-6">
-                  <label for="order-phone" class="form-label">Телефон</label>
-                  <div class="input-group">
-                    <span class="input-group-text">+7</span>
-                    <input id="order-phone" name="phone" type="tel" class="form-control" placeholder="900 000-00-00">
-                  </div>
-                </div>
-
-                <div class="col-12 col-md-6">
-                  <label for="order-product" class="form-label">Формат материала *</label>
-                  <select id="order-product" name="product" class="form-select" required>
-                    <option value="" selected disabled>Выберите формат</option>
-                    <option value="summary">Краткий пересказ по главам</option>
-                    <option value="analysis">Анализ проблематики и главных героев</option>
-                    <option value="quotes">Подборка цитат по темам</option>
-                  </select>
-                </div>
-
-                <div class="col-12">
-                  <label for="order-comment" class="form-label">Название книги, автор и ваши пожелания *</label>
-                  <textarea id="order-comment" name="comment" class="form-control" rows="4" placeholder="Например: И. А. Гончаров «Обломов» — подробнее разобрать сравнение Обломова и Штольца" required></textarea>
-                </div>
-
-                <div class="col-12">
-                  <div class="form-check">
-                    <input id="order-agree" name="agree" class="form-check-input" type="checkbox" required>
-                    <label class="form-check-label" for="order-agree">
-                      Я согласен на обработку персональных данных *
-                    </label>
-                  </div>
-                </div>
-
-                <div class="col-12 d-flex gap-2">
-                  <button class="btn btn-primary" type="submit">Отправить заявку</button>
-                  <button class="btn btn-outline-secondary" type="reset">Очистить форму</button>
-                </div>
-              </div>
-            </form>
-
-            <div id="order-success" class="alert alert-success mt-4 mb-0" role="alert" hidden>
-              Ваша заявка принята! Мы уведомим вас по электронной почте, как только разбор будет опубликован.
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aboutFaq3" aria-expanded="false" aria-controls="aboutFaq3">
+              Как предложить книгу для добавления в базу портала?
+            </button>
+          </h3>
+          <div id="aboutFaq3" class="accordion-collapse collapse" data-bs-parent="#aboutAccordion">
+            <div class="accordion-body">
+              Вы можете оставить заявку через форму предложения разбора на главной странице сайта. Редакция еженедельно формирует план новых публикаций на основе запросов читателей.
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 
-  <!-- Полноценный закреплённый подвал сайта -->
+  <!-- Закреплённый подвал (порядок: телефон, рабочее время, почта; без локации) -->
   <footer class="site-footer bg-dark text-white pt-5 pb-4 mt-5">
     <div class="container">
       <div class="row g-4 pb-4 border-bottom border-secondary">
@@ -122,25 +196,24 @@
           </p>
         </div>
         <div class="col-12 col-md-4">
-          <h2 class="h6 fw-bold text-uppercase mb-3">Разделы портала</h2>
+          <h2 class="h6 fw-bold text-uppercase mb-3">Навигация</h2>
           <ul class="list-unstyled small mb-0">
             <li class="mb-2"><a class="text-secondary text-decoration-none" href="index.html">Главная страница</a></li>
-            <li class="mb-2"><a class="text-secondary text-decoration-none" href="catalog.html">База пересказов</a></li>
-            <li class="mb-2"><a class="text-secondary text-decoration-none" href="product.html">Анализ произведений</a></li>
-            <li class="mb-2"><a class="text-secondary text-decoration-none" href="order.html">Предложить разбор книги</a></li>
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="catalog.html">База книг (Каталог и разборы)</a></li>
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="order.html">О проекте</a></li>
             <li><a class="text-secondary text-decoration-none" href="contacts.html">Контакты редакции</a></li>
           </ul>
         </div>
         <div class="col-12 col-md-4">
           <h2 class="h6 fw-bold text-uppercase mb-3">Связь с редакцией</h2>
           <p class="small mb-2">
-            📞 <a href="tel:+74951234567" class="text-white text-decoration-none fw-bold">+7 (495) 123-45-67</a>
+            📞 Телефон: <a href="tel:+74951234567" class="text-white text-decoration-none fw-bold">+7 (495) 123-45-67</a>
           </p>
-          <p class="small mb-2">
-            ✉️ <a href="mailto:info@litbrief.ru" class="text-secondary text-decoration-none">info@litbrief.ru</a>
+          <p class="small text-secondary mb-2">
+            🕒 Рабочее время: ежедневно с 08:00 до 22:00
           </p>
-          <p class="small text-secondary mb-3">
-            🕒 Время работы: ежедневно с 08:00 до 22:00
+          <p class="small mb-3">
+            ✉️ Почта: <a href="mailto:info@litbrief.ru" class="text-secondary text-decoration-none">info@litbrief.ru</a>
           </p>
           <div class="d-flex gap-2">
             <a href="https://vk.com" target="_blank" rel="noopener" class="social-link social-vk" aria-label="ВКонтакте" title="ВКонтакте">

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Контактная информация редакции портала LitBrief: телефон, электронная почта, режим работы, адрес офиса и схема проезда на Яндекс Картах.">
+  <meta name="description" content="Контактная информация редакции портала LitBrief: телефон, рабочее время, электронная почта и социальные сети.">
   <title>Контакты — LitBrief</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
@@ -21,10 +21,12 @@
         <div class="collapse navbar-collapse" id="mainNavbar">
           <ul class="navbar-nav ms-auto align-items-lg-center">
             <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-            <li class="nav-item"><a class="nav-link" href="catalog.html">База пересказов</a></li>
-            <li class="nav-item"><a class="nav-link" href="product.html">Разбор книги</a></li>
-            <li class="nav-item"><a class="nav-link" href="order.html">Предложить разбор</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalog.html">База книг</a></li>
+            <li class="nav-item"><a class="nav-link" href="order.html">О проекте</a></li>
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="contacts.html">Контакты</a></li>
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+              <a class="btn btn-primary btn-sm" href="index.html#propose-form">Предложить разбор</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -42,49 +44,44 @@
     <h1 class="h2 mb-4">Контактная информация редакции</h1>
 
     <div class="row g-4">
-      <!-- Карточка с контактами, адресом и соцсетями -->
+      <!-- Карточка со строгим порядком: Телефон, Часы работы, Почта -->
       <div class="col-12 col-lg-6">
         <div class="card h-100 shadow-sm p-4 border-0">
-          <h2 class="h4 mb-3">Свяжитесь с нами</h2>
+          <h2 class="h4 mb-3">Связь с редакцией LitBrief</h2>
           <p class="text-muted mb-4">
-            Редакция литературного портала <strong>LitBrief</strong> ежедневно отвечает на вопросы читателей, принимает заявки на новые разборы произведений и предложения о сотрудничестве.
+            Редакция портала <strong>LitBrief</strong> ежедневно консультирует читателей, принимает предложения по расширению каталога и отвечает на вопросы о сотрудничестве.
           </p>
 
           <ul class="list-unstyled mb-4">
+            <!-- 1. Телефон -->
             <li class="d-flex align-items-center mb-3">
               <span class="fs-4 me-3 text-primary" aria-hidden="true">📞</span>
               <div>
-                <div class="text-muted small">Телефон горячей линии</div>
+                <div class="text-muted small">Телефон</div>
                 <a href="tel:+74951234567" class="fs-5 fw-bold text-dark text-decoration-none">+7 (495) 123-45-67</a>
               </div>
             </li>
 
-            <li class="d-flex align-items-center mb-3">
-              <span class="fs-4 me-3 text-primary" aria-hidden="true">✉️</span>
-              <div>
-                <div class="text-muted small">Электронная почта редакции</div>
-                <a href="mailto:info@litbrief.ru" class="fs-5 fw-bold text-primary text-decoration-none">info@litbrief.ru</a>
-              </div>
-            </li>
-
+            <!-- 2. Рабочее время (Часы) -->
             <li class="d-flex align-items-center mb-3">
               <span class="fs-4 me-3 text-primary" aria-hidden="true">🕒</span>
               <div>
-                <div class="text-muted small">Режим работы</div>
-                <div class="fs-6 fw-bold">Ежедневно с 08:00 до 22:00</div>
+                <div class="text-muted small">Рабочее время</div>
+                <div class="fs-5 fw-bold">Ежедневно с 08:00 до 22:00</div>
               </div>
             </li>
 
+            <!-- 3. Почта -->
             <li class="d-flex align-items-center">
-              <span class="fs-4 me-3 text-primary" aria-hidden="true">📍</span>
+              <span class="fs-4 me-3 text-primary" aria-hidden="true">✉️</span>
               <div>
-                <div class="text-muted small">Адрес офиса</div>
-                <div class="fs-6 fw-bold">г. Москва, ул. Малая Дмитровка, д. 16, оф. 304</div>
+                <div class="text-muted small">Электронная почта</div>
+                <a href="mailto:info@litbrief.ru" class="fs-5 fw-bold text-primary text-decoration-none">info@litbrief.ru</a>
               </div>
             </li>
           </ul>
 
-          <h3 class="h6 fw-bold text-uppercase text-muted mb-3">Мы в социальных сетях и мессенджерах:</h3>
+          <h3 class="h6 fw-bold text-uppercase text-muted mb-3">Официальные каналы и мессенджеры:</h3>
           <div class="d-flex flex-wrap gap-3">
             <a href="https://vk.com" target="_blank" rel="noopener" class="btn btn-primary d-inline-flex align-items-center gap-2" style="background-color: #0077ff; border: none;">
               <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M13.162 18.994c.609 0 .858-.406.851-.915-.031-1.917.714-2.949 2.059-1.604 1.488 1.488 1.796 2.519 3.603 2.519h3.2c.808 0 1.126-.26 1.126-.668 0-.863-1.421-2.386-2.625-3.504-1.686-1.565-1.765-1.602-.313-3.486 1.801-2.339 4.157-5.336 2.073-5.336h-3.981c-.772 0-.828.435-1.103 1.083-.995 2.347-2.886 5.387-3.604 4.922-.751-.485-.407-2.406-.35-5.261.015-.754.011-1.271-1.141-1.539-.629-.145-1.241-.205-1.809-.205-2.273 0-3.841.953-2.95 1.119 1.571.293 1.42 3.692 1.054 5.16-.638 2.556-3.036-2.024-4.035-4.305-.241-.548-.315-.974-1.175-.974h-3.255c-.492 0-.787.16-.787.516 0 .602 2.96 6.72 5.786 9.77 2.756 2.975 5.48 2.708 7.376 2.708z"/></svg>
@@ -102,58 +99,32 @@
         </div>
       </div>
 
-      <!-- Блок для авторов и читателей -->
+      <!-- Информационный блок -->
       <div class="col-12 col-lg-6">
         <div class="card h-100 shadow-sm p-4 border-0">
-          <h2 class="h4 mb-3">Сотрудничество и заказ разборов</h2>
+          <h2 class="h4 mb-3">Регламент работы с обращениями</h2>
           <p class="text-muted">
-            Если вы хотите предложить произведение для разбора, заказать аналитический материал по конкретной теме или стать автором рецензий на портале <strong>LitBrief</strong>, воспользуйтесь формой заявки.
+            Все предложения по добавлению новых книг в каталог, замечания филологов и запросы на подготовку разборов рассматриваются редакционным советом портала <strong>LitBrief</strong>.
           </p>
           <div class="p-3 bg-light rounded border mb-4">
-            <h3 class="h6 fw-bold mb-2">Среднее время ответа редакции:</h3>
+            <h3 class="h6 fw-bold mb-2">Порядок обработки заявок:</h3>
             <p class="small text-muted mb-2">
-              Обращения в мессенджерах (Telegram, WhatsApp) и по телефону обрабатываются в течение 15 минут в рабочие часы (с 08:00 до 22:00). Заявки по электронной почте — в течение 2 часов.
+              • Обращения по телефону и в мессенджерах (Telegram, WhatsApp) принимаются ежедневно с 08:00 до 22:00.
             </p>
             <p class="small text-muted mb-0">
-              <strong>Как добраться до офиса:</strong> 5 минут пешком от станций метро «Пушкинская», «Тверская» или «Чеховская». Вход со стороны ул. Малая Дмитровка, 3 этаж, офис 304.
+              • Письма, направленные на электронную почту <strong>info@litbrief.ru</strong>, обрабатываются дежурным редактором в течение 2 часов.
             </p>
           </div>
-          <a href="order.html" class="btn btn-primary btn-lg mt-auto align-self-start">Перейти к форме заявки</a>
+          <div class="d-flex flex-wrap gap-2 mt-auto">
+            <a href="index.html#propose-form" class="btn btn-primary">Предложить книгу для разбора</a>
+            <a href="order.html" class="btn btn-outline-secondary">Подробнее о проекте</a>
+          </div>
         </div>
-      </div>
-
-      <!-- Интерактивная Яндекс Карта со схемой проезда -->
-      <div class="col-12">
-        <section class="card shadow-sm border-0 overflow-hidden">
-          <div class="card-header bg-white py-3 d-flex flex-wrap justify-content-between align-items-center gap-2">
-            <div>
-              <h2 class="h5 mb-0 fw-bold">📍 Схема проезда к редакции на Яндекс Картах</h2>
-              <small class="text-muted">г. Москва, ул. Малая Дмитровка, д. 16, оф. 304</small>
-            </div>
-            <a
-              href="https://yandex.ru/maps/?ll=37.606388%2C55.772533&z=17&pt=37.606388,55.772533,pm2rdm"
-              target="_blank"
-              rel="noopener"
-              class="btn btn-sm btn-outline-primary"
-            >
-              Открыть в Яндекс Картах ↗
-            </a>
-          </div>
-          <div class="ratio ratio-21x9" style="min-height: 380px;">
-            <iframe
-              src="https://yandex.ru/map-widget/v1/?ll=37.606388%2C55.772533&z=16&pt=37.606388,55.772533,pm2rdm"
-              title="Офис редакции LitBrief на Яндекс Картах: Москва, ул. Малая Дмитровка, д. 16"
-              allowfullscreen
-              loading="lazy"
-              style="border: 0; width: 100%; height: 100%;"
-            ></iframe>
-          </div>
-        </section>
       </div>
     </div>
   </main>
 
-  <!-- Полноценный закреплённый подвал сайта -->
+  <!-- Закреплённый подвал (порядок: телефон, рабочее время, почта; без локации) -->
   <footer class="site-footer bg-dark text-white pt-5 pb-4 mt-5">
     <div class="container">
       <div class="row g-4 pb-4 border-bottom border-secondary">
@@ -164,28 +135,24 @@
           </p>
         </div>
         <div class="col-12 col-md-4">
-          <h2 class="h6 fw-bold text-uppercase mb-3">Разделы портала</h2>
+          <h2 class="h6 fw-bold text-uppercase mb-3">Навигация</h2>
           <ul class="list-unstyled small mb-0">
             <li class="mb-2"><a class="text-secondary text-decoration-none" href="index.html">Главная страница</a></li>
-            <li class="mb-2"><a class="text-secondary text-decoration-none" href="catalog.html">База пересказов</a></li>
-            <li class="mb-2"><a class="text-secondary text-decoration-none" href="product.html">Анализ произведений</a></li>
-            <li class="mb-2"><a class="text-secondary text-decoration-none" href="order.html">Предложить разбор книги</a></li>
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="catalog.html">База книг (Каталог и разборы)</a></li>
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="order.html">О проекте</a></li>
             <li><a class="text-secondary text-decoration-none" href="contacts.html">Контакты редакции</a></li>
           </ul>
         </div>
         <div class="col-12 col-md-4">
           <h2 class="h6 fw-bold text-uppercase mb-3">Связь с редакцией</h2>
           <p class="small mb-2">
-            📞 <a href="tel:+74951234567" class="text-white text-decoration-none fw-bold">+7 (495) 123-45-67</a>
-          </p>
-          <p class="small mb-2">
-            ✉️ <a href="mailto:info@litbrief.ru" class="text-secondary text-decoration-none">info@litbrief.ru</a>
+            📞 Телефон: <a href="tel:+74951234567" class="text-white text-decoration-none fw-bold">+7 (495) 123-45-67</a>
           </p>
           <p class="small text-secondary mb-2">
-            📍 г. Москва, ул. Малая Дмитровка, д. 16
+            🕒 Рабочее время: ежедневно с 08:00 до 22:00
           </p>
-          <p class="small text-secondary mb-3">
-            🕒 Время работы: ежедневно с 08:00 до 22:00
+          <p class="small mb-3">
+            ✉️ Почта: <a href="mailto:info@litbrief.ru" class="text-secondary text-decoration-none">info@litbrief.ru</a>
           </p>
           <div class="d-flex gap-2">
             <a href="https://vk.com" target="_blank" rel="noopener" class="social-link social-vk" aria-label="ВКонтакте" title="ВКонтакте">

@@ -3,7 +3,7 @@ html {
   height: 100%;
 }
 
-/* Жёсткая фиксация каркаса страницы, чтобы footer никогда не всплывал */
+/* Фиксация каркаса страницы: шапка сверху, подвал всегда прижат к низу */
 body {
   display: flex;
   flex-direction: column;
@@ -26,11 +26,12 @@ main {
 }
 
 .card-img-top {
-  height: 210px;
+  height: 220px;
   object-fit: cover;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-/* Стили кнопок соцсетей (ВК, Telegram, WhatsApp) */
+/* Кнопки социальных сетей */
 .social-link {
   display: inline-flex;
   align-items: center;
@@ -62,7 +63,7 @@ main {
   color: #ffffff;
 }
 
-/* Видимый фокус для клавиатурной навигации */
+/* Видимый фокус для доступности с клавиатуры */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -72,7 +73,7 @@ textarea:focus-visible {
   outline-offset: 2px !important;
 }
 
-/* Адаптивность для мобильных экранов */
+/* Адаптивность кнопок на мобильных экранах */
 @media (max-width: 575.98px) {
   .card-body .d-flex.gap-2 {
     flex-direction: column;
