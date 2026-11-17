@@ -38,6 +38,7 @@ const BOOKS_DATA = {
     badge: 'Время чтения: 12 минут',
     epoch: 'Золотой век (1866 г.)',
     pagesCount: 580,
+    coverColor: '#3b1728',
     cardText: 'Подробный пересказ 6 частей и эпилога. Анализ теории Раскольникова, образов Сони Мармеладовой, Порфирия Петровича и Свидригайлова.',
     lead: 'Социально-психологический и философский роман Ф. М. Достоевского о бывшем студенте Родионе Раскольникове, решившем проверить теорию о «праве сильной личности».',
     pages: 'Объём оригинала: 580 стр.',
@@ -69,6 +70,7 @@ const BOOKS_DATA = {
     badge: 'Время чтения: 15 минут',
     epoch: 'XX век (1940 г.)',
     pagesCount: 480,
+    coverColor: '#172035',
     cardText: 'Похождения Воланда со свитой в Москве 1930-х годов, ершалаимские главы о Понтии Пилате и Иешуа, бал у сатаны и спасение рукописи Мастера.',
     lead: 'Философско-мистический роман М. А. Булгакова, объединяющий визит Воланда в Москву, историю любви Мастера и суд Понтия Пилата над Иешуа.',
     pages: 'Объём оригинала: 480 стр.',
@@ -100,6 +102,7 @@ const BOOKS_DATA = {
     badge: 'Время чтения: 9 минут',
     epoch: 'Золотой век (1862 г.)',
     pagesCount: 280,
+    coverColor: '#143829',
     cardText: 'Конфликт либералов-дворян Кирсановых и разночинца-нигилиста Евгения Базарова. Испытание нигилизма любовью к Анне Одинцовой.',
     lead: 'Социально-психологический роман И. С. Тургенева об идейном столкновении дворян-либералов 1840-х годов («отцов») и разночинцев 1860-х годов («детей»).',
     pages: 'Объём оригинала: 280 стр.',
@@ -131,6 +134,7 @@ const BOOKS_DATA = {
     badge: 'Время чтения: 25 минут',
     epoch: 'Золотой век (1869 г.)',
     pagesCount: 1300,
+    coverColor: '#1e2952',
     cardText: 'Все 4 тома в чёткой структуре: духовные искания Андрея Болконского и Пьера Безухова, Наташа Ростова, Аустерлиц и Бородинское сражение.',
     lead: 'Монументальный роман-эпопея Л. Н. Толстого о судьбах русского дворянства и всего народа в эпоху войн с Наполеоном 1805–1812 годов.',
     pages: 'Объём оригинала: 1300 стр.',
@@ -162,6 +166,7 @@ const BOOKS_DATA = {
     badge: 'Время чтения: 7 минут',
     epoch: 'Золотой век (1833 г.)',
     pagesCount: 220,
+    coverColor: '#2e1042',
     cardText: '«Энциклопедия русской жизни». Характер Онегина как «лишнего человека», письмо Татьяны Лариной и трагическая дуэль с Владимиром Ленским.',
     lead: 'Первый русский реалистический роман в стихах А. С. Пушкина, названный В. Г. Белинским «энциклопедией русской жизни».',
     pages: 'Объём оригинала: 220 стр.',
@@ -193,6 +198,7 @@ const BOOKS_DATA = {
     badge: 'Время чтения: 8 минут',
     epoch: 'Зарубежная классика (1949 г.)',
     pagesCount: 320,
+    coverColor: '#450a0a',
     cardText: 'Антиутопия о тоталитарном мире Океании, двоемыслии, новоязе, Министерстве правды и попытке Уинстона Смита сохранить человечность.',
     lead: 'Культовый роман-антиутопия Джорджа Оруэлла об обществе тотальной слежки, манипуляции историей и подавлении человеческой личности.',
     pages: 'Объём оригинала: 320 стр.',
@@ -224,6 +230,7 @@ const BOOKS_DATA = {
     badge: 'Время чтения: 10 минут',
     epoch: 'Золотой век (1840 г.)',
     pagesCount: 224,
+    coverColor: '#1e3a3a',
     cardText: 'Первый русский психологический роман в прозе. История Григория Печорина в пяти повестях: «Бэла», «Максим Максимыч», «Тамань», «Княжна Мери», «Фаталист».',
     lead: 'Социально-психологический и философский роман М. Ю. Лермонтова, раскрывающий противоречивую душу офицера Григория Печорина на Кавказе.',
     pages: 'Объём оригинала: 224 стр.',
@@ -255,6 +262,7 @@ const BOOKS_DATA = {
     badge: 'Время чтения: 14 минут',
     epoch: 'Золотой век (1842 г.)',
     pagesCount: 352,
+    coverColor: '#422006',
     cardText: 'Авантюра Павла Ивановича Чичикова по скупке умерших крестьян. Галерея помещиков: Манилов, Коробочка, Ноздрёв, Собакевич и Плюшкин.',
     lead: 'Бессмертная поэма в прозе Н. В. Гоголя, в которой через путешествие предприимчивого Чичикова показана широкая панорама России и духовного омертвения.',
     pages: 'Объём оригинала: 352 стр.',
@@ -286,6 +294,7 @@ const BOOKS_DATA = {
     badge: 'Время чтения: 8 минут',
     epoch: 'Рубеж XIX–XX вв. (1903 г.)',
     pagesCount: 96,
+    coverColor: '#3f1d38',
     cardText: 'Последняя пьеса А. П. Чехова о продаже дворянского имения. Образы Раневской, Гаева, купца Лопахина и молодых героев Пети Трофимова и Ани.',
     lead: 'Лирическая комедия в четырёх действиях А. П. Чехова, отразившая смену исторических эпох: уход дворянских гнёзд в прошлое и приход деловых людей.',
     pages: 'Объём оригинала: 96 стр.',
@@ -311,7 +320,7 @@ const BOOKS_DATA = {
 };
 
 // ==========================================================================
-// УПРАВЛЕНИЕ ИЗБРАННЫМ + АНИМАЦИЯ ВЫЛЕТА СЕРДЕЧЕК
+// УПРАВЛЕНИЕ ИЗБРАННЫМ + ПЛАВНЫЙ ВЫЛЕТ СЕРДЕЧЕК
 // ==========================================================================
 const FAV_STORAGE_KEY = 'litbrief_favorites';
 
@@ -330,15 +339,13 @@ function saveFavorites(list) {
 
 function spawnFlyingHearts(btnEl) {
   const trajectories = [
-    { tx: '-34px', ty: '-42px', rot: '-25deg' },
-    { tx: '0px', ty: '-52px', rot: '5deg' },
-    { tx: '34px', ty: '-40px', rot: '28deg' },
-    { tx: '-44px', ty: '-14px', rot: '-40deg' },
-    { tx: '44px', ty: '-12px', rot: '35deg' },
-    { tx: '-24px', ty: '28px', rot: '-18deg' },
-    { tx: '26px', ty: '26px', rot: '22deg' },
-    { tx: '-14px', ty: '-48px', rot: '-12deg' },
-    { tx: '18px', ty: '-46px', rot: '16deg' }
+    { tx: '-24px', ty: '-38px', rot: '-18deg' },
+    { tx: '0px', ty: '-46px', rot: '4deg' },
+    { tx: '24px', ty: '-36px', rot: '18deg' },
+    { tx: '-32px', ty: '-18px', rot: '-25deg' },
+    { tx: '32px', ty: '-16px', rot: '24deg' },
+    { tx: '-12px', ty: '-42px', rot: '-8deg' },
+    { tx: '14px', ty: '-40px', rot: '12deg' }
   ];
 
   trajectories.forEach((t) => {
@@ -349,7 +356,7 @@ function spawnFlyingHearts(btnEl) {
     span.style.setProperty('--ty', t.ty);
     span.style.setProperty('--rot', t.rot);
     btnEl.appendChild(span);
-    setTimeout(() => span.remove(), 950);
+    setTimeout(() => span.remove(), 1350);
   });
 }
 
@@ -380,7 +387,6 @@ function updateFavoriteUI() {
   });
 }
 
-// Карточка книги: сердечко справа на одном уровне с кнопками «Читать разбор» и «Краткая справка»
 function createBookCardHtml(b, index, isCatalogPage) {
   const favs = getFavorites();
   const isFav = favs.includes(b.key);
@@ -490,7 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 4. Отрисовка полного разбора выбранной книги + 3D-анимация открывания закрытой книги
+  // 4. Отрисовка полного разбора выбранной книги + открывание обложки строго внутри рамки книги
   function renderBook(bookKey, playBookOpenAnimation = false) {
     const book = BOOKS_DATA[bookKey] || BOOKS_DATA.dostoevsky;
     if (!detailTitle) return;
@@ -498,10 +504,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const stage = document.getElementById('book-open-stage');
     const overlayAuthor = document.getElementById('cover-overlay-author');
     const overlayTitle = document.getElementById('cover-overlay-title');
+    const coverFront = document.querySelector('.book-cover-front');
 
     if (overlayAuthor && overlayTitle) {
       overlayAuthor.textContent = book.author.toUpperCase();
       overlayTitle.textContent = book.title;
+    }
+    if (coverFront && book.coverColor) {
+      coverFront.style.background = `linear-gradient(135deg, ${book.coverColor} 0%, #140c10 100%)`;
     }
 
     if (stage && playBookOpenAnimation) {
@@ -576,20 +586,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. Анимированный расчёт времени чтения (бегущие цифры + вращение песочных часов + шкалы сравнения)
+  // 5. Плавный расчёт времени чтения (поддержка ручного ввода + кнопок пресетов скорости)
   const calcPreset = document.getElementById('calc-book-preset');
   const calcPages = document.getElementById('calc-pages');
   const calcSpeed = document.getElementById('calc-speed');
   const calcBtn = document.getElementById('calc-btn');
   const hourglassIcon = document.getElementById('calc-hourglass');
+  const speedPresetBtns = document.querySelectorAll('.speed-preset-btn');
 
-  function animateValue(el, start, end, duration, suffix, isDecimal = false) {
+  function animateValueSmooth(el, endValue, duration, suffix, isDecimal = false) {
     if (!el) return;
+    const startValue = parseFloat(el.dataset.val) || 0;
+    el.dataset.val = endValue;
     const startTime = performance.now();
+
     function step(now) {
       const progress = Math.min((now - startTime) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      const current = start + (end - start) * eased;
+      const current = startValue + (endValue - startValue) * eased;
       el.textContent = `${isDecimal ? current.toFixed(1) : Math.round(current)}${suffix}`;
       if (progress < 1) {
         requestAnimationFrame(step);
@@ -601,15 +615,13 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateReadingCalculation() {
     if (!calcPages || !calcSpeed) return;
     const pages = Math.max(10, Number(calcPages.value) || 300);
-    const speed = Number(calcSpeed.value) || 40;
+    const speed = Math.max(5, Number(calcSpeed.value) || 40);
     const originalHours = pages / speed;
     const briefMinutes = Math.max(6, Math.round(pages / 42));
-    const savedPercent = Math.min(99, Math.round((1 - briefMinutes / (originalHours * 60)) * 100));
+    const savedPercent = Math.min(99, Math.max(50, Math.round((1 - briefMinutes / (originalHours * 60)) * 100)));
 
     if (hourglassIcon) {
-      hourglassIcon.classList.remove('spinning');
-      void hourglassIcon.offsetWidth;
-      hourglassIcon.classList.add('spinning');
+      hourglassIcon.classList.toggle('spinning');
     }
 
     const numOrig = document.getElementById('calc-num-orig');
@@ -625,19 +637,53 @@ document.addEventListener('DOMContentLoaded', () => {
     if (barOrigLabel) barOrigLabel.textContent = `${originalHours.toFixed(1)} ч.`;
     if (barBriefLabel) barBriefLabel.textContent = `${briefMinutes} мин.`;
 
-    animateValue(numOrig, 0, originalHours, 900, ' ч.', true);
-    animateValue(numBrief, 0, briefMinutes, 900, ' мин.', false);
-    animateValue(numSave, 0, savedPercent, 900, '%', false);
+    animateValueSmooth(numOrig, originalHours, 1100, ' ч.', true);
+    animateValueSmooth(numBrief, briefMinutes, 1100, ' мин.', false);
+    animateValueSmooth(numSave, savedPercent, 1100, '%', false);
 
     if (barOrig && barBrief) {
-      barOrig.style.width = '0%';
-      barBrief.style.width = '0%';
-      setTimeout(() => {
-        barOrig.style.width = '100%';
-        const ratioWidth = Math.max(5, Math.min(35, Math.round((briefMinutes / (originalHours * 60)) * 300)));
-        barBrief.style.width = `${ratioWidth}%`;
-      }, 60);
+      barOrig.style.transition = 'none';
+      barBrief.style.transition = 'none';
+      barOrig.style.width = '15%';
+      barBrief.style.width = '2%';
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          barOrig.style.transition = 'width 1.4s cubic-bezier(0.22, 1, 0.36, 1)';
+          barBrief.style.transition = 'width 1.4s cubic-bezier(0.22, 1, 0.36, 1)';
+          barOrig.style.width = '100%';
+          const ratioWidth = Math.max(6, Math.min(35, Math.round((briefMinutes / (originalHours * 60)) * 280)));
+          barBrief.style.width = `${ratioWidth}%`;
+        });
+      });
     }
+  }
+
+  // Переключение кнопок быстрых пресетов скорости чтения
+  speedPresetBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const selectedSpeed = btn.dataset.speed;
+      if (calcSpeed && selectedSpeed) {
+        calcSpeed.value = selectedSpeed;
+      }
+      speedPresetBtns.forEach((b) => {
+        b.classList.replace('btn-primary', 'btn-outline-secondary');
+      });
+      btn.classList.replace('btn-outline-secondary', 'btn-primary');
+      updateReadingCalculation();
+    });
+  });
+
+  if (calcSpeed) {
+    calcSpeed.addEventListener('input', () => {
+      speedPresetBtns.forEach((b) => {
+        if (b.dataset.speed === calcSpeed.value.trim()) {
+          b.classList.replace('btn-outline-secondary', 'btn-primary');
+        } else {
+          b.classList.replace('btn-primary', 'btn-outline-secondary');
+        }
+      });
+    });
   }
 
   if (calcPreset && calcPages) {
