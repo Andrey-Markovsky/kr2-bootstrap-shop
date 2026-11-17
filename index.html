@@ -20,15 +20,33 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="mainNavbar">
-          <ul class="navbar-nav ms-auto align-items-lg-center">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-lg-center">
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Главная</a></li>
             <li class="nav-item"><a class="nav-link" href="catalog.html">База книг</a></li>
             <li class="nav-item"><a class="nav-link" href="order.html">О проекте</a></li>
             <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-              <a class="btn btn-primary btn-sm" href="index.html#propose-form">Предложить разбор</a>
-            </li>
           </ul>
+
+          <!-- БЛОК ПОИСКА ПО САЙТУ (при необходимости можно удалить этот блок div) -->
+          <div class="header-search-wrap me-lg-3 my-2 my-lg-0">
+            <input
+              type="search"
+              id="global-search-input"
+              class="form-control form-control-sm bg-secondary bg-opacity-25 text-white border-secondary"
+              placeholder="🔍 Поиск книги или автора..."
+              aria-label="Поиск книги или автора"
+              autocomplete="off"
+            >
+            <div id="global-search-results" class="search-results-dropdown d-none"></div>
+          </div>
+          <!-- КОНЕЦ БЛОКА ПОИСКА -->
+
+          <div class="d-flex flex-wrap gap-2 align-items-center">
+            <a class="btn btn-outline-light btn-sm" href="profile.html">
+              ♥ Личный кабинет <span class="badge bg-danger ms-1 fav-count-badge">0</span>
+            </a>
+            <a class="btn btn-primary btn-sm" href="index.html#propose-form">Предложить разбор</a>
+          </div>
         </div>
       </div>
     </nav>
@@ -45,20 +63,22 @@
             Поглавные пересказы сюжетов, разбор авторской проблематики, система ключевых образов и точные цитаты из фундаментальных произведений русской и мировой прозы.
           </p>
           <div class="d-flex flex-wrap gap-2">
-            <a class="btn btn-primary btn-lg" href="catalog.html">Открыть базу книг (9 разборов)</a>
-            <a class="btn btn-outline-secondary btn-lg" href="#propose-form">Предложить произведение</a>
+            <a class="btn btn-primary btn-lg" href="catalog.html">Открыть базу книг (9 изданий)</a>
+            <a class="btn btn-outline-secondary btn-lg" href="catalog.html#reading-calc-section">Рассчитать время чтения</a>
           </div>
         </div>
         <div class="col-12 col-lg-5">
-          <div class="card border-0 shadow-sm overflow-hidden">
-            <!-- Форзац книги недели -->
-            <img
-              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300' viewBox='0 0 500 300'><rect width='500' height='300' rx='6' fill='%233b1728'/><rect x='12' y='10' width='236' height='280' fill='%23f3ead8'/><rect x='252' y='10' width='236' height='280' fill='%23faf6ed'/><rect x='246' y='10' width='8' height='280' fill='%23cbbba0'/><line x1='250' y1='10' x2='250' y2='290' stroke='%235c3a21' stroke-width='1.5'/><rect x='24' y='22' width='212' height='256' fill='%23e6dac3' stroke='%238c6d53' stroke-width='1.5' stroke-dasharray='4,4'/><rect x='55' y='95' width='150' height='110' fill='%23faf6ed' stroke='%235c3a21' stroke-width='1.5'/><text x='130' y='125' font-family='Georgia, serif' font-size='10' fill='%235c3a21' text-anchor='middle' letter-spacing='2'>EX LIBRIS</text><line x1='75' y1='135' x2='185' y2='135' stroke='%238c6d53' stroke-width='1'/><text x='130' y='158' font-family='Georgia, serif' font-size='14' font-weight='bold' fill='%233b1728' text-anchor='middle'>LITBRIEF</text><text x='130' y='178' font-family='Arial, sans-serif' font-size='9' fill='%236b5b4d' text-anchor='middle'>Фонд классической прозы</text><text x='130' y='194' font-family='Georgia, serif' font-size='9' fill='%238c6d53' text-anchor='middle'>№ I • Золотой век</text><rect x='266' y='22' width='208' height='256' fill='none' stroke='%238c6d53' stroke-width='1.5'/><rect x='271' y='27' width='198' height='246' fill='none' stroke='%238c6d53' stroke-width='0.7'/><text x='370' y='72' font-family='Georgia, serif' font-size='12' fill='%235c3a21' text-anchor='middle' letter-spacing='1'>Ф. М. ДОСТОЕВСКИЙ</text><line x1='310' y1='85' x2='430' y2='85' stroke='%238c6d53' stroke-width='1'/><text x='370' y='125' font-family='Georgia, serif' font-size='18' font-weight='bold' fill='%232b1810' text-anchor='middle'>ПРЕСТУПЛЕНИЕ</text><text x='370' y='148' font-family='Georgia, serif' font-size='18' font-weight='bold' fill='%232b1810' text-anchor='middle'>И НАКАЗАНИЕ</text><text x='370' y='178' font-family='Georgia, serif' font-size='11' font-style='italic' fill='%236b5b4d' text-anchor='middle'>Роман в шести частях с эпилогом</text><circle cx='370' cy='215' r='16' fill='none' stroke='%238c6d53' stroke-width='1'/><text x='370' y='219' font-family='Georgia, serif' font-size='10' fill='%235c3a21' text-anchor='middle'>1866</text><text x='370' y='258' font-family='Arial, sans-serif' font-size='9' fill='%238c6d53' text-anchor='middle'>САНКТ-ПЕТЕРБУРГ</text><path d='M248,10 L256,10 L256,220 L252,212 L248,220 Z' fill='%23991b1b'/></svg>"
-              class="card-img-top"
-              alt="Форзац книги Преступление и наказание"
-            >
+          <div class="card book-card-3d border-0 shadow-sm overflow-hidden">
+            <div class="endpaper-wrapper">
+              <span class="endpaper-ribbon"></span>
+              <img
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300' viewBox='0 0 500 300'><rect width='500' height='300' rx='6' fill='%233b1728'/><rect x='12' y='10' width='236' height='280' fill='%23f3ead8'/><rect x='252' y='10' width='236' height='280' fill='%23faf6ed'/><rect x='246' y='10' width='8' height='280' fill='%23cbbba0'/><line x1='250' y1='10' x2='250' y2='290' stroke='%235c3a21' stroke-width='1.5'/><rect x='24' y='22' width='212' height='256' fill='%23e6dac3' stroke='%238c6d53' stroke-width='1.5' stroke-dasharray='4,4'/><rect x='55' y='95' width='150' height='110' fill='%23faf6ed' stroke='%235c3a21' stroke-width='1.5'/><text x='130' y='125' font-family='Georgia, serif' font-size='10' fill='%235c3a21' text-anchor='middle' letter-spacing='2'>EX LIBRIS</text><line x1='75' y1='135' x2='185' y2='135' stroke='%238c6d53' stroke-width='1'/><text x='130' y='158' font-family='Georgia, serif' font-size='14' font-weight='bold' fill='%233b1728' text-anchor='middle'>LITBRIEF</text><text x='130' y='178' font-family='Arial, sans-serif' font-size='9' fill='%236b5b4d' text-anchor='middle'>Фонд классической прозы</text><text x='130' y='194' font-family='Georgia, serif' font-size='9' fill='%238c6d53' text-anchor='middle'>№ I • Золотой век</text><rect x='266' y='22' width='208' height='256' fill='none' stroke='%238c6d53' stroke-width='1.5'/><rect x='271' y='27' width='198' height='246' fill='none' stroke='%238c6d53' stroke-width='0.7'/><text x='370' y='72' font-family='Georgia, serif' font-size='12' fill='%235c3a21' text-anchor='middle' letter-spacing='1'>Ф. М. ДОСТОЕВСКИЙ</text><line x1='310' y1='85' x2='430' y2='85' stroke='%238c6d53' stroke-width='1'/><text x='370' y='125' font-family='Georgia, serif' font-size='18' font-weight='bold' fill='%232b1810' text-anchor='middle'>ПРЕСТУПЛЕНИЕ</text><text x='370' y='148' font-family='Georgia, serif' font-size='18' font-weight='bold' fill='%232b1810' text-anchor='middle'>И НАКАЗАНИЕ</text><text x='370' y='178' font-family='Georgia, serif' font-size='11' font-style='italic' fill='%236b5b4d' text-anchor='middle'>Роман в шести частях с эпилогом</text><circle cx='370' cy='215' r='16' fill='none' stroke='%238c6d53' stroke-width='1'/><text x='370' y='219' font-family='Georgia, serif' font-size='10' fill='%235c3a21' text-anchor='middle'>1866</text><text x='370' y='258' font-family='Arial, sans-serif' font-size='9' fill='%238c6d53' text-anchor='middle'>САНКТ-ПЕТЕРБУРГ</text></svg>"
+                class="card-img-top"
+                alt="Форзац книги Преступление и наказание"
+              >
+            </div>
             <div class="card-body text-center bg-light">
-              <p class="mb-2 text-muted small">Центральный разбор недели • Полный анализ 6 частей и эпилога</p>
+              <p class="mb-2 text-muted small">Центральный разбор недели • Наведите курсор на форзац</p>
               <a href="catalog.html?book=dostoevsky#book-analysis-section" class="btn btn-sm btn-primary">Перейти к разбору в базе книг</a>
             </div>
           </div>
@@ -103,98 +123,19 @@
       </div>
     </section>
 
-    <!-- Популярные разборы недели (с иллюстрациями форзацев) -->
+    <!-- Популярные издания недели -->
     <section class="container my-5" id="popular">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Популярные издания в базе</h2>
         <a class="btn btn-outline-primary" href="catalog.html">Все 9 книг в базе</a>
       </div>
 
-      <div class="row g-4">
-        <!-- Карточка 1 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card h-100 shadow-sm">
-            <img
-              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300' viewBox='0 0 500 300'><rect width='500' height='300' rx='6' fill='%233b1728'/><rect x='12' y='10' width='236' height='280' fill='%23f3ead8'/><rect x='252' y='10' width='236' height='280' fill='%23faf6ed'/><rect x='246' y='10' width='8' height='280' fill='%23cbbba0'/><line x1='250' y1='10' x2='250' y2='290' stroke='%235c3a21' stroke-width='1.5'/><rect x='24' y='22' width='212' height='256' fill='%23e6dac3' stroke='%238c6d53' stroke-width='1.5' stroke-dasharray='4,4'/><rect x='55' y='95' width='150' height='110' fill='%23faf6ed' stroke='%235c3a21' stroke-width='1.5'/><text x='130' y='125' font-family='Georgia, serif' font-size='10' fill='%235c3a21' text-anchor='middle' letter-spacing='2'>EX LIBRIS</text><line x1='75' y1='135' x2='185' y2='135' stroke='%238c6d53' stroke-width='1'/><text x='130' y='158' font-family='Georgia, serif' font-size='14' font-weight='bold' fill='%233b1728' text-anchor='middle'>LITBRIEF</text><text x='130' y='182' font-family='Georgia, serif' font-size='10' fill='%236b5b4d' text-anchor='middle'>Том I • 1866</text><rect x='266' y='22' width='208' height='256' fill='none' stroke='%238c6d53' stroke-width='1.5'/><text x='370' y='75' font-family='Georgia, serif' font-size='12' fill='%235c3a21' text-anchor='middle'>Ф. М. ДОСТОЕВСКИЙ</text><line x1='310' y1='88' x2='430' y2='88' stroke='%238c6d53' stroke-width='1'/><text x='370' y='130' font-family='Georgia, serif' font-size='17' font-weight='bold' fill='%232b1810' text-anchor='middle'>Преступление</text><text x='370' y='152' font-family='Georgia, serif' font-size='17' font-weight='bold' fill='%232b1810' text-anchor='middle'>и наказание</text><text x='370' y='185' font-family='Georgia, serif' font-size='11' font-style='italic' fill='%236b5b4d' text-anchor='middle'>Психологический роман</text><text x='370' y='250' font-family='Georgia, serif' font-size='10' fill='%238c6d53' text-anchor='middle'>Издание LitBrief</text><path d='M248,10 L255,10 L255,210 L251.5,202 L248,210 Z' fill='%23991b1b'/></svg>"
-              class="card-img-top"
-              alt="Форзац книги Преступление и наказание"
-            >
-            <div class="card-body d-flex flex-column">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <h3 class="card-title h5 mb-0">Преступление и наказание</h3>
-                <span class="badge bg-success">12 мин</span>
-              </div>
-              <p class="card-text text-muted">
-                Психологический отчёт одного преступления. Теория Родиона Раскольникова о «праве сильной личности» и её крушение.
-              </p>
-              <p class="fw-bold mb-3 mt-auto">Объём оригинала: 580 стр.</p>
-              <div class="d-flex gap-2">
-                <a class="btn btn-primary" href="catalog.html?book=dostoevsky#book-analysis-section">Читать разбор</a>
-                <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalDostoevsky">
-                  Краткая справка
-                </button>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Карточка 2 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card h-100 shadow-sm">
-            <img
-              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300' viewBox='0 0 500 300'><rect width='500' height='300' rx='6' fill='%23172035'/><rect x='12' y='10' width='236' height='280' fill='%23f3ead8'/><rect x='252' y='10' width='236' height='280' fill='%23faf6ed'/><rect x='246' y='10' width='8' height='280' fill='%23cbbba0'/><line x1='250' y1='10' x2='250' y2='290' stroke='%235c3a21' stroke-width='1.5'/><rect x='24' y='22' width='212' height='256' fill='%23e4dccb' stroke='%23786652' stroke-width='1.5' stroke-dasharray='4,4'/><rect x='55' y='95' width='150' height='110' fill='%23faf6ed' stroke='%23172035' stroke-width='1.5'/><text x='130' y='125' font-family='Georgia, serif' font-size='10' fill='%23172035' text-anchor='middle' letter-spacing='2'>EX LIBRIS</text><line x1='75' y1='135' x2='185' y2='135' stroke='%23786652' stroke-width='1'/><text x='130' y='158' font-family='Georgia, serif' font-size='14' font-weight='bold' fill='%23172035' text-anchor='middle'>LITBRIEF</text><text x='130' y='182' font-family='Georgia, serif' font-size='10' fill='%236b5b4d' text-anchor='middle'>Том II • 1940</text><rect x='266' y='22' width='208' height='256' fill='none' stroke='%23786652' stroke-width='1.5'/><text x='370' y='75' font-family='Georgia, serif' font-size='12' fill='%235c3a21' text-anchor='middle'>М. А. БУЛГАКОВ</text><line x1='310' y1='88' x2='430' y2='88' stroke='%23786652' stroke-width='1'/><text x='370' y='130' font-family='Georgia, serif' font-size='18' font-weight='bold' fill='%23172035' text-anchor='middle'>Мастер</text><text x='370' y='152' font-family='Georgia, serif' font-size='18' font-weight='bold' fill='%23172035' text-anchor='middle'>и Маргарита</text><text x='370' y='185' font-family='Georgia, serif' font-size='11' font-style='italic' fill='%236b5b4d' text-anchor='middle'>Философский роман</text><text x='370' y='250' font-family='Georgia, serif' font-size='10' fill='%23786652' text-anchor='middle'>Издание LitBrief</text><path d='M248,10 L255,10 L255,210 L251.5,202 L248,210 Z' fill='%23d97706'/></svg>"
-              class="card-img-top"
-              alt="Форзац книги Мастер и Маргарита"
-            >
-            <div class="card-body d-flex flex-column">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <h3 class="card-title h5 mb-0">Мастер и Маргарита</h3>
-                <span class="badge bg-warning text-dark">15 мин</span>
-              </div>
-              <p class="card-text text-muted">
-                Визит Воланда со свитой в Москву 1930-х годов, суд Понтия Пилата над Иешуа и самоотверженная любовь Маргариты.
-              </p>
-              <p class="fw-bold mb-3 mt-auto">Объём оригинала: 480 стр.</p>
-              <div class="d-flex gap-2">
-                <a class="btn btn-primary" href="catalog.html?book=bulgakov#book-analysis-section">Читать разбор</a>
-                <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalBulgakov">
-                  Краткая справка
-                </button>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Карточка 3 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card h-100 shadow-sm">
-            <img
-              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300' viewBox='0 0 500 300'><rect width='500' height='300' rx='6' fill='%23143829'/><rect x='12' y='10' width='236' height='280' fill='%23f3ead8'/><rect x='252' y='10' width='236' height='280' fill='%23faf6ed'/><rect x='246' y='10' width='8' height='280' fill='%23cbbba0'/><line x1='250' y1='10' x2='250' y2='290' stroke='%235c3a21' stroke-width='1.5'/><rect x='24' y='22' width='212' height='256' fill='%23e1e8df' stroke='%234f6f5e' stroke-width='1.5' stroke-dasharray='4,4'/><rect x='55' y='95' width='150' height='110' fill='%23faf6ed' stroke='%23143829' stroke-width='1.5'/><text x='130' y='125' font-family='Georgia, serif' font-size='10' fill='%23143829' text-anchor='middle' letter-spacing='2'>EX LIBRIS</text><line x1='75' y1='135' x2='185' y2='135' stroke='%234f6f5e' stroke-width='1'/><text x='130' y='158' font-family='Georgia, serif' font-size='14' font-weight='bold' fill='%23143829' text-anchor='middle'>LITBRIEF</text><text x='130' y='182' font-family='Georgia, serif' font-size='10' fill='%236b5b4d' text-anchor='middle'>Том III • 1862</text><rect x='266' y='22' width='208' height='256' fill='none' stroke='%234f6f5e' stroke-width='1.5'/><text x='370' y='75' font-family='Georgia, serif' font-size='12' fill='%235c3a21' text-anchor='middle'>И. С. ТУРГЕНЕВ</text><line x1='310' y1='88' x2='430' y2='88' stroke='%234f6f5e' stroke-width='1'/><text x='370' y='140' font-family='Georgia, serif' font-size='20' font-weight='bold' fill='%23143829' text-anchor='middle'>Отцы и дети</text><text x='370' y='180' font-family='Georgia, serif' font-size='11' font-style='italic' fill='%236b5b4d' text-anchor='middle'>Социально-психологический роман</text><text x='370' y='250' font-family='Georgia, serif' font-size='10' fill='%234f6f5e' text-anchor='middle'>Издание LitBrief</text><path d='M248,10 L255,10 L255,210 L251.5,202 L248,210 Z' fill='%23059669'/></svg>"
-              class="card-img-top"
-              alt="Форзац книги Отцы и дети"
-            >
-            <div class="card-body d-flex flex-column">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <h3 class="card-title h5 mb-0">Отцы и дети</h3>
-                <span class="badge bg-info text-dark">9 мин</span>
-              </div>
-              <p class="card-text text-muted">
-                Идейное столкновение дворян Кирсановых и нигилиста Евгения Базарова. Испытание теории любовью к Анне Одинцовой.
-              </p>
-              <p class="fw-bold mb-3 mt-auto">Объём оригинала: 280 стр.</p>
-              <div class="d-flex gap-2">
-                <a class="btn btn-primary" href="catalog.html?book=turgenev#book-analysis-section">Читать разбор</a>
-                <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalTurgenev">
-                  Краткая справка
-                </button>
-              </div>
-            </div>
-          </article>
-        </div>
+      <div class="row g-4" id="home-popular-grid">
+        <!-- 3 популярные карточки с 3D-форзацем и кнопками Избранного отрисовываются через main.js -->
       </div>
     </section>
 
-    <!-- Форма предложения разбора на главной странице (вместо времени чтения) -->
+    <!-- Форма предложения разбора на главной странице -->
     <section class="container my-5" id="propose-form">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-10">
@@ -273,66 +214,7 @@
     </section>
   </main>
 
-  <!-- Всплывающие окна краткой справки для карточек главной страницы -->
-  <div class="modal fade" id="modalDostoevsky" tabindex="-1" aria-labelledby="modalDostoevskyLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header bg-dark text-white">
-          <h2 class="modal-title h5" id="modalDostoevskyLabel">📕 Преступление и наказание — Краткая справка</h2>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-        </div>
-        <div class="modal-body">
-          <p><strong>Автор:</strong> Ф. М. Достоевский (1866 г.) | <strong>Жанр:</strong> Социально-психологический и философский роман</p>
-          <p><strong>Краткая суть:</strong> Бывший студент Родион Раскольников решается на убийство старухи-процентщицы, чтобы проверить свою теорию о делении людей на «тварей дрожащих» и «право имеющих». Совершив преступление, он переживает тяжёлое душевное наказание и приходит к покаянию благодаря жертвенной любви Сони Мармеладовой.</p>
-          <p class="mb-0"><strong>Ключевые герои:</strong> Родион Раскольников, Соня Мармеладова, Порфирий Петрович, Аркадий Свидригайлов, Пётр Лужин, Дуня Раскольникова.</p>
-        </div>
-        <div class="modal-footer">
-          <a href="catalog.html?book=dostoevsky#book-analysis-section" class="btn btn-primary">Открыть полный разбор в базе книг</a>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="modalBulgakov" tabindex="-1" aria-labelledby="modalBulgakovLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header bg-dark text-white">
-          <h2 class="modal-title h5" id="modalBulgakovLabel">📘 Мастер и Маргарита — Краткая справка</h2>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-        </div>
-        <div class="modal-body">
-          <p><strong>Автор:</strong> М. А. Булгаков (1928–1940 гг.) | <strong>Жанр:</strong> Философско-мистический роман</p>
-          <p><strong>Краткая суть:</strong> В Москву 1930-х годов прибывает Воланд со своей свитой, разоблачая пороки обывателей. Параллельно развивается история любви Мастера и Маргариты и библейский сюжет о суде прокуратора Понтия Пилата над бродячим философом Иешуа Га-Ноцри.</p>
-          <p class="mb-0"><strong>Ключевые герои:</strong> Мастер, Маргарита, Воланд, Коровьев, Кот Бегемот, Иван Бездомный, Понтий Пилат, Иешуа.</p>
-        </div>
-        <div class="modal-footer">
-          <a href="catalog.html?book=bulgakov#book-analysis-section" class="btn btn-primary">Открыть полный разбор в базе книг</a>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="modalTurgenev" tabindex="-1" aria-labelledby="modalTurgenevLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header bg-dark text-white">
-          <h2 class="modal-title h5" id="modalTurgenevLabel">📗 Отцы и дети — Краткая справка</h2>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-        </div>
-        <div class="modal-body">
-          <p><strong>Автор:</strong> И. С. Тургенев (1862 г.) | <strong>Жанр:</strong> Социально-психологический роман</p>
-          <p><strong>Краткая суть:</strong> Молодой врач-нигилист Евгений Базаров гостит в имении Кирсановых, вступая в непримиримый спор с аристократом Павлом Петровичем. Отрицавший романтику и чувства Базаров неожиданно проходит через испытание сильной любовью к Анне Одинцовой.</p>
-          <p class="mb-0"><strong>Ключевые герои:</strong> Евгений Базаров, Аркадий Кирсанов, Павел Петрович Кирсанов, Николай Петрович Кирсанов, Анна Одинцова.</p>
-        </div>
-        <div class="modal-footer">
-          <a href="catalog.html?book=turgenev#book-analysis-section" class="btn btn-primary">Открыть полный разбор в базе книг</a>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div id="home-modals-container"></div>
 
   <!-- Закреплённый подвал (порядок: телефон, рабочее время, почта; без локации) -->
   <footer class="site-footer bg-dark text-white pt-5 pb-4 mt-5">
@@ -349,6 +231,7 @@
           <ul class="list-unstyled small mb-0">
             <li class="mb-2"><a class="text-secondary text-decoration-none" href="index.html">Главная страница</a></li>
             <li class="mb-2"><a class="text-secondary text-decoration-none" href="catalog.html">База книг (Каталог и разборы)</a></li>
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="profile.html">Личный кабинет и Избранное</a></li>
             <li class="mb-2"><a class="text-secondary text-decoration-none" href="order.html">О проекте</a></li>
             <li><a class="text-secondary text-decoration-none" href="contacts.html">Контакты редакции</a></li>
           </ul>

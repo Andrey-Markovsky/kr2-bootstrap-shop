@@ -1,5 +1,5 @@
-// Генератор SVG-иллюстрации книжного форзаца (разворота книги с экслибрисом, ляссе и титульным листом)
-function createEndpaperSvg(author, titleLine1, titleLine2, subtitle, year, tom, coverColor, ribbonColor) {
+// Генератор SVG-иллюстрации книжного форзаца (без встроенной ленты, так как лента-ляссе анимируется через CSS)
+function createEndpaperSvg(author, titleLine1, titleLine2, subtitle, year, tom, coverColor) {
   const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300' viewBox='0 0 500 300'>
     <rect width='500' height='300' rx='6' fill='${coverColor}'/>
     <rect x='12' y='10' width='236' height='280' fill='#f3ead8'/>
@@ -23,7 +23,6 @@ function createEndpaperSvg(author, titleLine1, titleLine2, subtitle, year, tom, 
     <circle cx='370' cy='218' r='15' fill='none' stroke='#8c6d53' stroke-width='1'/>
     <text x='370' y='222' font-family='Georgia, serif' font-size='10' fill='#5c3a21' text-anchor='middle'>${year}</text>
     <text x='370' y='256' font-family='Georgia, serif' font-size='9' fill='#8c6d53' text-anchor='middle'>АКАДЕМИЧЕСКОЕ ИЗДАНИЕ</text>
-    <path d='M248,10 L255,10 L255,215 L251.5,207 L248,215 Z' fill='${ribbonColor}'/>
   </svg>`;
   return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 }
@@ -37,11 +36,12 @@ const BOOKS_DATA = {
     badgeClass: 'bg-success',
     badge: 'Время чтения: 12 минут',
     epoch: 'Золотой век (1866 г.)',
+    pagesCount: 580,
     cardText: 'Подробный пересказ 6 частей и эпилога. Анализ теории Раскольникова, образов Сони Мармеладовой, Порфирия Петровича и Свидригайлова.',
     lead: 'Социально-психологический и философский роман Ф. М. Достоевского о бывшем студенте Родионе Раскольникове, решившем проверить теорию о «праве сильной личности».',
     pages: 'Объём оригинала: 580 стр.',
     moral: '<strong>Главная мысль:</strong> Невозможно построить счастье на пролитой крови; переступая нравственный закон, человек прежде всего разрушает собственную душу.',
-    image: createEndpaperSvg('Ф. М. ДОСТОЕВСКИЙ', 'Преступление', 'и наказание', 'Роман в шести частях', '1866', 'Том I', '#3b1728', '#991b1b'),
+    image: createEndpaperSvg('Ф. М. ДОСТОЕВСКИЙ', 'Преступление', 'и наказание', 'Роман в шести частях', '1866', 'Том I', '#3b1728'),
     table: [
       ['Автор и год публикации', 'Ф. М. Достоевский, 1866 год (журнал «Русский вестник»)'],
       ['Родион Раскольников', 'Главный герой, бывший студент. Автор теории о делении людей на «тварей дрожащих» и «право имеющих»'],
@@ -67,11 +67,12 @@ const BOOKS_DATA = {
     badgeClass: 'bg-warning text-dark',
     badge: 'Время чтения: 15 минут',
     epoch: 'XX век (1940 г.)',
+    pagesCount: 480,
     cardText: 'Похождения Воланда со свитой в Москве 1930-х годов, ершалаимские главы о Понтии Пилате и Иешуа, бал у сатаны и спасение рукописи Мастера.',
     lead: 'Философско-мистический роман М. А. Булгакова, объединяющий визит Воланда в Москву, историю любви Мастера и суд Понтия Пилата над Иешуа.',
     pages: 'Объём оригинала: 480 стр.',
     moral: '<strong>Главная мысль:</strong> «Рукописи не горят» — подлинное творчество, милосердие и преданная любовь сильнее трусости, конформизма и смерти.',
-    image: createEndpaperSvg('М. А. БУЛГАКОВ', 'Мастер', 'и Маргарита', 'Философско-мистический роман', '1940', 'Том II', '#172035', '#d97706'),
+    image: createEndpaperSvg('М. А. БУЛГАКОВ', 'Мастер', 'и Маргарита', 'Философско-мистический роман', '1940', 'Том II', '#172035'),
     table: [
       ['Автор и годы создания', 'М. А. Булгаков, 1928–1940 гг. (опубликован в 1966–1967 гг.)'],
       ['Мастер и Маргарита', 'Автор романа о Понтии Пилате и его возлюбленная, готовая на сделку с Воландом ради спасения Мастера'],
@@ -97,11 +98,12 @@ const BOOKS_DATA = {
     badgeClass: 'bg-info text-dark',
     badge: 'Время чтения: 9 минут',
     epoch: 'Золотой век (1862 г.)',
+    pagesCount: 280,
     cardText: 'Конфликт либералов-дворян Кирсановых и разночинца-нигилиста Евгения Базарова. Испытание нигилизма любовью к Анне Одинцовой.',
     lead: 'Социально-психологический роман И. С. Тургенева об идейном столкновении дворян-либералов 1840-х годов («отцов») и разночинцев 1860-х годов («детей»).',
     pages: 'Объём оригинала: 280 стр.',
     moral: '<strong>Главная мысль:</strong> Жизнь, природа и человеческое чувство всегда шире и сильнее любых радикальных теорий и полного отрицания.',
-    image: createEndpaperSvg('И. С. ТУРГЕНЕВ', 'Отцы', 'и дети', 'Социально-психологический роман', '1862', 'Том III', '#143829', '#059669'),
+    image: createEndpaperSvg('И. С. ТУРГЕНЕВ', 'Отцы', 'и дети', 'Социально-психологический роман', '1862', 'Том III', '#143829'),
     table: [
       ['Автор и год публикации', 'И. С. Тургенев, 1862 год (журнал «Русский вестник»)'],
       ['Евгений Базаров', 'Студент-медик, разночинец, убеждённый нигилист, отрицающий авторитеты, искусство и сентиментальность'],
@@ -127,11 +129,12 @@ const BOOKS_DATA = {
     badgeClass: 'bg-primary',
     badge: 'Время чтения: 25 минут',
     epoch: 'Золотой век (1869 г.)',
+    pagesCount: 1300,
     cardText: 'Все 4 тома в чёткой структуре: духовные искания Андрея Болконского и Пьера Безухова, Наташа Ростова, Аустерлиц и Бородинское сражение.',
     lead: 'Монументальный роман-эпопея Л. Н. Толстого о судьбах русского дворянства и всего народа в эпоху войн с Наполеоном 1805–1812 годов.',
     pages: 'Объём оригинала: 1300 стр.',
     moral: '<strong>Главная мысль:</strong> Истинное величие человека — в простоте, добре и единении с народом («мысль народная» и «мысль семейная»).',
-    image: createEndpaperSvg('Л. Н. ТОЛСТОЙ', 'Война', 'и мир', 'Роман-эпопея в четырёх томах', '1869', 'Том IV', '#1e2952', '#2563eb'),
+    image: createEndpaperSvg('Л. Н. ТОЛСТОЙ', 'Война', 'и мир', 'Роман-эпопея в четырёх томах', '1869', 'Том IV', '#1e2952'),
     table: [
       ['Автор и годы создания', 'Л. Н. Толстой, 1863–1869 гг.'],
       ['Андрей Болконский', 'Князь, ищущий свой «Тулон» и славу, но открывающий вечную истину под высоким небом Аустерлица'],
@@ -157,11 +160,12 @@ const BOOKS_DATA = {
     badgeClass: 'bg-secondary',
     badge: 'Время чтения: 7 минут',
     epoch: 'Золотой век (1833 г.)',
+    pagesCount: 220,
     cardText: '«Энциклопедия русской жизни». Характер Онегина как «лишнего человека», письмо Татьяны Лариной и трагическая дуэль с Владимиром Ленским.',
     lead: 'Первый русский реалистический роман в стихах А. С. Пушкина, названный В. Г. Белинским «энциклопедией русской жизни».',
     pages: 'Объём оригинала: 220 стр.',
     moral: '<strong>Главная мысль:</strong> Эгоизм, скептицизм и оторванность от национальной почвы обрекают одарённого человека на духовную пустоту и одиночество.',
-    image: createEndpaperSvg('А. С. ПУШКИН', 'Евгений', 'Онегин', 'Роман в стихах', '1833', 'Том V', '#2e1042', '#7c3aed'),
+    image: createEndpaperSvg('А. С. ПУШКИН', 'Евгений', 'Онегин', 'Роман в стихах', '1833', 'Том V', '#2e1042'),
     table: [
       ['Автор и годы создания', 'А. С. Пушкин, 1823–1831 гг.'],
       ['Евгений Онегин', 'Молодой петербургский дворянин, подверженный «русской хандре», родоначальник типа «лишнего человека»'],
@@ -187,11 +191,12 @@ const BOOKS_DATA = {
     badgeClass: 'bg-danger',
     badge: 'Время чтения: 8 минут',
     epoch: 'Зарубежная классика (1949 г.)',
+    pagesCount: 320,
     cardText: 'Антиутопия о тоталитарном мире Океании, двоемыслии, новоязе, Министерстве правды и попытке Уинстона Смита сохранить человечность.',
     lead: 'Культовый роман-антиутопия Джорджа Оруэлла об обществе тотальной слежки, манипуляции историей и подавлении человеческой личности.',
     pages: 'Объём оригинала: 320 стр.',
     moral: '<strong>Главная мысль:</strong> Когда власть получает контроль над прошлым, языком и внутренним миром человека, свобода уничтожается изнутри.',
-    image: createEndpaperSvg('ДЖОРДЖ ОРУЭЛЛ', 'Роман-антиутопия', '1984', 'Три части с приложением о Новоязе', '1949', 'Том VI', '#450a0a', '#dc2626'),
+    image: createEndpaperSvg('ДЖОРДЖ ОРУЭЛЛ', 'Роман-антиутопия', '1984', 'Три части с приложением о Новоязе', '1949', 'Том VI', '#450a0a'),
     table: [
       ['Автор и год издания', 'Джордж Оруэлл (Эрик Артур Блэр), 1949 год'],
       ['Уинстон Смит', 'Рядовой сотрудник Министерства правды, пытающийся сохранить память, дневник и личную свободу'],
@@ -217,11 +222,12 @@ const BOOKS_DATA = {
     badgeClass: 'bg-success',
     badge: 'Время чтения: 10 минут',
     epoch: 'Золотой век (1840 г.)',
+    pagesCount: 224,
     cardText: 'Первый русский психологический роман в прозе. История Григория Печорина в пяти повестях: «Бэла», «Максим Максимыч», «Тамань», «Княжна Мери», «Фаталист».',
     lead: 'Социально-психологический и философский роман М. Ю. Лермонтова, раскрывающий противоречивую душу офицера Григория Печорина на Кавказе.',
     pages: 'Объём оригинала: 224 стр.',
     moral: '<strong>Главная мысль:</strong> Нерастраченные богатые силы души, лишённые высокой жизненной цели, оборачиваются разрушением для самого человека и окружающих.',
-    image: createEndpaperSvg('М. Ю. ЛЕРМОНТОВ', 'Герой нашего', 'времени', 'Психологический роман в пяти повестях', '1840', 'Том VII', '#1e3a3a', '#0d9488'),
+    image: createEndpaperSvg('М. Ю. ЛЕРМОНТОВ', 'Герой нашего', 'времени', 'Психологический роман в пяти повестях', '1840', 'Том VII', '#1e3a3a'),
     table: [
       ['Автор и год издания', 'М. Ю. Лермонтов, 1840 год'],
       ['Григорий Александрович Печорин', 'Молодой офицер, яркий представитель поколения 1830-х годов, наделённый острым умом, но страдающий от душевной охлаждённости'],
@@ -231,7 +237,7 @@ const BOOKS_DATA = {
     ],
     chapters: [
       ['«Бэла» и «Максим Максимыч». Взгляд на Печорина со стороны', 'Странствующий офицер знакомится со штабс-капитаном Максимом Максимычем, который рассказывает историю похищения Печориным черкешенки Бэлы и её трагической гибели от руки Казбича.'],
-      ['Журнал Печорина: «Тамань» и «Княжна Мери»', 'Исповедь самого Печорина. Столкновение с «честными контрабандистами» в Тамани. Курортная интрига в Пятигорске, влюблённость княжны Мери, прощальное письмо Веры и дуэль с Грушницким на краю пропасти.'],
+      ['Журнал Печорина: «Тамань» и «Княжна Мери»', 'Исповедь самого Печорина. Столкновение с «честными контрабандистами» в Тамани. Курортная интрига в Пятигорске, влюблённость княжны Мери, прощальное письмо Веры и дуэль с Грушницким.'],
       ['«Фаталист». Испытание судьбы и предопределения', 'Пари поручика Вулича со смертью в казачьей станице. Гибель Вулича от шашки пьяного казака и отчаянный поступок Печорина, берущего убийцу живым.']
     ],
     quotes: [
@@ -247,11 +253,12 @@ const BOOKS_DATA = {
     badgeClass: 'bg-warning text-dark',
     badge: 'Время чтения: 14 минут',
     epoch: 'Золотой век (1842 г.)',
+    pagesCount: 352,
     cardText: 'Авантюра Павла Ивановича Чичикова по скупке умерших крестьян. Галерея помещиков: Манилов, Коробочка, Ноздрёв, Собакевич и Плюшкин.',
     lead: 'Бессмертная поэма в прозе Н. В. Гоголя, в которой через путешествие предприимчивого Чичикова показана широкая панорама России и духовного омертвения.',
     pages: 'Объём оригинала: 352 стр.',
     moral: '<strong>Главная мысль:</strong> Страшнее физической смерти — духовное омертвение человека, разменявшего живую душу на мелочную корысть и пошлость.',
-    image: createEndpaperSvg('Н. В. ГОГОЛЬ', 'Похождения Чичикова,', 'или Мёртвые души', 'Поэма в прозе', '1842', 'Том VIII', '#422006', '#ca8a04'),
+    image: createEndpaperSvg('Н. В. ГОГОЛЬ', 'Похождения Чичикова,', 'или Мёртвые души', 'Поэма в прозе', '1842', 'Том VIII', '#422006'),
     table: [
       ['Автор и год издания', 'Н. В. Гоголь, 1842 год (первый том)'],
       ['Павел Иванович Чичиков', 'Коллежский советник в отставке, «приобретатель», задумавший заложить в Опекунский совет фиктивные ревизские души'],
@@ -262,7 +269,7 @@ const BOOKS_DATA = {
     chapters: [
       ['Глава 1–6. Приезд в губернский город NN и объезд помещиков', 'Чичиков очаровывает чиновников города NN и отправляется по усадьбам скупать умерших крестьян, числящихся по ревизии живыми: от слащавого Манилова до скряги Плюшкина.'],
       ['Глава 7–10. Оформление купчих, бал у губернатора и разоблачение', 'Чичиков оформляет сделки и становится главным героем губернского бала. Однако появление Ноздрёва и Коробочки порождает нелепые слухи, включая «Повесть о капитане Копейкине».'],
-      ['Глава 11. Прошлое Чичикова и образ Птицы-тройки', 'Бегство Чичикова из города. История его жизни и завета отца «беречь копейку». Лирическое отступление о Руси как о неудержимой птице-тройке, перед которой расступаются другие народы.']
+      ['Глава 11. Прошлое Чичикова и образ Птицы-тройки', 'Бегство Чичикова из города. История его жизни и завета отца «беречь копейку». Лирическое отступление о Руси как о неудержимой птице-тройке.']
     ],
     quotes: [
       ['«Русь, куда ж несёшься ты? дай ответ. Не даёт ответа.»', '— Н. В. Гоголь'],
@@ -277,11 +284,12 @@ const BOOKS_DATA = {
     badgeClass: 'bg-info text-dark',
     badge: 'Время чтения: 8 минут',
     epoch: 'Рубеж XIX–XX вв. (1903 г.)',
+    pagesCount: 96,
     cardText: 'Последняя пьеса А. П. Чехова о продаже дворянского имения. Образы Раневской, Гаева, купца Лопахина и молодых героев Пети Трофимова и Ани.',
     lead: 'Лирическая комедия в четырёх действиях А. П. Чехова, отразившая смену исторических эпох: уход дворянских гнёзд в прошлое и приход деловых людей.',
     pages: 'Объём оригинала: 96 стр.',
     moral: '<strong>Главная мысль:</strong> Время неумолимо сметает тех, кто живёт одними воспоминаниями, но за разрушением старого мира открывается надежда на созидательный труд будущего.',
-    image: createEndpaperSvg('А. П. ЧЕХОВ', 'Вишнёвый', 'сад', 'Комедия в четырёх действиях', '1903', 'Том IX', '#3f1d38', '#db2777'),
+    image: createEndpaperSvg('А. П. ЧЕХОВ', 'Вишнёвый', 'сад', 'Комедия в четырёх действиях', '1903', 'Том IX', '#3f1d38'),
     table: [
       ['Автор и год создания', 'А. П. Чехов, 1903 год (премьера в МХТ в январе 1904 г.)'],
       ['Любовь Андреевна Раневская и Гаев', 'Владельцы имения, живущие прошлым: добрая, но легкомысленная и непрактичная Раневская и её брат Леонид Гаев'],
@@ -290,9 +298,9 @@ const BOOKS_DATA = {
       ['Фирс', 'Старый лакей 87 лет, символ преданности уходящему барскому укладу, забытый в заколоченном доме']
     ],
     chapters: [
-      ['Действие 1–2. Возвращение Раневской и проект Лопахина', 'После пяти лет в Париже Раневская возвращается в цветущее родовое имение, которое должно пойти с молотка за долги. Купец Лопахин предлагает вырубить вишнёвый сад и разбить участки под дачи, но хозяева не хотят его слушать.'],
-      ['Действие 3. Бал в день торгов и покупка сада Лопахиным', 'В день аукциона в усадьбе устраивают нелепый бал с еврейским оркестром. Появляется потрясённый Лопахин и объявляет: «Вишнёвый сад теперь мой! Я купил!». Раневская горько плачет, а Аня утешает мать.'],
-      ['Действие 4. Прощание с домом, стук топоров и забытый Фирс', 'Октябрь. Обитатели имения разъезжаются в разные стороны. В саду уже слышен глухой стук топора по деревьям и звук лопнувшей струны. В запертом пустом доме остаётся забытый всеми старик Фирс.']
+      ['Действие 1–2. Возвращение Раневской и проект Лопахина', 'После пяти лет в Париже Раневская возвращается в цветущее родовое имение, которое должно пойти с молотка за долги. Купец Лопахин предлагает вырубить вишнёвый сад и разбить участки под дачи.'],
+      ['Действие 3. Бал в день торгов и покупка сада Лопахиным', 'В день аукциона в усадьбе устраивают нелепый бал. Появляется потрясённый Лопахин и объявляет: «Вишнёвый сад теперь мой! Я купил!». Раневская горько плачет, а Аня утешает мать.'],
+      ['Действие 4. Прощание с домом, стук топоров и забытый Фирс', 'Октябрь. Обитатели имения разъезжаются в разные стороны. В саду уже слышен глухой стук топора по деревьям и звук лопнувшей струны. В запертом пустом доме остаётся старик Фирс.']
     ],
     quotes: [
       ['«Вся Россия наш сад. Земля велика и прекрасна, есть на ней много чудесных мест.»', '— Петя Трофимов'],
@@ -301,85 +309,181 @@ const BOOKS_DATA = {
   }
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  const catalogGrid = document.getElementById('catalog-grid');
-  const modalsContainer = document.getElementById('modals-container');
-  const detailTitle = document.getElementById('detail-title');
-  const bookSwitchBtns = document.querySelectorAll('.book-switch-btn');
+// ==========================================================================
+// УПРАВЛЕНИЕ ИЗБРАННЫМ (localStorage)
+// ==========================================================================
+const FAV_STORAGE_KEY = 'litbrief_favorites';
 
-  // 1. Автоматическая отрисовка 9 карточек с форзацами и 9 модальных окон в catalog.html
-  if (catalogGrid && modalsContainer) {
-    const booksArray = Object.values(BOOKS_DATA);
+function getFavorites() {
+  try {
+    return JSON.parse(localStorage.getItem(FAV_STORAGE_KEY)) || [];
+  } catch {
+    return [];
+  }
+}
 
-    catalogGrid.innerHTML = booksArray
-      .map(
-        (b, index) => `
-      <div class="col-12 col-md-6 col-lg-4">
-        <article class="card h-100 shadow-sm">
+function saveFavorites(list) {
+  localStorage.setItem(FAV_STORAGE_KEY, JSON.stringify(list));
+  updateFavoriteUI();
+}
+
+function toggleFavorite(bookKey, btnEl) {
+  const favs = getFavorites();
+  const idx = favs.indexOf(bookKey);
+  if (idx === -1) {
+    favs.push(bookKey);
+  } else {
+    favs.splice(idx, 1);
+  }
+  saveFavorites(favs);
+
+  if (btnEl) {
+    btnEl.classList.remove('animating');
+    void btnEl.offsetWidth;
+    btnEl.classList.add('animating');
+  }
+}
+
+function updateFavoriteUI() {
+  const favs = getFavorites();
+
+  // Обновляем бейджи счётчика в шапке и в профиле
+  document.querySelectorAll('.fav-count-badge').forEach((badge) => {
+    badge.textContent = favs.length;
+  });
+
+  // Обновляем состояние всех кнопок Избранного
+  document.querySelectorAll('.fav-btn').forEach((btn) => {
+    const key = btn.dataset.book;
+    const isFav = favs.includes(key);
+    btn.classList.toggle('is-favorite', isFav);
+    const textSpan = btn.querySelector('.fav-text');
+    if (textSpan) {
+      textSpan.textContent = isFav ? 'В избранном' : 'В избранное';
+    }
+  });
+}
+
+// Карточка книги с 3D-форзацем, движущейся закладкой-ляссе и кнопкой Избранного
+function createBookCardHtml(b, index, isCatalogPage) {
+  const favs = getFavorites();
+  const isFav = favs.includes(b.key);
+  const analysisLink = isCatalogPage
+    ? `#book-analysis-section`
+    : `catalog.html?book=${b.key}#book-analysis-section`;
+
+  return `
+    <div class="col-12 col-md-6 col-lg-4 book-card-col" data-title="${b.title.toLowerCase()}" data-author="${b.author.toLowerCase()}" data-desc="${b.cardText.toLowerCase()}">
+      <article class="card book-card-3d h-100 shadow-sm">
+        <div class="endpaper-wrapper">
+          <span class="endpaper-ribbon"></span>
           <img src="${b.image}" class="card-img-top" alt="Форзац книги ${b.title}">
-          <div class="card-body d-flex flex-column">
-            <div class="d-flex justify-content-between align-items-start mb-2">
-              <h2 class="card-title h5 mb-0">${b.title}</h2>
-              <span class="badge ${b.badgeClass}">${b.shortTag}</span>
-            </div>
-            <p class="text-muted small mb-2">${b.author} • ${b.epoch}</p>
-            <p class="card-text text-muted">${b.cardText}</p>
-            <p class="fw-bold fs-6 mt-auto">${b.pages}</p>
-            <div class="d-flex gap-2">
-              <a class="btn btn-primary open-analysis-btn" href="#book-analysis-section" data-book="${b.key}">
-                Читать разбор
-              </a>
-              <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#bookModal${index + 1}">
-                Краткая справка
-              </button>
-            </div>
+        </div>
+        <div class="card-body d-flex flex-column">
+          <div class="d-flex justify-content-between align-items-start mb-2">
+            <h2 class="card-title h5 mb-0">${b.title}</h2>
+            <span class="badge ${b.badgeClass}">${b.shortTag}</span>
           </div>
-        </article>
-      </div>`
-      )
-      .join('');
-
-    modalsContainer.innerHTML = booksArray
-      .map(
-        (b, index) => `
-      <div class="modal fade" id="bookModal${index + 1}" tabindex="-1" aria-labelledby="bookModalLabel${index + 1}" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header bg-dark text-white">
-              <h2 class="modal-title h5" id="bookModalLabel${index + 1}">📖 ${b.title} — Краткая справка об издании</h2>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-            </div>
-            <div class="modal-body">
-              <p><strong>Автор:</strong> ${b.author} | <strong>Эпоха:</strong> ${b.epoch} | <strong>${b.badge}</strong></p>
-              <p><strong>Краткое описание:</strong> ${b.lead}</p>
-              <div class="p-3 bg-light rounded border mb-3">${b.moral}</div>
-              <hr>
-              <form class="modal-quick-order">
-                <h3 class="h6 fw-bold">Отправить полный PDF-конспект «${b.title}» на электронную почту:</h3>
-                <div class="row g-2 mt-1">
-                  <div class="col-12 col-md-5"><input type="text" class="form-control" placeholder="Ваше имя *" required></div>
-                  <div class="col-12 col-md-5"><input type="email" class="form-control" placeholder="Ваш E-mail *" required></div>
-                  <div class="col-12 col-md-2"><button type="submit" class="btn btn-success w-100">Получить</button></div>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <a href="#book-analysis-section" class="btn btn-primary modal-to-analysis-btn" data-book="${b.key}" data-bs-dismiss="modal">
-                Перейти к полному разбору на странице
-              </a>
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-            </div>
+          <p class="text-muted small mb-2">${b.author} • ${b.epoch}</p>
+          <p class="card-text text-muted">${b.cardText}</p>
+          <div class="d-flex justify-content-between align-items-center mt-auto mb-3">
+            <span class="fw-bold small">${b.pages}</span>
+            <button type="button" class="btn btn-sm btn-outline-danger fav-btn ${isFav ? 'is-favorite' : ''}" data-book="${b.key}" title="Добавить в избранное">
+              <span class="heart-icon">♥</span> <span class="fav-text">${isFav ? 'В избранном' : 'В избранное'}</span>
+            </button>
+          </div>
+          <div class="d-flex gap-2">
+            <a class="btn btn-primary open-analysis-btn" href="${analysisLink}" data-book="${b.key}">
+              Читать разбор
+            </a>
+            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#bookModal${index + 1}">
+              Краткая справка
+            </button>
           </div>
         </div>
-      </div>`
-      )
-      .join('');
+      </article>
+    </div>`;
+}
+
+function createBookModalHtml(b, index, isCatalogPage) {
+  const analysisLink = isCatalogPage
+    ? `#book-analysis-section`
+    : `catalog.html?book=${b.key}#book-analysis-section`;
+
+  return `
+    <div class="modal fade" id="bookModal${index + 1}" tabindex="-1" aria-labelledby="bookModalLabel${index + 1}" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-dark text-white">
+            <h2 class="modal-title h5" id="bookModalLabel${index + 1}">📖 ${b.title} — Краткая справка об издании</h2>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body">
+            <p><strong>Автор:</strong> ${b.author} | <strong>Эпоха:</strong> ${b.epoch} | <strong>${b.badge}</strong></p>
+            <p><strong>Краткое описание:</strong> ${b.lead}</p>
+            <div class="p-3 bg-light rounded border mb-3">${b.moral}</div>
+            <hr>
+            <form class="modal-quick-order">
+              <h3 class="h6 fw-bold">Отправить полный PDF-конспект «${b.title}» на электронную почту:</h3>
+              <div class="row g-2 mt-1">
+                <div class="col-12 col-md-5"><input type="text" class="form-control" placeholder="Ваше имя *" required></div>
+                <div class="col-12 col-md-5"><input type="email" class="form-control" placeholder="Ваш E-mail *" required></div>
+                <div class="col-12 col-md-2"><button type="submit" class="btn btn-success w-100">Получить</button></div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <a href="${analysisLink}" class="btn btn-primary modal-to-analysis-btn" data-book="${b.key}" ${isCatalogPage ? 'data-bs-dismiss="modal"' : ''}>
+              Перейти к полному разбору
+            </a>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const booksArray = Object.values(BOOKS_DATA);
+  const catalogGrid = document.getElementById('catalog-grid');
+  const modalsContainer = document.getElementById('modals-container');
+  const homePopularGrid = document.getElementById('home-popular-grid');
+  const homeModalsContainer = document.getElementById('home-modals-container');
+  const detailTitle = document.getElementById('detail-title');
+
+  // 1. Отрисовка 3 популярных книг на главной странице (index.html)
+  if (homePopularGrid && homeModalsContainer) {
+    const popularBooks = booksArray.slice(0, 3);
+    homePopularGrid.innerHTML = popularBooks.map((b, i) => createBookCardHtml(b, i, false)).join('');
+    homeModalsContainer.innerHTML = popularBooks.map((b, i) => createBookModalHtml(b, i, false)).join('');
   }
 
-  // 2. Функция отображения полного разбора выбранной книги
-  function renderBook(bookKey) {
+  // 2. Отрисовка всех 9 книг в каталоге (catalog.html)
+  if (catalogGrid && modalsContainer) {
+    catalogGrid.innerHTML = booksArray.map((b, i) => createBookCardHtml(b, i, true)).join('');
+    modalsContainer.innerHTML = booksArray.map((b, i) => createBookModalHtml(b, i, true)).join('');
+  }
+
+  // 3. Обработка кликов по кнопкам «В избранное» (делегирование событий)
+  document.body.addEventListener('click', (e) => {
+    const favBtn = e.target.closest('.fav-btn');
+    if (favBtn && favBtn.dataset.book) {
+      toggleFavorite(favBtn.dataset.book, favBtn);
+      renderProfilePage();
+    }
+  });
+
+  // 4. Отрисовка полного разбора выбранной книги с анимацией перелистывания страницы (@keyframes pageTurn)
+  function renderBook(bookKey, triggerAnimation = true) {
     const book = BOOKS_DATA[bookKey] || BOOKS_DATA.dostoevsky;
     if (!detailTitle) return;
+
+    const analysisCard = document.getElementById('book-analysis-card');
+    if (analysisCard && triggerAnimation) {
+      analysisCard.classList.remove('page-turn-active');
+      void analysisCard.offsetWidth;
+      analysisCard.classList.add('page-turn-active');
+    }
 
     detailTitle.textContent = book.title;
     document.getElementById('detail-badge').textContent = book.badge;
@@ -389,6 +493,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('detail-moral').innerHTML = book.moral;
     document.getElementById('detail-image').src = book.image;
     document.getElementById('detail-image').alt = `Форзац книги ${book.title}`;
+
+    const detailFavBtn = document.getElementById('detail-fav-btn');
+    if (detailFavBtn) {
+      detailFavBtn.dataset.book = book.key;
+    }
+
     const modalBookEl = document.getElementById('modal-current-book');
     if (modalBookEl) modalBookEl.textContent = book.title;
 
@@ -417,43 +527,233 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    bookSwitchBtns.forEach((b) => {
-      if (b.dataset.book === bookKey) {
-        b.classList.replace('btn-outline-primary', 'btn-primary');
-      } else {
-        b.classList.replace('btn-primary', 'btn-outline-primary');
-      }
-    });
+    updateFavoriteUI();
   }
 
   if (detailTitle) {
     const params = new URLSearchParams(window.location.search);
     const initialBook = params.get('book') || 'dostoevsky';
-    renderBook(initialBook);
+    renderBook(initialBook, false);
 
-    // Переключение по вкладкам в блоке разбора
-    bookSwitchBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
+    document.body.addEventListener('click', (e) => {
+      const btn = e.target.closest('.open-analysis-btn, .modal-to-analysis-btn');
+      if (btn && btn.dataset.book && detailTitle) {
         const key = btn.dataset.book;
-        renderBook(key);
+        renderBook(key, true);
         window.history.replaceState({}, '', `catalog.html?book=${key}#book-analysis-section`);
-      });
-    });
-
-    // Переключение при клике «Читать разбор» в карточках каталога и в модальных окнах
-    document.querySelectorAll('.open-analysis-btn, .modal-to-analysis-btn').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const key = btn.dataset.book;
-        renderBook(key);
         const section = document.getElementById('book-analysis-section');
         if (section) {
-          setTimeout(() => section.scrollIntoView({ behavior: 'smooth' }), 150);
+          setTimeout(() => section.scrollIntoView({ behavior: 'smooth' }), 120);
         }
-      });
+      }
     });
   }
 
-  // 3. Копирование цитат в буфер обмена
+  // 5. Калькулятор времени чтения внутри Базы книг (catalog.html)
+  const calcPreset = document.getElementById('calc-book-preset');
+  const calcPages = document.getElementById('calc-pages');
+  const calcSpeed = document.getElementById('calc-speed');
+  const calcBtn = document.getElementById('calc-btn');
+  const calcResult = document.getElementById('calc-result');
+
+  function updateReadingCalculation() {
+    if (!calcPages || !calcSpeed || !calcResult) return;
+    const pages = Math.max(10, Number(calcPages.value) || 300);
+    const speed = Number(calcSpeed.value) || 40;
+    const originalHours = (pages / speed).toFixed(1);
+    const briefMinutes = Math.max(6, Math.round(pages / 42));
+    const savedPercent = Math.min(99, Math.round((1 - briefMinutes / (pages / speed * 60)) * 100));
+
+    calcResult.innerHTML = `Чтение оригинала (${pages} стр.) займёт около <strong>${originalHours} ч.</strong> Аналитический разбор в нашей базе вы освоите за <strong>${briefMinutes} мин.</strong> (экономия <strong>${savedPercent}%</strong> времени)!`;
+  }
+
+  if (calcPreset && calcPages) {
+    calcPreset.addEventListener('change', () => {
+      calcPages.value = calcPreset.value;
+      updateReadingCalculation();
+    });
+  }
+  if (calcBtn) {
+    calcBtn.addEventListener('click', updateReadingCalculation);
+  }
+
+  // 6. Поиск по каталогу в Базе книг (catalog.html)
+  const catalogSearchInput = document.getElementById('catalog-search-input');
+  const catalogSearchReset = document.getElementById('catalog-search-reset');
+  const catalogSearchStatus = document.getElementById('catalog-search-status');
+
+  if (catalogSearchInput && catalogGrid) {
+    catalogSearchInput.addEventListener('input', () => {
+      const query = catalogSearchInput.value.trim().toLowerCase();
+      const cols = catalogGrid.querySelectorAll('.book-card-col');
+      let visibleCount = 0;
+
+      cols.forEach((col) => {
+        const match =
+          col.dataset.title.includes(query) ||
+          col.dataset.author.includes(query) ||
+          col.dataset.desc.includes(query);
+        col.classList.toggle('d-none', !match);
+        if (match) visibleCount++;
+      });
+
+      if (catalogSearchStatus) {
+        catalogSearchStatus.hidden = !query;
+        catalogSearchStatus.textContent = `Найдено произведений по запросу «${catalogSearchInput.value}»: ${visibleCount} из 9`;
+      }
+    });
+
+    if (catalogSearchReset) {
+      catalogSearchReset.addEventListener('click', () => {
+        catalogSearchInput.value = '';
+        catalogGrid.querySelectorAll('.book-card-col').forEach((col) => col.classList.remove('d-none'));
+        if (catalogSearchStatus) catalogSearchStatus.hidden = true;
+      });
+    }
+  }
+
+  // 7. Глобальный живой поиск в шапке сайта на всех страницах
+  const globalSearchInput = document.getElementById('global-search-input');
+  const globalSearchResults = document.getElementById('global-search-results');
+
+  if (globalSearchInput && globalSearchResults) {
+    globalSearchInput.addEventListener('input', () => {
+      const q = globalSearchInput.value.trim().toLowerCase();
+      if (!q) {
+        globalSearchResults.classList.add('d-none');
+        return;
+      }
+
+      const matches = booksArray.filter(
+        (b) =>
+          b.title.toLowerCase().includes(q) ||
+          b.author.toLowerCase().includes(q) ||
+          b.cardText.toLowerCase().includes(q)
+      );
+
+      if (matches.length === 0) {
+        globalSearchResults.innerHTML = `<div class="p-3 text-muted small">Ничего не найдено по запросу «${globalSearchInput.value}»</div>`;
+      } else {
+        globalSearchResults.innerHTML = matches
+          .map(
+            (b) => `
+          <a href="catalog.html?book=${b.key}#book-analysis-section" class="d-block p-2 px-3 text-decoration-none border-bottom text-dark search-result-item">
+            <div class="fw-bold small">${b.title}</div>
+            <div class="text-muted" style="font-size: 12px;">${b.author} • ${b.shortTag}</div>
+          </a>`
+          )
+          .join('');
+      }
+      globalSearchResults.classList.remove('d-none');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.header-search-wrap')) {
+        globalSearchResults.classList.add('d-none');
+      }
+    });
+  }
+
+  // 8. Отрисовка страницы Личного кабинета и Избранного (profile.html)
+  const favListContainer = document.getElementById('favorites-list-container');
+  const clearFavBtn = document.getElementById('clear-favorites-btn');
+  const profileSavedHours = document.getElementById('profile-saved-hours');
+
+  function renderProfilePage() {
+    if (!favListContainer) return;
+    const favKeys = getFavorites();
+    const favBooks = favKeys.map((k) => BOOKS_DATA[k]).filter(Boolean);
+
+    const totalPages = favBooks.reduce((sum, b) => sum + (b.pagesCount || 300), 0);
+    if (profileSavedHours) {
+      profileSavedHours.textContent = `${Math.round(totalPages / 40)} ч.`;
+    }
+
+    if (favBooks.length === 0) {
+      favListContainer.innerHTML = `
+        <div class="col-12">
+          <div class="p-4 text-center bg-light rounded border">
+            <p class="mb-2 fw-bold">В вашем списке «Избранное» пока нет сохранённых книг.</p>
+            <p class="text-muted small mb-3">Перейдите в базу книг и нажмите кнопку «♥ В избранное» на интересующих вас произведениях.</p>
+            <a href="catalog.html" class="btn btn-primary btn-sm">Перейти в базу книг</a>
+          </div>
+        </div>`;
+      return;
+    }
+
+    favListContainer.innerHTML = favBooks
+      .map(
+        (b) => `
+      <div class="col-12 col-md-6">
+        <div class="card book-card-3d h-100 shadow-sm">
+          <div class="endpaper-wrapper">
+            <span class="endpaper-ribbon"></span>
+            <img src="${b.image}" class="card-img-top" alt="Форзац ${b.title}">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start mb-1">
+              <h3 class="h6 fw-bold mb-0">${b.title}</h3>
+              <span class="badge ${b.badgeClass}">${b.shortTag}</span>
+            </div>
+            <p class="text-muted small mb-2">${b.author}</p>
+            <p class="small text-muted mb-3">${b.cardText}</p>
+            <div class="d-flex gap-2 mt-auto">
+              <a href="catalog.html?book=${b.key}#book-analysis-section" class="btn btn-primary btn-sm flex-grow-1">Открыть разбор</a>
+              <button type="button" class="btn btn-outline-danger btn-sm fav-btn is-favorite" data-book="${b.key}" title="Убрать из избранного">
+                <span class="heart-icon">♥</span> Убрать
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>`
+      )
+      .join('');
+  }
+
+  if (favListContainer) {
+    renderProfilePage();
+    if (clearFavBtn) {
+      clearFavBtn.addEventListener('click', () => {
+        saveFavorites([]);
+        renderProfilePage();
+      });
+    }
+  }
+
+  // Настройки профиля в Личном кабинете
+  const profileForm = document.getElementById('profile-settings-form');
+  const profileNameInput = document.getElementById('profile-name-input');
+  const profileGoalInput = document.getElementById('profile-goal-input');
+  const profileDisplayName = document.getElementById('profile-display-name');
+  const profileDisplayBio = document.getElementById('profile-display-bio');
+  const profileSaveAlert = document.getElementById('profile-save-alert');
+
+  if (profileForm) {
+    const savedName = localStorage.getItem('litbrief_user_name');
+    const savedBio = localStorage.getItem('litbrief_user_bio');
+    if (savedName) {
+      profileNameInput.value = savedName;
+      profileDisplayName.textContent = savedName;
+    }
+    if (savedBio) {
+      profileGoalInput.value = savedBio;
+      profileDisplayBio.textContent = savedBio;
+    }
+
+    profileForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      localStorage.setItem('litbrief_user_name', profileNameInput.value);
+      localStorage.setItem('litbrief_user_bio', profileGoalInput.value);
+      profileDisplayName.textContent = profileNameInput.value;
+      profileDisplayBio.textContent = profileGoalInput.value;
+      if (profileSaveAlert) {
+        profileSaveAlert.hidden = false;
+        setTimeout(() => (profileSaveAlert.hidden = true), 2500);
+      }
+    });
+  }
+
+  // 9. Копирование цитат в буфер обмена
   document.querySelectorAll('.copy-quote-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       const card = btn.closest('.card-body');
@@ -471,15 +771,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Обработка быстрых форм во всплывающих окнах
-  document.querySelectorAll('.modal-quick-order').forEach((form) => {
-    form.addEventListener('submit', (e) => {
+  // 10. Обработка быстрых форм во всплывающих окнах
+  document.body.addEventListener('submit', (e) => {
+    const quickForm = e.target.closest('.modal-quick-order');
+    if (quickForm) {
       e.preventDefault();
-      form.innerHTML = '<div class="alert alert-success mb-0">Заявка принята! PDF-конспект отправлен на указанный E-mail.</div>';
-    });
+      quickForm.innerHTML = '<div class="alert alert-success mb-0">Заявка принята! PDF-конспект отправлен на указанный E-mail.</div>';
+    }
   });
 
-  // 5. Валидация формы предложения разбора на главной странице (index.html)
+  // 11. Валидация формы предложения разбора на главной странице
   const orderForm = document.getElementById('order-form');
   const orderSuccess = document.getElementById('order-success');
 
@@ -496,4 +797,6 @@ document.addEventListener('DOMContentLoaded', () => {
       orderForm.reset();
     });
   }
+
+  updateFavoriteUI();
 });
