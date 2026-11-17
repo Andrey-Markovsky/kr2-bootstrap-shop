@@ -1,5 +1,5 @@
-// Генератор SVG-иллюстрации книжного форзаца (без встроенной ленты, так как лента-ляссе анимируется через CSS)
-function createEndpaperSvg(author, titleLine1, titleLine2, subtitle, year, tom, coverColor) {
+// Генератор SVG-иллюстрации книжного форзаца
+function createEndpaperSvg(author, titleLine1, titleLine2, subtitle, year, tom, coverColor, ribbonColor) {
   const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300' viewBox='0 0 500 300'>
     <rect width='500' height='300' rx='6' fill='${coverColor}'/>
     <rect x='12' y='10' width='236' height='280' fill='#f3ead8'/>
@@ -23,6 +23,7 @@ function createEndpaperSvg(author, titleLine1, titleLine2, subtitle, year, tom, 
     <circle cx='370' cy='218' r='15' fill='none' stroke='#8c6d53' stroke-width='1'/>
     <text x='370' y='222' font-family='Georgia, serif' font-size='10' fill='#5c3a21' text-anchor='middle'>${year}</text>
     <text x='370' y='256' font-family='Georgia, serif' font-size='9' fill='#8c6d53' text-anchor='middle'>АКАДЕМИЧЕСКОЕ ИЗДАНИЕ</text>
+    <path d='M248,10 L255,10 L255,215 L251.5,207 L248,215 Z' fill='${ribbonColor}'/>
   </svg>`;
   return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 }
@@ -41,7 +42,7 @@ const BOOKS_DATA = {
     lead: 'Социально-психологический и философский роман Ф. М. Достоевского о бывшем студенте Родионе Раскольникове, решившем проверить теорию о «праве сильной личности».',
     pages: 'Объём оригинала: 580 стр.',
     moral: '<strong>Главная мысль:</strong> Невозможно построить счастье на пролитой крови; переступая нравственный закон, человек прежде всего разрушает собственную душу.',
-    image: createEndpaperSvg('Ф. М. ДОСТОЕВСКИЙ', 'Преступление', 'и наказание', 'Роман в шести частях', '1866', 'Том I', '#3b1728'),
+    image: createEndpaperSvg('Ф. М. ДОСТОЕВСКИЙ', 'Преступление', 'и наказание', 'Роман в шести частях', '1866', 'Том I', '#3b1728', '#991b1b'),
     table: [
       ['Автор и год публикации', 'Ф. М. Достоевский, 1866 год (журнал «Русский вестник»)'],
       ['Родион Раскольников', 'Главный герой, бывший студент. Автор теории о делении людей на «тварей дрожащих» и «право имеющих»'],
@@ -72,7 +73,7 @@ const BOOKS_DATA = {
     lead: 'Философско-мистический роман М. А. Булгакова, объединяющий визит Воланда в Москву, историю любви Мастера и суд Понтия Пилата над Иешуа.',
     pages: 'Объём оригинала: 480 стр.',
     moral: '<strong>Главная мысль:</strong> «Рукописи не горят» — подлинное творчество, милосердие и преданная любовь сильнее трусости, конформизма и смерти.',
-    image: createEndpaperSvg('М. А. БУЛГАКОВ', 'Мастер', 'и Маргарита', 'Философско-мистический роман', '1940', 'Том II', '#172035'),
+    image: createEndpaperSvg('М. А. БУЛГАКОВ', 'Мастер', 'и Маргарита', 'Философско-мистический роман', '1940', 'Том II', '#172035', '#d97706'),
     table: [
       ['Автор и годы создания', 'М. А. Булгаков, 1928–1940 гг. (опубликован в 1966–1967 гг.)'],
       ['Мастер и Маргарита', 'Автор романа о Понтии Пилате и его возлюбленная, готовая на сделку с Воландом ради спасения Мастера'],
@@ -103,7 +104,7 @@ const BOOKS_DATA = {
     lead: 'Социально-психологический роман И. С. Тургенева об идейном столкновении дворян-либералов 1840-х годов («отцов») и разночинцев 1860-х годов («детей»).',
     pages: 'Объём оригинала: 280 стр.',
     moral: '<strong>Главная мысль:</strong> Жизнь, природа и человеческое чувство всегда шире и сильнее любых радикальных теорий и полного отрицания.',
-    image: createEndpaperSvg('И. С. ТУРГЕНЕВ', 'Отцы', 'и дети', 'Социально-психологический роман', '1862', 'Том III', '#143829'),
+    image: createEndpaperSvg('И. С. ТУРГЕНЕВ', 'Отцы', 'и дети', 'Социально-психологический роман', '1862', 'Том III', '#143829', '#059669'),
     table: [
       ['Автор и год публикации', 'И. С. Тургенев, 1862 год (журнал «Русский вестник»)'],
       ['Евгений Базаров', 'Студент-медик, разночинец, убеждённый нигилист, отрицающий авторитеты, искусство и сентиментальность'],
@@ -134,7 +135,7 @@ const BOOKS_DATA = {
     lead: 'Монументальный роман-эпопея Л. Н. Толстого о судьбах русского дворянства и всего народа в эпоху войн с Наполеоном 1805–1812 годов.',
     pages: 'Объём оригинала: 1300 стр.',
     moral: '<strong>Главная мысль:</strong> Истинное величие человека — в простоте, добре и единении с народом («мысль народная» и «мысль семейная»).',
-    image: createEndpaperSvg('Л. Н. ТОЛСТОЙ', 'Война', 'и мир', 'Роман-эпопея в четырёх томах', '1869', 'Том IV', '#1e2952'),
+    image: createEndpaperSvg('Л. Н. ТОЛСТОЙ', 'Война', 'и мир', 'Роман-эпопея в четырёх томах', '1869', 'Том IV', '#1e2952', '#2563eb'),
     table: [
       ['Автор и годы создания', 'Л. Н. Толстой, 1863–1869 гг.'],
       ['Андрей Болконский', 'Князь, ищущий свой «Тулон» и славу, но открывающий вечную истину под высоким небом Аустерлица'],
@@ -165,7 +166,7 @@ const BOOKS_DATA = {
     lead: 'Первый русский реалистический роман в стихах А. С. Пушкина, названный В. Г. Белинским «энциклопедией русской жизни».',
     pages: 'Объём оригинала: 220 стр.',
     moral: '<strong>Главная мысль:</strong> Эгоизм, скептицизм и оторванность от национальной почвы обрекают одарённого человека на духовную пустоту и одиночество.',
-    image: createEndpaperSvg('А. С. ПУШКИН', 'Евгений', 'Онегин', 'Роман в стихах', '1833', 'Том V', '#2e1042'),
+    image: createEndpaperSvg('А. С. ПУШКИН', 'Евгений', 'Онегин', 'Роман в стихах', '1833', 'Том V', '#2e1042', '#7c3aed'),
     table: [
       ['Автор и годы создания', 'А. С. Пушкин, 1823–1831 гг.'],
       ['Евгений Онегин', 'Молодой петербургский дворянин, подверженный «русской хандре», родоначальник типа «лишнего человека»'],
@@ -196,7 +197,7 @@ const BOOKS_DATA = {
     lead: 'Культовый роман-антиутопия Джорджа Оруэлла об обществе тотальной слежки, манипуляции историей и подавлении человеческой личности.',
     pages: 'Объём оригинала: 320 стр.',
     moral: '<strong>Главная мысль:</strong> Когда власть получает контроль над прошлым, языком и внутренним миром человека, свобода уничтожается изнутри.',
-    image: createEndpaperSvg('ДЖОРДЖ ОРУЭЛЛ', 'Роман-антиутопия', '1984', 'Три части с приложением о Новоязе', '1949', 'Том VI', '#450a0a'),
+    image: createEndpaperSvg('ДЖОРДЖ ОРУЭЛЛ', 'Роман-антиутопия', '1984', 'Три части с приложением о Новоязе', '1949', 'Том VI', '#450a0a', '#dc2626'),
     table: [
       ['Автор и год издания', 'Джордж Оруэлл (Эрик Артур Блэр), 1949 год'],
       ['Уинстон Смит', 'Рядовой сотрудник Министерства правды, пытающийся сохранить память, дневник и личную свободу'],
@@ -227,7 +228,7 @@ const BOOKS_DATA = {
     lead: 'Социально-психологический и философский роман М. Ю. Лермонтова, раскрывающий противоречивую душу офицера Григория Печорина на Кавказе.',
     pages: 'Объём оригинала: 224 стр.',
     moral: '<strong>Главная мысль:</strong> Нерастраченные богатые силы души, лишённые высокой жизненной цели, оборачиваются разрушением для самого человека и окружающих.',
-    image: createEndpaperSvg('М. Ю. ЛЕРМОНТОВ', 'Герой нашего', 'времени', 'Психологический роман в пяти повестях', '1840', 'Том VII', '#1e3a3a'),
+    image: createEndpaperSvg('М. Ю. ЛЕРМОНТОВ', 'Герой нашего', 'времени', 'Психологический роман в пяти повестях', '1840', 'Том VII', '#1e3a3a', '#0d9488'),
     table: [
       ['Автор и год издания', 'М. Ю. Лермонтов, 1840 год'],
       ['Григорий Александрович Печорин', 'Молодой офицер, яркий представитель поколения 1830-х годов, наделённый острым умом, но страдающий от душевной охлаждённости'],
@@ -258,7 +259,7 @@ const BOOKS_DATA = {
     lead: 'Бессмертная поэма в прозе Н. В. Гоголя, в которой через путешествие предприимчивого Чичикова показана широкая панорама России и духовного омертвения.',
     pages: 'Объём оригинала: 352 стр.',
     moral: '<strong>Главная мысль:</strong> Страшнее физической смерти — духовное омертвение человека, разменявшего живую душу на мелочную корысть и пошлость.',
-    image: createEndpaperSvg('Н. В. ГОГОЛЬ', 'Похождения Чичикова,', 'или Мёртвые души', 'Поэма в прозе', '1842', 'Том VIII', '#422006'),
+    image: createEndpaperSvg('Н. В. ГОГОЛЬ', 'Похождения Чичикова,', 'или Мёртвые души', 'Поэма в прозе', '1842', 'Том VIII', '#422006', '#ca8a04'),
     table: [
       ['Автор и год издания', 'Н. В. Гоголь, 1842 год (первый том)'],
       ['Павел Иванович Чичиков', 'Коллежский советник в отставке, «приобретатель», задумавший заложить в Опекунский совет фиктивные ревизские души'],
@@ -289,7 +290,7 @@ const BOOKS_DATA = {
     lead: 'Лирическая комедия в четырёх действиях А. П. Чехова, отразившая смену исторических эпох: уход дворянских гнёзд в прошлое и приход деловых людей.',
     pages: 'Объём оригинала: 96 стр.',
     moral: '<strong>Главная мысль:</strong> Время неумолимо сметает тех, кто живёт одними воспоминаниями, но за разрушением старого мира открывается надежда на созидательный труд будущего.',
-    image: createEndpaperSvg('А. П. ЧЕХОВ', 'Вишнёвый', 'сад', 'Комедия в четырёх действиях', '1903', 'Том IX', '#3f1d38'),
+    image: createEndpaperSvg('А. П. ЧЕХОВ', 'Вишнёвый', 'сад', 'Комедия в четырёх действиях', '1903', 'Том IX', '#3f1d38', '#db2777'),
     table: [
       ['Автор и год создания', 'А. П. Чехов, 1903 год (премьера в МХТ в январе 1904 г.)'],
       ['Любовь Андреевна Раневская и Гаев', 'Владельцы имения, живущие прошлым: добрая, но легкомысленная и непрактичная Раневская и её брат Леонид Гаев'],
@@ -310,7 +311,7 @@ const BOOKS_DATA = {
 };
 
 // ==========================================================================
-// УПРАВЛЕНИЕ ИЗБРАННЫМ (localStorage)
+// УПРАВЛЕНИЕ ИЗБРАННЫМ + АНИМАЦИЯ ВЫЛЕТА СЕРДЕЧЕК
 // ==========================================================================
 const FAV_STORAGE_KEY = 'litbrief_favorites';
 
@@ -327,6 +328,31 @@ function saveFavorites(list) {
   updateFavoriteUI();
 }
 
+function spawnFlyingHearts(btnEl) {
+  const trajectories = [
+    { tx: '-34px', ty: '-42px', rot: '-25deg' },
+    { tx: '0px', ty: '-52px', rot: '5deg' },
+    { tx: '34px', ty: '-40px', rot: '28deg' },
+    { tx: '-44px', ty: '-14px', rot: '-40deg' },
+    { tx: '44px', ty: '-12px', rot: '35deg' },
+    { tx: '-24px', ty: '28px', rot: '-18deg' },
+    { tx: '26px', ty: '26px', rot: '22deg' },
+    { tx: '-14px', ty: '-48px', rot: '-12deg' },
+    { tx: '18px', ty: '-46px', rot: '16deg' }
+  ];
+
+  trajectories.forEach((t) => {
+    const span = document.createElement('span');
+    span.className = 'flying-heart';
+    span.textContent = '♥';
+    span.style.setProperty('--tx', t.tx);
+    span.style.setProperty('--ty', t.ty);
+    span.style.setProperty('--rot', t.rot);
+    btnEl.appendChild(span);
+    setTimeout(() => span.remove(), 950);
+  });
+}
+
 function toggleFavorite(bookKey, btnEl) {
   const favs = getFavorites();
   const idx = favs.indexOf(bookKey);
@@ -341,30 +367,20 @@ function toggleFavorite(bookKey, btnEl) {
     btnEl.classList.remove('animating');
     void btnEl.offsetWidth;
     btnEl.classList.add('animating');
+    spawnFlyingHearts(btnEl);
   }
 }
 
 function updateFavoriteUI() {
   const favs = getFavorites();
-
-  // Обновляем бейджи счётчика в шапке и в профиле
-  document.querySelectorAll('.fav-count-badge').forEach((badge) => {
-    badge.textContent = favs.length;
-  });
-
-  // Обновляем состояние всех кнопок Избранного
   document.querySelectorAll('.fav-btn').forEach((btn) => {
     const key = btn.dataset.book;
     const isFav = favs.includes(key);
     btn.classList.toggle('is-favorite', isFav);
-    const textSpan = btn.querySelector('.fav-text');
-    if (textSpan) {
-      textSpan.textContent = isFav ? 'В избранном' : 'В избранное';
-    }
   });
 }
 
-// Карточка книги с 3D-форзацем, движущейся закладкой-ляссе и кнопкой Избранного
+// Карточка книги: сердечко справа на одном уровне с кнопками «Читать разбор» и «Краткая справка»
 function createBookCardHtml(b, index, isCatalogPage) {
   const favs = getFavorites();
   const isFav = favs.includes(b.key);
@@ -373,12 +389,9 @@ function createBookCardHtml(b, index, isCatalogPage) {
     : `catalog.html?book=${b.key}#book-analysis-section`;
 
   return `
-    <div class="col-12 col-md-6 col-lg-4 book-card-col" data-title="${b.title.toLowerCase()}" data-author="${b.author.toLowerCase()}" data-desc="${b.cardText.toLowerCase()}">
-      <article class="card book-card-3d h-100 shadow-sm">
-        <div class="endpaper-wrapper">
-          <span class="endpaper-ribbon"></span>
-          <img src="${b.image}" class="card-img-top" alt="Форзац книги ${b.title}">
-        </div>
+    <div class="col-12 col-md-6 col-lg-4 book-card-col">
+      <article class="card h-100 shadow-sm">
+        <img src="${b.image}" class="card-img-top" alt="Форзац книги ${b.title}">
         <div class="card-body d-flex flex-column">
           <div class="d-flex justify-content-between align-items-start mb-2">
             <h2 class="card-title h5 mb-0">${b.title}</h2>
@@ -386,18 +399,22 @@ function createBookCardHtml(b, index, isCatalogPage) {
           </div>
           <p class="text-muted small mb-2">${b.author} • ${b.epoch}</p>
           <p class="card-text text-muted">${b.cardText}</p>
-          <div class="d-flex justify-content-between align-items-center mt-auto mb-3">
-            <span class="fw-bold small">${b.pages}</span>
-            <button type="button" class="btn btn-sm btn-outline-danger fav-btn ${isFav ? 'is-favorite' : ''}" data-book="${b.key}" title="Добавить в избранное">
-              <span class="heart-icon">♥</span> <span class="fav-text">${isFav ? 'В избранном' : 'В избранное'}</span>
-            </button>
-          </div>
-          <div class="d-flex gap-2">
+          <p class="fw-bold fs-6 mt-auto mb-3">${b.pages}</p>
+          <div class="d-flex align-items-center gap-2 card-actions-row">
             <a class="btn btn-primary open-analysis-btn" href="${analysisLink}" data-book="${b.key}">
               Читать разбор
             </a>
             <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#bookModal${index + 1}">
               Краткая справка
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-danger fav-btn ms-auto ${isFav ? 'is-favorite' : ''}"
+              data-book="${b.key}"
+              aria-label="Добавить в избранное"
+              title="В избранное"
+            >
+              <span class="heart-icon">♥</span>
             </button>
           </div>
         </div>
@@ -451,20 +468,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const homeModalsContainer = document.getElementById('home-modals-container');
   const detailTitle = document.getElementById('detail-title');
 
-  // 1. Отрисовка 3 популярных книг на главной странице (index.html)
+  // 1. Отрисовка популярных карточек на главной странице
   if (homePopularGrid && homeModalsContainer) {
     const popularBooks = booksArray.slice(0, 3);
     homePopularGrid.innerHTML = popularBooks.map((b, i) => createBookCardHtml(b, i, false)).join('');
     homeModalsContainer.innerHTML = popularBooks.map((b, i) => createBookModalHtml(b, i, false)).join('');
   }
 
-  // 2. Отрисовка всех 9 книг в каталоге (catalog.html)
+  // 2. Отрисовка каталога в Базе книг
   if (catalogGrid && modalsContainer) {
     catalogGrid.innerHTML = booksArray.map((b, i) => createBookCardHtml(b, i, true)).join('');
     modalsContainer.innerHTML = booksArray.map((b, i) => createBookModalHtml(b, i, true)).join('');
   }
 
-  // 3. Обработка кликов по кнопкам «В избранное» (делегирование событий)
+  // 3. Обработка кликов по кнопке «Избранное»
   document.body.addEventListener('click', (e) => {
     const favBtn = e.target.closest('.fav-btn');
     if (favBtn && favBtn.dataset.book) {
@@ -473,16 +490,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 4. Отрисовка полного разбора выбранной книги с анимацией перелистывания страницы (@keyframes pageTurn)
-  function renderBook(bookKey, triggerAnimation = true) {
+  // 4. Отрисовка полного разбора выбранной книги + 3D-анимация открывания закрытой книги
+  function renderBook(bookKey, playBookOpenAnimation = false) {
     const book = BOOKS_DATA[bookKey] || BOOKS_DATA.dostoevsky;
     if (!detailTitle) return;
 
-    const analysisCard = document.getElementById('book-analysis-card');
-    if (analysisCard && triggerAnimation) {
-      analysisCard.classList.remove('page-turn-active');
-      void analysisCard.offsetWidth;
-      analysisCard.classList.add('page-turn-active');
+    const stage = document.getElementById('book-open-stage');
+    const overlayAuthor = document.getElementById('cover-overlay-author');
+    const overlayTitle = document.getElementById('cover-overlay-title');
+
+    if (overlayAuthor && overlayTitle) {
+      overlayAuthor.textContent = book.author.toUpperCase();
+      overlayTitle.textContent = book.title;
+    }
+
+    if (stage && playBookOpenAnimation) {
+      stage.classList.remove('is-opening');
+      void stage.offsetWidth;
+      stage.classList.add('is-opening');
     }
 
     detailTitle.textContent = book.title;
@@ -533,38 +558,86 @@ document.addEventListener('DOMContentLoaded', () => {
   if (detailTitle) {
     const params = new URLSearchParams(window.location.search);
     const initialBook = params.get('book') || 'dostoevsky';
-    renderBook(initialBook, false);
+    const shouldAnimateOnLoad = window.location.hash === '#book-analysis-section' || params.has('book');
+    renderBook(initialBook, shouldAnimateOnLoad);
 
     document.body.addEventListener('click', (e) => {
       const btn = e.target.closest('.open-analysis-btn, .modal-to-analysis-btn');
       if (btn && btn.dataset.book && detailTitle) {
+        e.preventDefault();
         const key = btn.dataset.book;
-        renderBook(key, true);
-        window.history.replaceState({}, '', `catalog.html?book=${key}#book-analysis-section`);
         const section = document.getElementById('book-analysis-section');
         if (section) {
-          setTimeout(() => section.scrollIntoView({ behavior: 'smooth' }), 120);
+          section.scrollIntoView({ behavior: 'smooth' });
         }
+        renderBook(key, true);
+        window.history.replaceState({}, '', `catalog.html?book=${key}#book-analysis-section`);
       }
     });
   }
 
-  // 5. Калькулятор времени чтения внутри Базы книг (catalog.html)
+  // 5. Анимированный расчёт времени чтения (бегущие цифры + вращение песочных часов + шкалы сравнения)
   const calcPreset = document.getElementById('calc-book-preset');
   const calcPages = document.getElementById('calc-pages');
   const calcSpeed = document.getElementById('calc-speed');
   const calcBtn = document.getElementById('calc-btn');
-  const calcResult = document.getElementById('calc-result');
+  const hourglassIcon = document.getElementById('calc-hourglass');
+
+  function animateValue(el, start, end, duration, suffix, isDecimal = false) {
+    if (!el) return;
+    const startTime = performance.now();
+    function step(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = start + (end - start) * eased;
+      el.textContent = `${isDecimal ? current.toFixed(1) : Math.round(current)}${suffix}`;
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    }
+    requestAnimationFrame(step);
+  }
 
   function updateReadingCalculation() {
-    if (!calcPages || !calcSpeed || !calcResult) return;
+    if (!calcPages || !calcSpeed) return;
     const pages = Math.max(10, Number(calcPages.value) || 300);
     const speed = Number(calcSpeed.value) || 40;
-    const originalHours = (pages / speed).toFixed(1);
+    const originalHours = pages / speed;
     const briefMinutes = Math.max(6, Math.round(pages / 42));
-    const savedPercent = Math.min(99, Math.round((1 - briefMinutes / (pages / speed * 60)) * 100));
+    const savedPercent = Math.min(99, Math.round((1 - briefMinutes / (originalHours * 60)) * 100));
 
-    calcResult.innerHTML = `Чтение оригинала (${pages} стр.) займёт около <strong>${originalHours} ч.</strong> Аналитический разбор в нашей базе вы освоите за <strong>${briefMinutes} мин.</strong> (экономия <strong>${savedPercent}%</strong> времени)!`;
+    if (hourglassIcon) {
+      hourglassIcon.classList.remove('spinning');
+      void hourglassIcon.offsetWidth;
+      hourglassIcon.classList.add('spinning');
+    }
+
+    const numOrig = document.getElementById('calc-num-orig');
+    const numBrief = document.getElementById('calc-num-brief');
+    const numSave = document.getElementById('calc-num-save');
+    const labelPages = document.getElementById('calc-label-pages');
+    const barOrigLabel = document.getElementById('calc-bar-orig-label');
+    const barBriefLabel = document.getElementById('calc-bar-brief-label');
+    const barOrig = document.getElementById('calc-bar-orig');
+    const barBrief = document.getElementById('calc-bar-brief');
+
+    if (labelPages) labelPages.textContent = pages;
+    if (barOrigLabel) barOrigLabel.textContent = `${originalHours.toFixed(1)} ч.`;
+    if (barBriefLabel) barBriefLabel.textContent = `${briefMinutes} мин.`;
+
+    animateValue(numOrig, 0, originalHours, 900, ' ч.', true);
+    animateValue(numBrief, 0, briefMinutes, 900, ' мин.', false);
+    animateValue(numSave, 0, savedPercent, 900, '%', false);
+
+    if (barOrig && barBrief) {
+      barOrig.style.width = '0%';
+      barBrief.style.width = '0%';
+      setTimeout(() => {
+        barOrig.style.width = '100%';
+        const ratioWidth = Math.max(5, Math.min(35, Math.round((briefMinutes / (originalHours * 60)) * 300)));
+        barBrief.style.width = `${ratioWidth}%`;
+      }, 60);
+    }
   }
 
   if (calcPreset && calcPages) {
@@ -577,42 +650,7 @@ document.addEventListener('DOMContentLoaded', () => {
     calcBtn.addEventListener('click', updateReadingCalculation);
   }
 
-  // 6. Поиск по каталогу в Базе книг (catalog.html)
-  const catalogSearchInput = document.getElementById('catalog-search-input');
-  const catalogSearchReset = document.getElementById('catalog-search-reset');
-  const catalogSearchStatus = document.getElementById('catalog-search-status');
-
-  if (catalogSearchInput && catalogGrid) {
-    catalogSearchInput.addEventListener('input', () => {
-      const query = catalogSearchInput.value.trim().toLowerCase();
-      const cols = catalogGrid.querySelectorAll('.book-card-col');
-      let visibleCount = 0;
-
-      cols.forEach((col) => {
-        const match =
-          col.dataset.title.includes(query) ||
-          col.dataset.author.includes(query) ||
-          col.dataset.desc.includes(query);
-        col.classList.toggle('d-none', !match);
-        if (match) visibleCount++;
-      });
-
-      if (catalogSearchStatus) {
-        catalogSearchStatus.hidden = !query;
-        catalogSearchStatus.textContent = `Найдено произведений по запросу «${catalogSearchInput.value}»: ${visibleCount} из 9`;
-      }
-    });
-
-    if (catalogSearchReset) {
-      catalogSearchReset.addEventListener('click', () => {
-        catalogSearchInput.value = '';
-        catalogGrid.querySelectorAll('.book-card-col').forEach((col) => col.classList.remove('d-none'));
-        if (catalogSearchStatus) catalogSearchStatus.hidden = true;
-      });
-    }
-  }
-
-  // 7. Глобальный живой поиск в шапке сайта на всех страницах
+  // 6. Глобальный живой поиск в шапке сайта на всех страницах
   const globalSearchInput = document.getElementById('global-search-input');
   const globalSearchResults = document.getElementById('global-search-results');
 
@@ -654,27 +692,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 8. Отрисовка страницы Личного кабинета и Избранного (profile.html)
+  // 7. Отрисовка страницы Личного кабинета и Избранного (profile.html)
   const favListContainer = document.getElementById('favorites-list-container');
   const clearFavBtn = document.getElementById('clear-favorites-btn');
-  const profileSavedHours = document.getElementById('profile-saved-hours');
 
   function renderProfilePage() {
     if (!favListContainer) return;
     const favKeys = getFavorites();
     const favBooks = favKeys.map((k) => BOOKS_DATA[k]).filter(Boolean);
 
-    const totalPages = favBooks.reduce((sum, b) => sum + (b.pagesCount || 300), 0);
-    if (profileSavedHours) {
-      profileSavedHours.textContent = `${Math.round(totalPages / 40)} ч.`;
-    }
-
     if (favBooks.length === 0) {
       favListContainer.innerHTML = `
         <div class="col-12">
           <div class="p-4 text-center bg-light rounded border">
             <p class="mb-2 fw-bold">В вашем списке «Избранное» пока нет сохранённых книг.</p>
-            <p class="text-muted small mb-3">Перейдите в базу книг и нажмите кнопку «♥ В избранное» на интересующих вас произведениях.</p>
+            <p class="text-muted small mb-3">Перейдите в базу книг и нажмите на значок сердечка на карточке интересующего произведения.</p>
             <a href="catalog.html" class="btn btn-primary btn-sm">Перейти в базу книг</a>
           </div>
         </div>`;
@@ -685,11 +717,8 @@ document.addEventListener('DOMContentLoaded', () => {
       .map(
         (b) => `
       <div class="col-12 col-md-6">
-        <div class="card book-card-3d h-100 shadow-sm">
-          <div class="endpaper-wrapper">
-            <span class="endpaper-ribbon"></span>
-            <img src="${b.image}" class="card-img-top" alt="Форзац ${b.title}">
-          </div>
+        <div class="card h-100 shadow-sm">
+          <img src="${b.image}" class="card-img-top" alt="Форзац ${b.title}">
           <div class="card-body d-flex flex-column">
             <div class="d-flex justify-content-between align-items-start mb-1">
               <h3 class="h6 fw-bold mb-0">${b.title}</h3>
@@ -697,10 +726,10 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <p class="text-muted small mb-2">${b.author}</p>
             <p class="small text-muted mb-3">${b.cardText}</p>
-            <div class="d-flex gap-2 mt-auto">
-              <a href="catalog.html?book=${b.key}#book-analysis-section" class="btn btn-primary btn-sm flex-grow-1">Открыть разбор</a>
-              <button type="button" class="btn btn-outline-danger btn-sm fav-btn is-favorite" data-book="${b.key}" title="Убрать из избранного">
-                <span class="heart-icon">♥</span> Убрать
+            <div class="d-flex align-items-center gap-2 mt-auto">
+              <a href="catalog.html?book=${b.key}#book-analysis-section" class="btn btn-primary btn-sm flex-grow-1">Читать разбор</a>
+              <button type="button" class="btn btn-outline-danger fav-btn is-favorite ms-auto" data-book="${b.key}" title="Убрать из избранного">
+                <span class="heart-icon">♥</span>
               </button>
             </div>
           </div>
@@ -753,7 +782,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 9. Копирование цитат в буфер обмена
+  // 8. Копирование цитат в буфер обмена
   document.querySelectorAll('.copy-quote-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       const card = btn.closest('.card-body');
@@ -771,7 +800,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 10. Обработка быстрых форм во всплывающих окнах
+  // 9. Обработка быстрых форм во всплывающих окнах
   document.body.addEventListener('submit', (e) => {
     const quickForm = e.target.closest('.modal-quick-order');
     if (quickForm) {
@@ -780,7 +809,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 11. Валидация формы предложения разбора на главной странице
+  // 10. Валидация формы предложения разбора на главной странице
   const orderForm = document.getElementById('order-form');
   const orderSuccess = document.getElementById('order-success');
 

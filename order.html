@@ -27,24 +27,21 @@
             <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
           </ul>
 
-          <!-- БЛОК ПОИСКА ПО САЙТУ -->
+          <!-- Белый поисковик по сайту -->
           <div class="header-search-wrap me-lg-3 my-2 my-lg-0">
             <input
               type="search"
               id="global-search-input"
-              class="form-control form-control-sm bg-secondary bg-opacity-25 text-white border-secondary"
-              placeholder="🔍 Поиск книги или автора..."
+              class="form-control form-control-sm header-search-input"
+              placeholder="Поиск книги или автора..."
               aria-label="Поиск книги или автора"
               autocomplete="off"
             >
             <div id="global-search-results" class="search-results-dropdown d-none"></div>
           </div>
-          <!-- КОНЕЦ БЛОКА ПОИСКА -->
 
           <div class="d-flex flex-wrap gap-2 align-items-center">
-            <a class="btn btn-outline-light btn-sm" href="profile.html">
-              ♥ Личный кабинет <span class="badge bg-danger ms-1 fav-count-badge">0</span>
-            </a>
+            <a class="btn btn-outline-light btn-sm" href="profile.html">Личный кабинет</a>
             <a class="btn btn-primary btn-sm" href="index.html#propose-form">Предложить разбор</a>
           </div>
         </div>
@@ -154,6 +151,50 @@
         </table>
       </div>
     </section>
+
+    <section class="mb-4">
+      <h2 class="h3 fw-bold mb-3">Вопросы о работе редакции и материалах</h2>
+      <div class="accordion shadow-sm" id="aboutAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#aboutFaq1" aria-expanded="true" aria-controls="aboutFaq1">
+              Кто составляет пересказы и аналитические карточки для портала?
+            </button>
+          </h3>
+          <div id="aboutFaq1" class="accordion-collapse collapse show" data-bs-parent="#aboutAccordion">
+            <div class="accordion-body">
+              Над материалами работает профильная редакционная коллегия, состоящая из филологов, преподавателей литературы и редакторов. Каждый разбор проходит двухэтапную проверку: на фактическую точность пересказа сюжета и на полноту раскрытия авторского замысла.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aboutFaq2" aria-expanded="false" aria-controls="aboutFaq2">
+              Чем аналитический разбор LitBrief отличается от обычного краткого содержания?
+            </button>
+          </h3>
+          <div id="aboutFaq2" class="accordion-collapse collapse" data-bs-parent="#aboutAccordion">
+            <div class="accordion-body">
+              Обычный пересказ фиксирует только внешнюю цепочку событий. В материалах LitBrief события неразрывно связаны с внутренней мотивацией героев, символикой деталей, композиционными приёмами автора и историческим контекстом эпохи.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aboutFaq3" aria-expanded="false" aria-controls="aboutFaq3">
+              Как предложить книгу для добавления в базу портала?
+            </button>
+          </h3>
+          <div id="aboutFaq3" class="accordion-collapse collapse" data-bs-parent="#aboutAccordion">
+            <div class="accordion-body">
+              Вы можете оставить заявку через форму предложения разбора на главной странице сайта. Редакция еженедельно формирует план новых публикаций на основе запросов читателей.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer bg-dark text-white pt-5 pb-4 mt-5">
@@ -169,8 +210,8 @@
           <h2 class="h6 fw-bold text-uppercase mb-3">Навигация</h2>
           <ul class="list-unstyled small mb-0">
             <li class="mb-2"><a class="text-secondary text-decoration-none" href="index.html">Главная страница</a></li>
-            <li class="mb-2"><a class="text-secondary text-decoration-none" href="catalog.html">База книг (Каталог и разборы)</a></li>
-            <li class="mb-2"><a class="text-secondary text-decoration-none" href="profile.html">Личный кабинет и Избранное</a></li>
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="catalog.html">База книг</a></li>
+            <li class="mb-2"><a class="text-secondary text-decoration-none" href="profile.html">Личный кабинет</a></li>
             <li class="mb-2"><a class="text-secondary text-decoration-none" href="order.html">О проекте</a></li>
             <li><a class="text-secondary text-decoration-none" href="contacts.html">Контакты редакции</a></li>
           </ul>
