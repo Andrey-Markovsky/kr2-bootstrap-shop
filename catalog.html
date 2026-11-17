@@ -68,7 +68,7 @@
     <!-- Сетка книг -->
     <div class="row g-4 mb-5" id="catalog-grid"></div>
 
-    <!-- КАЛЬКУЛЯТОР ВРЕМЕНИ ЧТЕНИЯ (ручной ввод скорости + готовые пресеты + плавная анимация) -->
+    <!-- КАЛЬКУЛЯТОР ВРЕМЕНИ ЧТЕНИЯ (фиксированный объём книги + выбор/ввод скорости чтения) -->
     <section id="reading-calc-section" class="my-5 pt-2">
       <div class="card border-primary shadow-sm">
         <div class="card-header bg-primary text-white py-3 d-flex justify-content-between align-items-center">
@@ -78,27 +78,34 @@
         </div>
         <div class="card-body p-4">
           <p class="text-muted mb-3">
-            Выберите произведение из списка, укажите объём страниц и введите собственную скорость чтения (или выберите одно из заготовленных значений ниже).
+            Выберите произведение из списка (объём страниц устанавливается автоматически по академическому изданию) и укажите вашу скорость чтения.
           </p>
           <form class="row g-3 align-items-start mb-4" onsubmit="return false;">
             <div class="col-12 col-lg-4">
               <label for="calc-book-preset" class="form-label fw-semibold">Выбрать книгу из базы</label>
               <select id="calc-book-preset" class="form-select">
-                <option value="580" selected>Ф. М. Достоевский — Преступление и наказание (580 стр.)</option>
-                <option value="480">М. А. Булгаков — Мастер и Маргарита (480 стр.)</option>
-                <option value="280">И. С. Тургенев — Отцы и дети (280 стр.)</option>
-                <option value="1300">Л. Н. Толстой — Война и мир (1300 стр.)</option>
-                <option value="220">А. С. Пушкин — Евгений Онегин (220 стр.)</option>
-                <option value="320">Дж. Оруэлл — 1984 (320 стр.)</option>
-                <option value="224">М. Ю. Лермонтов — Герой нашего времени (224 стр.)</option>
-                <option value="352">Н. В. Гоголь — Мёртвые души (352 стр.)</option>
-                <option value="96">А. П. Чехов — Вишнёвый сад (96 стр.)</option>
+                <option value="dostoevsky" selected>Ф. М. Достоевский — Преступление и наказание</option>
+                <option value="bulgakov">М. А. Булгаков — Мастер и Маргарита</option>
+                <option value="turgenev">И. С. Тургенев — Отцы и дети</option>
+                <option value="tolstoy">Л. Н. Толстой — Война и мир</option>
+                <option value="pushkin">А. С. Пушкин — Евгений Онегин</option>
+                <option value="orwell">Дж. Оруэлл — 1984</option>
+                <option value="lermontov">М. Ю. Лермонтов — Герой нашего времени</option>
+                <option value="gogol">Н. В. Гоголь — Мёртвые души</option>
+                <option value="chekhov">А. П. Чехов — Вишнёвый сад</option>
               </select>
             </div>
 
             <div class="col-12 col-sm-6 col-lg-2">
-              <label for="calc-pages" class="form-label fw-semibold">Объём (страниц)</label>
-              <input type="number" id="calc-pages" class="form-control" value="580" min="10" max="5000">
+              <label for="calc-pages" class="form-label fw-semibold">Объём издания</label>
+              <input
+                type="text"
+                id="calc-pages"
+                class="form-control bg-light fw-bold text-secondary"
+                value="580 стр."
+                readonly
+                title="Объём страниц фиксирован и зависит от выбранного произведения"
+              >
             </div>
 
             <div class="col-12 col-sm-6 col-lg-4">
@@ -108,8 +115,8 @@
                 id="calc-speed"
                 class="form-control"
                 value="40"
-                min="5"
-                max="300"
+                min="10"
+                max="250"
                 placeholder="Введите скорость (стр./ч)"
               >
               <div class="d-flex flex-wrap align-items-center gap-1 mt-2">
@@ -138,13 +145,13 @@
               <div class="col-12 col-md-4">
                 <div class="p-3 bg-white rounded border">
                   <div class="text-muted small">Разбор на LitBrief</div>
-                  <div class="fs-3 fw-bold text-success" id="calc-num-brief" data-val="14">14 мин.</div>
+                  <div class="fs-3 fw-bold text-success" id="calc-num-brief" data-val="12">12 мин.</div>
                 </div>
               </div>
               <div class="col-12 col-md-4">
                 <div class="p-3 bg-white rounded border">
                   <div class="text-muted small">Экономия времени</div>
-                  <div class="fs-3 fw-bold text-primary" id="calc-num-save" data-val="98">98%</div>
+                  <div class="fs-3 fw-bold text-primary" id="calc-num-save" data-val="14.3">14.3 ч.</div>
                 </div>
               </div>
             </div>
@@ -162,7 +169,7 @@
             <div>
               <div class="d-flex justify-content-between small fw-bold mb-1">
                 <span>Структурированный разбор LitBrief</span>
-                <span class="text-success" id="calc-bar-brief-label">14 мин.</span>
+                <span class="text-success" id="calc-bar-brief-label">12 мин.</span>
               </div>
               <div class="calc-bar-track">
                 <div id="calc-bar-brief" class="calc-bar-fill calc-bar-brief-color" style="width: 10%;"></div>
@@ -175,7 +182,7 @@
 
     <hr class="my-5">
 
-    <!-- ПОЛНЫЙ РАЗБОР ВЫБРАННОЙ КНИГИ (обложка открывается строго в рамке самой книги слева) -->
+    <!-- ПОЛНЫЙ РАЗБОР ВЫБРАННОЙ КНИГИ -->
     <section id="book-analysis-section" class="pt-2">
       <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-2">
         <h2 class="h3 fw-bold mb-0">📖 Полный разбор и поглавный анализ произведения</h2>
@@ -183,10 +190,10 @@
       </div>
 
       <div class="row g-4 align-items-center bg-white p-4 rounded shadow-sm border">
-        <!-- Левая колонка: Книга с открывающейся обложкой строго по размеру форзаца -->
+        <!-- Левая колонка: Книга с открывающейся обложкой -->
         <div class="col-12 col-lg-5">
           <div id="book-open-stage" class="book-frame-stage shadow-sm">
-            <!-- Закрытая обложка книги (открывается только поверх самой книги) -->
+            <!-- Закрытая обложка книги -->
             <div class="book-cover-overlay" id="book-cover-overlay" aria-hidden="true">
               <div class="book-cover-front">
                 <div class="text-uppercase small mb-2" style="letter-spacing: 2px; color: #fbbf24;" id="cover-overlay-author">Ф. М. ДОСТОЕВСКИЙ</div>

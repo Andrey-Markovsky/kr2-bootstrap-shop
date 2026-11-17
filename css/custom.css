@@ -143,11 +143,11 @@ main {
 }
 
 /* ==========================================================================
-   АНИМАЦИЯ 2: Открывание обложки строго внутри рамки книги
+   АНИМАЦИЯ 2: Закрытая книга при прокрутке -> Медленное открывание обложки
    ========================================================================== */
 .book-frame-stage {
   position: relative;
-  perspective: 1200px;
+  perspective: 1300px;
   border-radius: 8px;
   overflow: hidden;
   background-color: #2b1810;
@@ -163,12 +163,24 @@ main {
   will-change: transform, opacity;
 }
 
+/* Пока страница спускается к книге — обложка полностью закрыта */
+.book-frame-stage.is-closed .book-cover-overlay {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+.book-frame-stage.is-closed #detail-image {
+  filter: brightness(0.45);
+  transform: scale(0.96);
+}
+
+/* Когда прокрутка завершилась — книга плавно и неспешно открывается */
 .book-frame-stage.is-opening .book-cover-overlay {
-  animation: openBookCoverLocal 1.65s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation: openBookCoverSlow 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .book-frame-stage.is-opening #detail-image {
-  animation: revealEndpaperLocal 1.65s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation: revealEndpaperSlow 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .book-cover-front {
@@ -176,8 +188,8 @@ main {
   height: 100%;
   background: linear-gradient(135deg, #3b1728 0%, #241019 100%);
   border: 2px solid #d4af37;
-  border-left: 10px solid #1a0b12;
-  box-shadow: inset 0 0 0 6px rgba(212, 175, 55, 0.22), 10px 0 25px rgba(0, 0, 0, 0.45);
+  border-left: 12px solid #16090e;
+  box-shadow: inset 0 0 0 6px rgba(212, 175, 55, 0.25), 10px 0 25px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -187,28 +199,36 @@ main {
   text-align: center;
 }
 
-@keyframes openBookCoverLocal {
+@keyframes openBookCoverSlow {
   0% {
     opacity: 1;
     transform: rotateY(0deg);
   }
-  20% {
+  18% {
     opacity: 1;
-    transform: rotateY(-8deg);
+    transform: rotateY(0deg);
   }
-  75% {
+  45% {
+    opacity: 1;
+    transform: rotateY(-35deg);
+  }
+  85% {
     opacity: 0.95;
-    transform: rotateY(-105deg);
+    transform: rotateY(-108deg);
   }
   100% {
     opacity: 0;
-    transform: rotateY(-120deg);
+    transform: rotateY(-125deg);
   }
 }
 
-@keyframes revealEndpaperLocal {
+@keyframes revealEndpaperSlow {
   0% {
-    filter: brightness(0.65);
+    filter: brightness(0.45);
+    transform: scale(0.96);
+  }
+  20% {
+    filter: brightness(0.55);
     transform: scale(0.97);
   }
   100% {
@@ -218,7 +238,7 @@ main {
 }
 
 /* ==========================================================================
-   АНИМАЦИЯ 3: Плавные шкалы сравнения времени чтения (без бликов)
+   АНИМАЦИЯ 3: Плавные шкалы сравнения времени чтения
    ========================================================================== */
 .calc-visual-box {
   background: #f8fafc;

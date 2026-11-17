@@ -34,6 +34,7 @@ const BOOKS_DATA = {
     title: 'Преступление и наказание',
     author: 'Ф. М. Достоевский',
     shortTag: '12 мин',
+    briefBaseMinutes: 12,
     badgeClass: 'bg-success',
     badge: 'Время чтения: 12 минут',
     epoch: 'Золотой век (1866 г.)',
@@ -66,6 +67,7 @@ const BOOKS_DATA = {
     title: 'Мастер и Маргарита',
     author: 'М. А. Булгаков',
     shortTag: '15 мин',
+    briefBaseMinutes: 15,
     badgeClass: 'bg-warning text-dark',
     badge: 'Время чтения: 15 минут',
     epoch: 'XX век (1940 г.)',
@@ -98,6 +100,7 @@ const BOOKS_DATA = {
     title: 'Отцы и дети',
     author: 'И. С. Тургенев',
     shortTag: '9 мин',
+    briefBaseMinutes: 9,
     badgeClass: 'bg-info text-dark',
     badge: 'Время чтения: 9 минут',
     epoch: 'Золотой век (1862 г.)',
@@ -130,6 +133,7 @@ const BOOKS_DATA = {
     title: 'Война и мир',
     author: 'Л. Н. Толстой',
     shortTag: '25 мин',
+    briefBaseMinutes: 25,
     badgeClass: 'bg-primary',
     badge: 'Время чтения: 25 минут',
     epoch: 'Золотой век (1869 г.)',
@@ -162,6 +166,7 @@ const BOOKS_DATA = {
     title: 'Евгений Онегин',
     author: 'А. С. Пушкин',
     shortTag: '7 мин',
+    briefBaseMinutes: 7,
     badgeClass: 'bg-secondary',
     badge: 'Время чтения: 7 минут',
     epoch: 'Золотой век (1833 г.)',
@@ -194,6 +199,7 @@ const BOOKS_DATA = {
     title: '1984',
     author: 'Джордж Оруэлл',
     shortTag: '8 мин',
+    briefBaseMinutes: 8,
     badgeClass: 'bg-danger',
     badge: 'Время чтения: 8 минут',
     epoch: 'Зарубежная классика (1949 г.)',
@@ -226,6 +232,7 @@ const BOOKS_DATA = {
     title: 'Герой нашего времени',
     author: 'М. Ю. Лермонтов',
     shortTag: '10 мин',
+    briefBaseMinutes: 10,
     badgeClass: 'bg-success',
     badge: 'Время чтения: 10 минут',
     epoch: 'Золотой век (1840 г.)',
@@ -258,6 +265,7 @@ const BOOKS_DATA = {
     title: 'Мёртвые души',
     author: 'Н. В. Гоголь',
     shortTag: '14 мин',
+    briefBaseMinutes: 14,
     badgeClass: 'bg-warning text-dark',
     badge: 'Время чтения: 14 минут',
     epoch: 'Золотой век (1842 г.)',
@@ -290,6 +298,7 @@ const BOOKS_DATA = {
     title: 'Вишнёвый сад',
     author: 'А. П. Чехов',
     shortTag: '8 мин',
+    briefBaseMinutes: 8,
     badgeClass: 'bg-info text-dark',
     badge: 'Время чтения: 8 минут',
     epoch: 'Рубеж XIX–XX вв. (1903 г.)',
@@ -496,7 +505,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 4. Отрисовка полного разбора выбранной книги + открывание обложки строго внутри рамки книги
+  // 4. Отрисовка полного разбора книги: сначала книга закрыта во время скролла, затем плавно открывается
+  let bookOpenTimer = null;
+
   function renderBook(bookKey, playBookOpenAnimation = false) {
     const book = BOOKS_DATA[bookKey] || BOOKS_DATA.dostoevsky;
     if (!detailTitle) return;
@@ -514,10 +525,19 @@ document.addEventListener('DOMContentLoaded', () => {
       coverFront.style.background = `linear-gradient(135deg, ${book.coverColor} 0%, #140c10 100%)`;
     }
 
-    if (stage && playBookOpenAnimation) {
-      stage.classList.remove('is-opening');
-      void stage.offsetWidth;
-      stage.classList.add('is-opening');
+    if (stage) {
+      if (bookOpenTimer) clearTimeout(bookOpenTimer);
+      stage.classList.remove('is-opening', 'is-closed');
+
+      if (playBookOpenAnimation) {
+        // Сначала держим книгу полностью закрытой, пока страница спускается к блоку разбора
+        stage.classList.add('is-closed');
+        bookOpenTimer = setTimeout(() => {
+          stage.classList.remove('is-closed');
+          void stage.offsetWidth;
+          stage.classList.add('is-opening');
+        }, 700);
+      }
     }
 
     detailTitle.textContent = book.title;
@@ -576,17 +596,17 @@ document.addEventListener('DOMContentLoaded', () => {
       if (btn && btn.dataset.book && detailTitle) {
         e.preventDefault();
         const key = btn.dataset.book;
+        renderBook(key, true);
         const section = document.getElementById('book-analysis-section');
         if (section) {
           section.scrollIntoView({ behavior: 'smooth' });
         }
-        renderBook(key, true);
         window.history.replaceState({}, '', `catalog.html?book=${key}#book-analysis-section`);
       }
     });
   }
 
-  // 5. Плавный расчёт времени чтения (поддержка ручного ввода + кнопок пресетов скорости)
+  // 5. Расчёт времени чтения (фиксированные страницы выбранной книги + точный расчёт сэкономленных часов)
   const calcPreset = document.getElementById('calc-book-preset');
   const calcPages = document.getElementById('calc-pages');
   const calcSpeed = document.getElementById('calc-speed');
@@ -613,12 +633,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateReadingCalculation() {
-    if (!calcPages || !calcSpeed) return;
-    const pages = Math.max(10, Number(calcPages.value) || 300);
-    const speed = Math.max(5, Number(calcSpeed.value) || 40);
+    if (!calcPreset || !calcSpeed) return;
+    const selectedBook = BOOKS_DATA[calcPreset.value] || BOOKS_DATA.dostoevsky;
+    const pages = selectedBook.pagesCount;
+    const speed = Math.max(10, Math.min(250, Number(calcSpeed.value) || 40));
+
+    if (calcPages) {
+      calcPages.value = `${pages} стр.`;
+    }
+
+    // Время чтения оригинала (в часах) и время чтения разбора с учётом скорости читателя (в минутах)
     const originalHours = pages / speed;
-    const briefMinutes = Math.max(6, Math.round(pages / 42));
-    const savedPercent = Math.min(99, Math.max(50, Math.round((1 - briefMinutes / (originalHours * 60)) * 100)));
+    const briefMinutes = Math.max(4, Math.round(selectedBook.briefBaseMinutes * (40 / speed)));
+    const savedHours = Math.max(0.5, originalHours - briefMinutes / 60);
 
     if (hourglassIcon) {
       hourglassIcon.classList.toggle('spinning');
@@ -637,29 +664,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if (barOrigLabel) barOrigLabel.textContent = `${originalHours.toFixed(1)} ч.`;
     if (barBriefLabel) barBriefLabel.textContent = `${briefMinutes} мин.`;
 
-    animateValueSmooth(numOrig, originalHours, 1100, ' ч.', true);
-    animateValueSmooth(numBrief, briefMinutes, 1100, ' мин.', false);
-    animateValueSmooth(numSave, savedPercent, 1100, '%', false);
+    animateValueSmooth(numOrig, originalHours, 1000, ' ч.', true);
+    animateValueSmooth(numBrief, briefMinutes, 1000, ' мин.', false);
+    animateValueSmooth(numSave, savedHours, 1000, ' ч.', true);
 
     if (barOrig && barBrief) {
       barOrig.style.transition = 'none';
       barBrief.style.transition = 'none';
-      barOrig.style.width = '15%';
+      barOrig.style.width = '12%';
       barBrief.style.width = '2%';
 
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          barOrig.style.transition = 'width 1.4s cubic-bezier(0.22, 1, 0.36, 1)';
-          barBrief.style.transition = 'width 1.4s cubic-bezier(0.22, 1, 0.36, 1)';
+          barOrig.style.transition = 'width 1.3s cubic-bezier(0.22, 1, 0.36, 1)';
+          barBrief.style.transition = 'width 1.3s cubic-bezier(0.22, 1, 0.36, 1)';
           barOrig.style.width = '100%';
-          const ratioWidth = Math.max(6, Math.min(35, Math.round((briefMinutes / (originalHours * 60)) * 280)));
+          const ratioWidth = Math.max(6, Math.min(35, Math.round((briefMinutes / (originalHours * 60)) * 320)));
           barBrief.style.width = `${ratioWidth}%`;
         });
       });
     }
   }
 
-  // Переключение кнопок быстрых пресетов скорости чтения
   speedPresetBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       const selectedSpeed = btn.dataset.speed;
@@ -686,11 +712,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (calcPreset && calcPages) {
-    calcPreset.addEventListener('change', () => {
-      calcPages.value = calcPreset.value;
-      updateReadingCalculation();
-    });
+  if (calcPreset) {
+    calcPreset.addEventListener('change', updateReadingCalculation);
   }
   if (calcBtn) {
     calcBtn.addEventListener('click', updateReadingCalculation);
